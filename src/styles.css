@@ -1,0 +1,277 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
+
+/*
+ * Spice Garden — Luxury Fine Dining Design System
+ * All tokens are oklch. Use semantic classes only.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 14px);
+  --radius-3xl: calc(var(--radius) + 22px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-cream: var(--cream);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-button: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-luxe:
+    0 30px 80px -30px color-mix(in oklab, var(--primary) 35%, transparent),
+    0 10px 30px -15px oklch(0 0 0 / 0.6);
+  --shadow-glow: 0 0 60px -10px color-mix(in oklab, var(--primary) 55%, transparent);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Luxury dark palette */
+  --background: oklch(0.16 0 0); /* #0F0F0F */
+  --foreground: oklch(0.97 0.01 80); /* Cream-white */
+  --surface: oklch(0.2 0 0); /* #181818 */
+  --card: oklch(0.225 0.005 60); /* #1F1F1F */
+  --card-foreground: oklch(0.97 0.01 80);
+  --popover: oklch(0.2 0 0);
+  --popover-foreground: oklch(0.97 0.01 80);
+
+  --primary: oklch(0.78 0.13 85); /* #D4AF37 luxury gold */
+  --primary-foreground: oklch(0.18 0.02 60);
+  --primary-glow: oklch(0.86 0.15 92);
+
+  --secondary: oklch(0.28 0.04 40); /* Accent brown */
+  --secondary-foreground: oklch(0.97 0.01 80);
+
+  --muted: oklch(0.25 0.005 60);
+  --muted-foreground: oklch(0.7 0.01 80);
+
+  --accent: oklch(0.32 0.06 45); /* #2B1D16 warmer */
+  --accent-foreground: oklch(0.97 0.01 80);
+
+  --cream: oklch(0.95 0.015 80); /* #F7F3EE */
+
+  --destructive: oklch(0.62 0.21 25);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --success: oklch(0.7 0.17 145);
+
+  --border: oklch(1 0 0 / 0.08);
+  --input: oklch(1 0 0 / 0.12);
+  --ring: oklch(0.78 0.13 85 / 0.6);
+}
+
+:root.light {
+  /* Luxury light palette — warm ivory, espresso & antique gold */
+  --background: oklch(0.975 0.008 80);   /* #FAF7F2 warm ivory */
+  --foreground: oklch(0.25 0.005 60);    /* #1F1F1F espresso */
+  --surface: oklch(0.955 0.012 82);      /* #F5EFE7 section bg */
+  --card: oklch(1 0 0);                  /* #FFFFFF crisp card */
+  --card-foreground: oklch(0.25 0.005 60);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.25 0.005 60);
+
+  --primary: oklch(0.72 0.13 82);        /* #C9A33A antique gold (deeper for AA) */
+  --primary-foreground: oklch(0.99 0.005 85);
+  --primary-glow: oklch(0.82 0.14 88);   /* warm champagne highlight */
+
+  --secondary: oklch(0.46 0.06 60);      /* #7A5C3E warm brown */
+  --secondary-foreground: oklch(0.99 0.005 85);
+
+  --muted: oklch(0.94 0.012 80);
+  --muted-foreground: oklch(0.52 0.008 60); /* #666 secondary text */
+
+  --accent: oklch(0.92 0.025 75);
+  --accent-foreground: oklch(0.3 0.03 55);
+
+  --cream: oklch(0.985 0.008 82);
+
+  --destructive: oklch(0.58 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --success: oklch(0.58 0.16 145);
+
+  --border: oklch(0.78 0.015 70 / 0.6);  /* #E9E2D8 warm border */
+  --input: oklch(0.78 0.015 70 / 0.7);
+  --ring: oklch(0.72 0.13 82 / 0.45);
+
+  /* Soft, layered premium shadows — no harsh drop shadows */
+  --shadow-luxe:
+    0 1px 2px oklch(0.3 0.02 60 / 0.04),
+    0 8px 24px -8px oklch(0.3 0.02 60 / 0.08),
+    0 24px 48px -24px oklch(0.5 0.08 70 / 0.18);
+  --shadow-glow: 0 12px 40px -12px color-mix(in oklab, var(--primary) 38%, transparent);
+}
+
+/* ----- Light-mode component refinements ----- */
+:root.light body {
+  background:
+    radial-gradient(ellipse 1200px 600px at 50% -10%, color-mix(in oklab, var(--primary) 8%, transparent), transparent 60%),
+    radial-gradient(ellipse 900px 500px at 90% 90%, color-mix(in oklab, var(--secondary) 6%, transparent), transparent 60%),
+    var(--background);
+  background-attachment: fixed;
+}
+
+:root.light .glass {
+  background: color-mix(in oklab, #ffffff 78%, transparent);
+  backdrop-filter: blur(22px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--primary) 22%, oklch(0.78 0.015 70 / 0.5));
+  box-shadow:
+    0 1px 2px oklch(0.3 0.02 60 / 0.04),
+    0 10px 30px -12px oklch(0.3 0.02 60 / 0.1);
+}
+:root.light .glass-strong {
+  background: color-mix(in oklab, #ffffff 88%, transparent);
+  backdrop-filter: blur(28px) saturate(160%);
+  border: 1px solid color-mix(in oklab, var(--primary) 28%, oklch(0.78 0.015 70 / 0.6));
+  box-shadow:
+    0 1px 2px oklch(0.3 0.02 60 / 0.05),
+    0 14px 40px -16px oklch(0.3 0.02 60 / 0.14);
+}
+
+:root.light .gold-text {
+  background: linear-gradient(
+    135deg,
+    oklch(0.62 0.13 72) 0%,
+    oklch(0.72 0.13 82) 50%,
+    oklch(0.55 0.1 65) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+:root.light ::-webkit-scrollbar-track { background: var(--surface); }
+
+/* Smooth theme transition on core surfaces */
+html, body,
+header, footer, section, main, article, aside, nav,
+.glass, .glass-strong,
+[class*="bg-"], [class*="border"], [class*="text-"], [class*="shadow"] {
+  transition:
+    background-color 380ms ease,
+    border-color 380ms ease,
+    color 280ms ease,
+    box-shadow 380ms ease;
+}
+/* Don't transition interactive hover/active for snappy feel */
+button, a { transition: background-color 220ms ease, color 200ms ease, box-shadow 260ms ease, transform 260ms ease, border-color 220ms ease; }
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 40%, transparent);
+    color: var(--cream);
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--surface); }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--primary) 40%, var(--surface));
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+  }
+}
+
+/* Reusable luxury utilities */
+@utility glass {
+  background: color-mix(in oklab, var(--card) 55%, transparent);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--primary) 18%, transparent);
+}
+
+@utility glass-strong {
+  background: color-mix(in oklab, var(--card) 75%, transparent);
+  backdrop-filter: blur(28px) saturate(160%);
+  border: 1px solid color-mix(in oklab, var(--primary) 25%, transparent);
+}
+
+@utility gold-text {
+  background: linear-gradient(
+    135deg,
+    var(--primary-glow) 0%,
+    var(--primary) 50%,
+    color-mix(in oklab, var(--primary) 70%, #8a6a00) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@utility gold-border {
+  border: 1px solid color-mix(in oklab, var(--primary) 50%, transparent);
+}
+
+@utility radial-spot {
+  background:
+    radial-gradient(ellipse at top, color-mix(in oklab, var(--primary) 14%, transparent), transparent 60%),
+    var(--background);
+}
+
+@utility hover-lift {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+}
+
+@utility section-pad {
+  padding-block: clamp(4rem, 9vw, 8rem);
+}
+
+@utility container-luxe {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+}
+
+@utility divider-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--primary);
+  font-family: var(--font-button);
+  font-size: 0.75rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
