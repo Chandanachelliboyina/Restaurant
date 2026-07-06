@@ -50,6 +50,7 @@ const LOCAL = {
   crispyCorn: new URL('../assets/Crispy-corn-kernals-1.jpg', import.meta.url).href,
   haraBhara: new URL('../assets/hara-bhara-kabab.jpg', import.meta.url).href,
   fishAmritsari: new URL('../assets/download (1).jpg', import.meta.url).href,
+  mushroomGalouti: new URL('../assets/mushroom-galouti.jpg', import.meta.url).href,
 };
 
 type Seed = {
@@ -68,7 +69,7 @@ const SEEDS: Record<Category, Seed[]> = {
     { name: "Chicken Tikka", desc: "Tandoori boneless chicken chunks with smoked cumin butter.", price: 14, veg: false, img: IMG("1599487488170-d11ec9c172f0") },
     { name: "Hara Bhara Kebab", desc: "Spinach, peas & potato patties dusted with rock salt.", price: 10, veg: true, img: LOCAL.haraBhara },
     { name: "Fish Amritsari", desc: "Ajwain-battered basa fillets fried till crisp.", price: 15, veg: false, img: LOCAL.fishAmritsari },
-    { name: "Mushroom Galouti", desc: "Melt-in-mouth spiced mushroom patties on mini rumali.", price: 13, veg: true, img: IMG("1534422298391-e4f8c172dddb") },
+    { name: "Mushroom Galouti", desc: "Melt-in-mouth spiced mushroom patties on mini rumali.", price: 13, veg: true, img: LOCAL.mushroomGalouti },
     { name: "Prawn Koliwada", desc: "Battered prawns with curry-leaf mayo.", price: 17, veg: false, img: IMG("1565557623262-b51c2513a641") },
     { name: "Veg Spring Rolls", desc: "Crisp rolls of cabbage, carrot and glass noodles.", price: 9, veg: true, img: IMG("1544025162-d76694265947") },
     { name: "Chilli Paneer Dry", desc: "Indo-Chinese paneer with bell peppers in soy glaze.", price: 12, veg: true, img: IMG("1601050690597-df056fb49785") },
