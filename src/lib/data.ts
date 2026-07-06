@@ -65,7 +65,7 @@ type Seed = {
 
 const SEEDS: Record<Category, Seed[]> = {
   Starters: [
-    { name: "Paneer Tikka", desc: "Charred paneer marinated in yogurt, ginger and warm spices.", price: 12, veg: true, img: LOCAL.download },
+    { name: "Paneer Tikka", desc: "Charred paneer marinated in yogurt, ginger and warm spices.", price: 12, veg: true, img: IMG("1601050690597-df056fb49785") },
     { name: "Crispy Corn Kernels", desc: "Golden fried corn tossed with bell peppers and chilli.", price: 9, veg: true, img: LOCAL.crispyCorn },
     { name: "Chicken Tikka", desc: "Tandoori boneless chicken chunks with smoked cumin butter.", price: 14, veg: false, img: IMG("1599487488170-d11ec9c172f0") },
     { name: "Hara Bhara Kebab", desc: "Spinach, peas & potato patties dusted with rock salt.", price: 10, veg: true, img: LOCAL.haraBhara },
