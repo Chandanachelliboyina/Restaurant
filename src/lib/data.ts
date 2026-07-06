@@ -51,6 +51,7 @@ const LOCAL = {
   haraBhara: '/assets/hara-bhara-kabab.jpg',
   fishAmritsari: '/assets/download-1.jpg',
   mushroomGalouti: '/assets/mushroom-galouti.jpg',
+  alooTikki: '/assets/aloo-tikki-chaat.jpg',
 };
 
 type Seed = {
