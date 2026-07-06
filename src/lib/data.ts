@@ -44,13 +44,13 @@ export interface Dish {
 const IMG = (id: string) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&q=80`;
 
-// Local assets
+// Public-hosted asset paths (ensure files exist under `public/assets` before deploy)
 const LOCAL = {
-  download: new URL('../assets/download.jpg', import.meta.url).href,
-  crispyCorn: new URL('../assets/Crispy-corn-kernals-1.jpg', import.meta.url).href,
-  haraBhara: new URL('../assets/hara-bhara-kabab.jpg', import.meta.url).href,
-  fishAmritsari: new URL('../assets/download-1.jpg', import.meta.url).href,
-  mushroomGalouti: new URL('../assets/mushroom-galouti.jpg', import.meta.url).href,
+  download: '/assets/download.jpg',
+  crispyCorn: '/assets/Crispy-corn-kernals-1.jpg',
+  haraBhara: '/assets/hara-bhara-kabab.jpg',
+  fishAmritsari: '/assets/download-1.jpg',
+  mushroomGalouti: '/assets/mushroom-galouti.jpg',
 };
 
 type Seed = {
