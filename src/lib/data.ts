@@ -52,6 +52,7 @@ const LOCAL = {
   fishAmritsari: '/assets/download-1.jpg',
   mushroomGalouti: '/assets/mushroom-galouti.jpg',
   alooTikki: '/assets/aloo-tikki-chaat.jpg',
+  vegSpringRolls: '/assets/veg-spring-rolls.jpg',
 };
 
 type Seed = {
@@ -72,7 +73,7 @@ const SEEDS: Record<Category, Seed[]> = {
     { name: "Fish Amritsari", desc: "Ajwain-battered basa fillets fried till crisp.", price: 15, veg: false, img: LOCAL.fishAmritsari },
     { name: "Mushroom Galouti", desc: "Melt-in-mouth spiced mushroom patties on mini rumali.", price: 13, veg: true, img: LOCAL.mushroomGalouti },
     { name: "Prawn Koliwada", desc: "Battered prawns with curry-leaf mayo.", price: 17, veg: false, img: IMG("1565557623262-b51c2513a641") },
-    { name: "Veg Spring Rolls", desc: "Crisp rolls of cabbage, carrot and glass noodles.", price: 9, veg: true, img: IMG("1544025162-d76694265947") },
+    { name: "Veg Spring Rolls", desc: "Crisp rolls of cabbage, carrot and glass noodles.", price: 9, veg: true, img: LOCAL.vegSpringRolls },
     { name: "Chilli Paneer Dry", desc: "Indo-Chinese paneer with bell peppers in soy glaze.", price: 12, veg: true, img: IMG("1601050690597-df056fb49785") },
     { name: "Chicken 65", desc: "Fiery Chettinad-spiced fried chicken with curry leaves.", price: 14, veg: false, img: IMG("1626132647523-66f5bf380027") },
     { name: "Aloo Tikki Chaat", desc: "Potato patties layered with chutneys and yogurt.", price: 8, veg: true, img: IMG("1589301760014-d929f3979dbc") },
