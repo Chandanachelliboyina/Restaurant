@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import { formatCurrency } from "@/lib/utils";
 import {
   ArrowRight,
   Award,
@@ -99,8 +100,8 @@ function Hero() {
           transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="mt-6 font-display text-[clamp(3rem,9vw,7.5rem)] font-semibold leading-[0.95]"
         >
-          <span className="block">Good Food.</span>
-          <span className="block gold-text italic">Good Mood.</span>
+          <span className="block">A different</span>
+          <span className="block gold-text italic">kind of evening.</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -108,8 +109,8 @@ function Hero() {
           transition={{ duration: 0.9, delay: 0.55 }}
           className="mt-8 max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg"
         >
-          Experience unforgettable dining crafted by world-class chefs using rare, seasonal
-          ingredients from our private garden.
+          Step into our warm, candlelit restaurant for handcrafted dishes, elegant service, and a
+          memorable night of comfort, spice, and celebration.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -158,23 +159,23 @@ function WhyChooseUs() {
   const items = [
     {
       icon: ChefHat,
-      title: "World-class Chefs",
-      text: "A brigade led by three-Michelin-star talent with decades on the world stage.",
+      title: "Chef-led Dining",
+      text: "Every plate is prepared with care by a team passionate about flavour, tradition and presentation.",
     },
     {
       icon: Leaf,
-      title: "Garden to Table",
-      text: "Rare herbs and produce from our private chef's garden, picked the same day.",
+      title: "Fresh Ingredients",
+      text: "Seasonal produce and rich spices bring freshness and depth to our restaurant favourites.",
     },
     {
       icon: Sparkles,
-      title: "Cinematic Service",
-      text: "Choreographed service rituals that feel less like dining and more like theatre.",
+      title: "Warm Evening Atmosphere",
+      text: "From intimate dinners to lively gatherings, our space is made for relaxed celebration.",
     },
     {
       icon: Award,
-      title: "Award Winning",
-      text: "Recognised among the world's fifty finest restaurants three years running.",
+      title: "Loved by Guests",
+      text: "Guests return for our comfort dishes, thoughtful service and memorable dining experience.",
     },
   ];
   return (
@@ -209,24 +210,30 @@ function WhyChooseUs() {
 }
 
 function PopularDishes() {
+  const featuredDishes = DISHES.filter((d) => d.popular || d.category === "Biryani" || d.category === "North Indian" || d.category === "Desserts").slice(0, 8);
+
   return (
     <section className="section-pad bg-surface">
       <div className="container-luxe">
         <SectionHeader
           eyebrow="Popular Dishes"
-          title="Tonight's signature plates"
+          title="Crowd favourites from our kitchen"
           action={
             <Link
               to="/menu"
               className="hidden items-center gap-2 text-sm font-medium text-primary hover:underline md:inline-flex"
             >
-              View full menu <ArrowRight className="h-4 w-4" />
+              Explore the full menu <ArrowRight className="h-4 w-4" />
             </Link>
           }
         />
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
+          From biryanis to desserts, our menu brings together beloved classics and modern favourites
+          for every kind of evening.
+        </p>
         <div className="-mx-4 mt-12 overflow-x-auto px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div className="flex gap-6 md:grid md:grid-cols-2 lg:grid-cols-3">
-            {DISHES.map((d, i) => (
+            {featuredDishes.map((d, i) => (
               <div key={d.id} className="w-[300px] shrink-0 md:w-auto">
                 <DishCard dish={d} index={i} />
               </div>
@@ -282,16 +289,16 @@ function ChefSection() {
             Chef Marco Aurelio
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Trained in the kitchens of Paris and Tokyo, Chef Marco built Spice Garden around a
-            single belief — that the most luxurious thing on a plate is restraint. Every menu is a
-            quiet conversation between season, soil and fire.
+            With over 20 years of experience across Paris, Tokyo and Delhi, Chef Marco creates
+            menus that balance elegance, comfort and bold spice. Every dish is shaped by technique,
+            warmth and a deep respect for tradition.
           </p>
           <p className="mt-4 font-display text-2xl italic gold-text">"Cook less. Cook better."</p>
           <div className="mt-8 grid grid-cols-3 gap-4">
             {[
-              ["12k+", "Guests"],
-              ["28", "Awards"],
-              ["4", "Branches"],
+              ["20+", "Years"],
+              ["15", "Awards"],
+              ["All", "Menu Dishes"],
             ].map(([n, l]) => (
               <div
                 key={l}
@@ -325,9 +332,9 @@ function Story() {
             A garden grown from <span className="gold-text">one small table</span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            What began as a twelve-seat counter in a quiet Mayfair townhouse has grown into one of
-            Europe's most considered fine dining houses — without losing the intimacy that made it
-            ours.
+            What began as an intimate dinner destination has grown into a restaurant known for warm
+            hospitality, candlelit evenings and a menu filled with favourites from biryanis and
+            curries to heartfelt desserts and refreshing beverages.
           </p>
           <Link
             to="/about"
@@ -375,7 +382,7 @@ function TodaysSpecial() {
               <p className="mt-4 max-w-md text-muted-foreground">{dish.description}</p>
               <div className="mt-6 flex flex-wrap items-center gap-6 text-sm">
                 <span className="flex items-center gap-2"><Star className="h-4 w-4 fill-primary text-primary" /> {dish.rating}</span>
-                <span className="font-display text-3xl gold-text">${dish.price}</span>
+                <span className="font-display text-3xl gold-text">{formatCurrency(dish.price)}</span>
               </div>
               <Link
                 to="/reservations"
@@ -399,11 +406,11 @@ function TodaysSpecial() {
 }
 
 function Categories() {
-  const cats = ["Starters", "Pasta", "Chicken", "Seafood", "Desserts", "Drinks"];
+  const cats = ["Biryani", "Chinese", "South Indian", "North Indian", "Desserts", "Beverages"];
   return (
     <section className="section-pad bg-surface">
       <div className="container-luxe">
-        <SectionHeader eyebrow="Explore" title="By the course" />
+        <SectionHeader eyebrow="Menu Highlights" title="All dishes available in our menu" />
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {cats.map((c, i) => (
             <motion.div

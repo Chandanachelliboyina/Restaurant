@@ -15,6 +15,7 @@ CREATE TABLE public.orders (
   total NUMERIC(10,2) NOT NULL DEFAULT 0,
   payment_status public.payment_status NOT NULL DEFAULT 'paid',
   order_status public.order_status NOT NULL DEFAULT 'confirmed',
+  payment_method TEXT,
   fulfillment TEXT NOT NULL DEFAULT 'delivery',
   address TEXT,
   notes TEXT,

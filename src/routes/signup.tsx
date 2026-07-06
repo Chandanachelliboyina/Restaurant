@@ -19,9 +19,15 @@ const schema = z
   })
   .refine((d) => d.password === d.confirm, { path: ["confirm"], message: "Passwords do not match" });
 
+const signupSearchSchema = z.object({
+  email: z.string().optional(),
+  step: z.enum(["form", "otp", "done"]).optional(),
+});
+
 const RESEND_COOLDOWN_SECONDS = 60;
 
 export const Route = createFileRoute("/signup")({
+  validateSearch: (search) => signupSearchSchema.parse(search),
   head: () => ({
     meta: [
       { title: "Create Account — Spice Garden" },
@@ -33,10 +39,11 @@ export const Route = createFileRoute("/signup")({
 
 function SignupPage() {
   const navigate = useNavigate();
+  const search = Route.useSearch();
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
-    email: "",
+    email: search.email || "",
     phone: "",
     password: "",
     confirm: "",
@@ -44,9 +51,13 @@ function SignupPage() {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
-  const [step, setStep] = useState<"form" | "otp" | "done">("form");
+  const [step, setStep] = useState<"form" | "otp" | "done">(search.step || "form");
   const [otp, setOtp] = useState("");
   const [cooldown, setCooldown] = useState(0);
+  const [otpExpiresAt, setOtpExpiresAt] = useState<number | null>(() => {
+    return search.step === "otp" ? Date.now() + 10 * 60 * 1000 : null;
+  });
+  const [timeLeft, setTimeLeft] = useState<number>(0);
 
   useEffect(() => {
     if (cooldown <= 0) return;
@@ -54,27 +65,56 @@ function SignupPage() {
     return () => clearTimeout(t);
   }, [cooldown]);
 
+  useEffect(() => {
+    if (!otpExpiresAt) return;
+    const interval = setInterval(() => {
+      const remaining = Math.max(0, Math.ceil((otpExpiresAt - Date.now()) / 1000));
+      setTimeLeft(remaining);
+      if (remaining <= 0) {
+        clearInterval(interval);
+      }
+    }, 1000);
+    setTimeLeft(Math.max(0, Math.ceil((otpExpiresAt - Date.now()) / 1000)));
+    return () => clearInterval(interval);
+  }, [otpExpiresAt]);
+
   async function sendSignup(): Promise<boolean> {
-    const { error } = await supabase.auth.signUp({
+    try {
+      // 1. Check if the user already exists in profiles and has completed registration
+      const { data: existingProfile, error: profileErr } = await supabase
+        .from("profiles")
+        .select("id, first_name")
+        .eq("email", form.email.trim())
+        .maybeSingle();
+
+      if (profileErr) {
+        console.error("[signup] error querying profile:", profileErr);
+      }
+
+      if (existingProfile && existingProfile.first_name) {
+        toast.error("This email is already registered. Please sign in instead.");
+        return false;
+      }
+    } catch (e) {
+      console.error("[signup] check profile failed:", e);
+    }
+
+    // 2. Request OTP email verification via signInWithOtp
+    const { error } = await supabase.auth.signInWithOtp({
       email: form.email.trim(),
-      password: form.password,
       options: {
-        emailRedirectTo: `${window.location.origin}/`,
-        data: {
-          first_name: form.firstName.trim(),
-          last_name: form.lastName.trim(),
-          phone: form.phone.trim(),
-        },
+        shouldCreateUser: true,
       },
     });
+
     if (error) {
-      console.error("[signup] send failed:", error);
-      const msg = /registered|already/i.test(error.message)
-        ? "This email is already registered. Please sign in instead."
-        : error.message || "We couldn't send the verification code. Please try again.";
-      toast.error(msg);
+      console.error("[signup] send OTP failed:", error);
+      toast.error(error.message || "We couldn't send the verification code. Please try again.");
       return false;
     }
+
+    // Locally mark an expiry for the OTP so we can show remaining time in the UI.
+    setOtpExpiresAt(Date.now() + 10 * 60 * 1000);
     return true;
   }
 
@@ -98,10 +138,8 @@ function SignupPage() {
   async function resend() {
     if (cooldown > 0 || loading) return;
     setLoading(true);
-    const { error } = await supabase.auth.resend({
-      type: "signup",
+    const { error } = await supabase.auth.signInWithOtp({
       email: form.email.trim(),
-      options: { emailRedirectTo: `${window.location.origin}/` },
     });
     setLoading(false);
     if (error) {
@@ -110,6 +148,8 @@ function SignupPage() {
       return;
     }
     setCooldown(RESEND_COOLDOWN_SECONDS);
+    // Reset local expiry when a new code is sent
+    setOtpExpiresAt(Date.now() + 10 * 60 * 1000);
     toast.success("A new code has been sent to your email.");
   }
 
@@ -119,13 +159,16 @@ function SignupPage() {
       return;
     }
     setLoading(true);
-    const { error } = await supabase.auth.verifyOtp({
+
+    // 1. Verify the OTP token
+    const { data, error } = await supabase.auth.verifyOtp({
       email: form.email.trim(),
       token: otp,
-      type: "signup",
+      type: "email", // Use "email" type for magic link/OTP logins
     });
-    setLoading(false);
+
     if (error) {
+      setLoading(false);
       console.error("[signup] verify failed:", error);
       const msg = /expired/i.test(error.message)
         ? "That code has expired. Tap Resend to get a new one."
@@ -135,8 +178,50 @@ function SignupPage() {
       toast.error(msg);
       return;
     }
+
+    // 2. Set password and metadata for the user
+    const { error: updateError } = await supabase.auth.updateUser({
+      password: form.password,
+      data: {
+        first_name: form.firstName.trim(),
+        last_name: form.lastName.trim(),
+        phone: form.phone.trim(),
+      },
+    });
+
+    if (updateError) {
+      setLoading(false);
+      console.error("[signup] update user metadata/password failed:", updateError);
+      toast.error("Account verified, but failed to set password. Please use Forgot Password to set it.");
+      return;
+    }
+
+    // 3. Update public profiles directly
+    const userId = data.user?.id;
+    if (userId) {
+      const { error: profileError } = await supabase
+        .from("profiles")
+        .update({
+          first_name: form.firstName.trim(),
+          last_name: form.lastName.trim(),
+          phone: form.phone.trim(),
+        })
+        .eq("id", userId);
+      
+      if (profileError) {
+        console.error("[signup] update profile table failed:", profileError);
+      }
+    }
+
+    setLoading(false);
     setStep("done");
     toast.success("Account verified — welcome!");
+
+    try {
+      await supabase.auth.getSession();
+    } catch (e) {
+      console.error("[signup] getSession after verify failed:", e);
+    }
     setTimeout(() => navigate({ to: "/" }), 1200);
   }
 
@@ -265,17 +350,24 @@ function SignupPage() {
               >
                 ← Edit details
               </button>
-              <button
-                type="button"
-                onClick={resend}
-                disabled={cooldown > 0 || loading}
-                className="uppercase tracking-[0.3em] text-primary disabled:text-muted-foreground disabled:cursor-not-allowed"
-              >
-                {cooldown > 0 ? `Resend in ${cooldown}s` : "Resend code"}
-              </button>
+              <div className="flex items-center gap-3">
+                {otpExpiresAt && timeLeft > 0 ? (
+                  <span className="text-muted-foreground">Expires in {timeLeft}s</span>
+                ) : otpExpiresAt ? (
+                  <span className="text-destructive font-medium">Code expired</span>
+                ) : null}
+                <button
+                  type="button"
+                  onClick={resend}
+                  disabled={cooldown > 0 || loading}
+                  className="uppercase tracking-[0.3em] text-primary disabled:text-muted-foreground disabled:cursor-not-allowed"
+                >
+                  {cooldown > 0 ? `Resend in ${cooldown}s` : "Resend code"}
+                </button>
+              </div>
             </div>
             <p className="text-center text-[0.7rem] text-muted-foreground">
-              The code expires in about an hour. Check your spam folder if it hasn't arrived.
+              The code expires in about 5–10 minutes. Check your spam folder if it hasn't arrived.
             </p>
           </motion.div>
         )}

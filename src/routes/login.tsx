@@ -59,7 +59,13 @@ function LoginPage() {
       console.error("[login] failed:", error);
       if (/confirm/i.test(error.message)) {
         toast.error("Please verify your email before signing in.");
-        navigate({ to: "/signup" });
+        navigate({
+          to: "/signup",
+          search: {
+            email: validation.data.email.trim(),
+            step: "otp",
+          },
+        });
         return;
       }
       toast.error(

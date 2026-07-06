@@ -3,11 +3,12 @@ import { Heart, Star, Flame, Clock, Plus, Minus, ShoppingBag } from "lucide-reac
 import { useState } from "react";
 import type { Dish } from "@/lib/data";
 import { toast } from "sonner";
-import { cn } from "@/lib/utils";
+import { cn, formatCurrency } from "@/lib/utils";
 import { useCart } from "@/lib/cart";
+import { isFavoriteDish, toggleFavoriteDish } from "@/lib/favorites";
 
 export function DishCard({ dish, index = 0 }: { dish: Dish; index?: number }) {
-  const [fav, setFav] = useState(false);
+  const [fav, setFav] = useState(() => isFavoriteDish(dish.id));
   const [qty, setQty] = useState(1);
   const { add } = useCart();
   return (
@@ -29,8 +30,9 @@ export function DishCard({ dish, index = 0 }: { dish: Dish; index?: number }) {
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent opacity-90" />
         <button
           onClick={() => {
-            setFav((v) => !v);
-            toast.success(fav ? "Removed from favourites" : "Added to favourites");
+            const nextFav = toggleFavoriteDish(dish.id);
+            setFav(nextFav);
+            toast.success(nextFav ? "Added to favourites" : "Removed from favourites");
           }}
           aria-label="Add to favourites"
           className={cn(
@@ -61,7 +63,7 @@ export function DishCard({ dish, index = 0 }: { dish: Dish; index?: number }) {
       <div className="flex flex-1 flex-col gap-3 p-6">
         <div className="flex items-start justify-between gap-3">
           <h3 className="font-display text-xl leading-tight">{dish.name}</h3>
-          <p className="font-display text-xl gold-text">${dish.price}</p>
+          <p className="font-display text-xl gold-text">{formatCurrency(dish.price)}</p>
         </div>
         <p className="text-sm leading-relaxed text-muted-foreground line-clamp-2">
           {dish.description}

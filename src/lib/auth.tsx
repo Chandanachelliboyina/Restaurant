@@ -9,6 +9,7 @@ export interface AuthUser {
   lastName?: string;
   phone?: string;
   avatar?: string;
+  deliveryAddress?: string;
 }
 
 interface AuthContextValue {
@@ -31,6 +32,7 @@ function toAuthUser(u: User | null | undefined): AuthUser | null {
     lastName: meta.last_name,
     phone: meta.phone,
     avatar: meta.avatar_url,
+    deliveryAddress: meta.delivery_address,
   };
 }
 

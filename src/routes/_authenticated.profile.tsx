@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { formatCurrency } from "@/lib/utils";
 import { CalendarDays, Heart, Receipt, Settings2, LogOut, User2, Star } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { DISHES } from "@/lib/data";
@@ -143,7 +144,7 @@ function ProfilePage() {
                   <div className="min-w-0 flex-1">
                     <p className="font-display text-lg">{d.name}</p>
                     <p className="flex items-center gap-1 text-xs text-muted-foreground">
-                      <Star className="h-3 w-3 fill-primary text-primary" /> {d.rating} · ${d.price}
+                      <Star className="h-3 w-3 fill-primary text-primary" /> {d.rating} · {formatCurrency(d.price)}
                     </p>
                   </div>
                 </div>

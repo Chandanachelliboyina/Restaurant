@@ -21,7 +21,10 @@ function AccountPage() {
   const [firstName, setFirstName] = useState(user?.firstName ?? "");
   const [lastName, setLastName] = useState(user?.lastName ?? "");
   const [phone, setPhone] = useState(user?.phone ?? "");
+  const [deliveryAddress, setDeliveryAddress] = useState(user?.deliveryAddress ?? "");
+  const [avatarUrl, setAvatarUrl] = useState(user?.avatar ?? "");
   const [newPw, setNewPw] = useState("");
+  const [uploading, setUploading] = useState(false);
 
   if (!user || !session) return null;
   const supaUser = session.user;
@@ -33,12 +36,34 @@ function AccountPage() {
     e.preventDefault();
     setSaving(true);
     const { error } = await supabase.auth.updateUser({
-      data: { first_name: firstName, last_name: lastName, phone },
+      data: { first_name: firstName, last_name: lastName, phone, delivery_address: deliveryAddress, avatar_url: avatarUrl },
     });
     setSaving(false);
     if (error) return toast.error(error.message);
     toast.success("Profile updated");
     setEditing(false);
+  };
+
+  // Upload avatar image to Supabase Storage and update profile metadata
+  const uploadAvatar = async (file: File | null) => {
+    if (!file || !user) return;
+    setUploading(true);
+    try {
+      const path = `avatars/${user.id}/avatar-${Date.now()}`;
+      const { error: upErr } = await supabase.storage.from("avatars").upload(path, file, { upsert: true });
+      if (upErr) throw upErr;
+      const { data } = supabase.storage.from("avatars").getPublicUrl(path);
+      const publicUrl = data.publicUrl;
+      const { error: upd } = await supabase.auth.updateUser({ data: { avatar_url: publicUrl } });
+      if (upd) throw upd;
+      setAvatarUrl(publicUrl);
+      toast.success("Profile photo updated");
+    } catch (err: any) {
+      console.error("[account] avatar upload failed:", err);
+      toast.error(err?.message || "Failed to upload avatar");
+    } finally {
+      setUploading(false);
+    }
   };
 
   const changePassword = async (e: React.FormEvent) => {
@@ -78,6 +103,7 @@ function AccountPage() {
             <Info icon={User2} l="Full Name" v={`${firstName || "—"} ${lastName}`.trim()} />
             <Info icon={Mail} l="Email" v={user.email} />
             <Info icon={Phone} l="Phone" v={phone || "—"} />
+            <Info icon={Calendar} l="Delivery Address" v={deliveryAddress || "—"} />
             <Info icon={Calendar} l="Member Since" v={created} />
           </dl>
 
@@ -100,7 +126,15 @@ function AccountPage() {
             <form onSubmit={saveProfile} className="mt-6 grid gap-4 border-t border-border pt-6 sm:grid-cols-2">
               <Field label="First name" value={firstName} onChange={setFirstName} />
               <Field label="Last name" value={lastName} onChange={setLastName} />
-              <Field label="Phone" value={phone} onChange={setPhone} className="sm:col-span-2" />
+              <Field label="Phone" value={phone} onChange={setPhone} />
+              <Field label="Delivery address" value={deliveryAddress} onChange={setDeliveryAddress} className="sm:col-span-2" />
+              <label className="sm:col-span-2">
+                <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Profile photo</span>
+                <div className="flex items-center gap-3">
+                  <img src={avatarUrl || undefined} alt="avatar" className="h-12 w-12 rounded-full object-cover" />
+                  <input type="file" accept="image/*" onChange={(e) => uploadAvatar(e.target.files?.[0] ?? null)} disabled={uploading} />
+                </div>
+              </label>
               <button disabled={saving} className="sm:col-span-2 rounded-full bg-primary px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground disabled:opacity-60">
                 {saving ? "Saving…" : "Save Changes"}
               </button>

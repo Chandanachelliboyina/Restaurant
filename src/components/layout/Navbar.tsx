@@ -11,6 +11,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/menu", label: "Menu" },
+  { to: "/favourites", label: "Favourites" },
   { to: "/gallery", label: "Gallery" },
   { to: "/reservations", label: "Reservations" },
   { to: "/orders", label: "Orders" },
