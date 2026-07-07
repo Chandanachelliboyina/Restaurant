@@ -8,6 +8,7 @@ import premiumDiavolaImage from "@/assets/premium_photo-1722686519091-886edbd87f
 import wontonSoupImage from "@/assets/premium_photo-1664391950572-bc4b1bdd1268.avif";
 import creamOfMushroomImage from "@/assets/premium_photo-1669631647057-3403888e87da.avif";
 import spicyChickenBurgerImage from "@/assets/premium_photo-1675252369719-dd52bc69c3df.avif";
+import paneerTikkaBurgerImage from "@/assets/photo-1697155406055-2db32d47ca07.avif";
 export type Category =
   | "Starters"
   | "Soups"
@@ -120,7 +121,7 @@ const SEEDS: Record<Category, Seed[]> = {
     { name: "BBQ Bacon Burger", desc: "Beef, smoked bacon, cheddar, crispy onions.", price: 16, veg: false, img: IMG("1610440042657-612c34d95e9f") },
     { name: "Spicy Chicken Burger", desc: "Buttermilk fried chicken with chipotle mayo.", price: 13, veg: false, img: spicyChickenBurgerImage },
     { name: "Mushroom Swiss", desc: "Beef, sautéed mushrooms and molten swiss.", price: 15, veg: false, img: IMG("1605345981660-ab44e036a21d") },
-    { name: "Paneer Tikka Burger", desc: "Grilled paneer patty with mint mayo.", price: 12, veg: true, img: IMG("1568901346375-23c9450c58cd") },
+    { name: "Paneer Tikka Burger", desc: "Grilled paneer patty with mint mayo.", price: 12, veg: true, img: paneerTikkaBurgerImage },
     { name: "Veggie Beetroot", desc: "Beetroot-quinoa patty with hummus and greens.", price: 12, veg: true, img: IMG("1571336350540-8b189c0779f4") },
     { name: "Fish Fillet Burger", desc: "Panko-fried basa, tartar, iceberg and pickles.", price: 14, veg: false, img: IMG("1645024679624-e8351ac98f01") },
     { name: "Aloo Tikki Burger", desc: "Spiced potato patty with tangy chutney mayo.", price: 10, veg: true, img: IMG("1660715683691-d1614d1dd361") },
