@@ -9,7 +9,7 @@ import wontonSoupImage from "@/assets/premium_photo-1664391950572-bc4b1bdd1268.a
 import creamOfMushroomImage from "@/assets/premium_photo-1669631647057-3403888e87da.avif";
 import spicyChickenBurgerImage from "@/assets/premium_photo-1675252369719-dd52bc69c3df.avif";
 import paneerTikkaBurgerImage from "@/assets/istockphoto-1401041513-612x612.webp";
-import tandooriBroccoliImage from "@/assets/tandoori-broccoli.jpg";
+import tandooriBroccoliImage from "@/assets/istockphoto-1469649306-612x612.webp";
 export type Category =
   | "Starters"
   | "Soups"
