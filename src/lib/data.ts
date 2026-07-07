@@ -10,6 +10,7 @@ import creamOfMushroomImage from "@/assets/premium_photo-1669631647057-3403888e8
 import spicyChickenBurgerImage from "@/assets/premium_photo-1675252369719-dd52bc69c3df.avif";
 import paneerTikkaBurgerImage from "@/assets/istockphoto-1401041513-612x612.webp";
 import tandooriBroccoliImage from "@/assets/istockphoto-1469649306-612x612.webp";
+import manchurianBallsImage from "@/assets/premium_photo-1713083113912-177fb1dd0a97.avif";
 export type Category =
   | "Starters"
   | "Soups"
@@ -144,7 +145,7 @@ const SEEDS: Record<Category, Seed[]> = {
     { name: "Veg Hakka Noodles", desc: "Egg-less noodles with julienned vegetables.", price: 10, veg: true, img: IMG("1585032226651-759b368d7246") },
     { name: "Kung Pao Chicken", desc: "Sichuan chicken with peanuts and dry chillies.", price: 14, veg: false, img: IMG("1512058564366-18510a8d4347") },
     { name: "Schezwan Fried Rice", desc: "Wok rice with red schezwan chilli paste.", price: 10, veg: true, img: IMG("1618449806651-7f4cf91d1e48") },
-    { name: "Manchurian Balls", desc: "Crispy veg dumplings in tangy brown sauce.", price: 11, veg: true, img: IMG("1713083113912-177fb1dd0a97") },
+    { name: "Manchurian Balls", desc: "Crispy veg dumplings in tangy brown sauce.", price: 11, veg: true, img: manchurianBallsImage },
     { name: "Sweet & Sour Fish", desc: "Battered fish with pineapple and peppers.", price: 16, veg: false, img: IMG("1623689046286-01d812cc8bad") },
     { name: "Chow Mein Chicken", desc: "Slippery noodles wok-fried with shredded chicken.", price: 12, veg: false, img: IMG("1769690507359-98ad7820b1bb") },
     { name: "Tofu Black Bean", desc: "Silken tofu in fermented black bean sauce.", price: 12, veg: true, img: IMG("1694860349260-a2e6d9cdc6d8") },
