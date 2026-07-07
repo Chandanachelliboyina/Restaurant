@@ -2,6 +2,8 @@ import crispycornImage from "@/assets/premium_photo-1680118540055-aa9f6ce1d93d.a
 import harabharakebabImage from "@/assets/istockphoto-1024552618-612x612.jpg";
 import fishamritsariImage from "@/assets/photo-1626253836448-e2376678c191.avif";
 import mushroomgaloutiImage from "@/assets/images.avif";
+import wontonSoupImage from "@/assets/photo-1664391950572-bc4b1bdd1268.avif";
+import creamOfMushroomImage from "@/assets/photo-1669631647057-3403888e87da.avif";
 export type Category =
   | "Starters"
   | "Soups"
@@ -87,15 +89,15 @@ const SEEDS: Record<Category, Seed[]> = {
     { name: "Manchow Soup", desc: "Peppery Indo-Chinese broth with crispy noodles.", price: 8, veg: true, img: IMG("1672667509988-baade9ade083") },
     { name: "Hot & Sour Chicken", desc: "Tangy-spicy broth with tender chicken shreds.", price: 9, veg: false, img: IMG("1730112696140-19e61bb43d36") },
     { name: "Lemon Coriander", desc: "Bright lemon-scented broth with fine vegetables.", price: 8, veg: true, img: IMG("1620256114757-322387444c16") },
-    { name: "Wonton Soup", desc: "Chicken wontons in a delicate ginger broth.", price: 10, veg: false, img: IMG("1664391950572-bc4b1bdd1268") },
+    { name: "Wonton Soup", desc: "Chicken wontons in a delicate ginger broth.", price: 10, veg: false, img: wontonSoupImage },
     { name: "Mulligatawny", desc: "South Indian lentil soup with curry leaves.", price: 8, veg: true, img: IMG("1613844237701-8f3664fc2eff") },
-    { name: "Cream of Mushroom", desc: "Silky mushroom velouté finished with truffle oil.", price: 9, veg: true, img: IMG("1669631647057-3403888e87da") },
+    { name: "Cream of Mushroom", desc: "Silky mushroom velouté finished with truffle oil.", price: 9, veg: true, img: creamOfMushroomImage },
     { name: "Thukpa Noodle Soup", desc: "Himalayan hand-pulled noodles in aromatic broth.", price: 10, veg: false, img: IMG("1569718212165-3a8278d5f624") },
     { name: "Tom Yum Soup", desc: "Aromatic lemongrass broth with mushrooms, herbs and lime.", price: 9, veg: true, img: IMG("1628430043175-0e8820df47c3") },
     { name: "Vegetable Clear Soup", desc: "Light broth with fresh vegetables and a delicate herbal finish.", price: 7, veg: true, img: IMG("1643786661490-966f1877effa") },
   ],
   Pizza: [
-    { name: "Margherita Classica", desc: "San Marzano tomato, fior di latte, basil.", price: 14, veg: true, img: IMG("1513104890138-7c749659a591") },
+    { name: "Margherita Classica", desc: "San Marzano tomato, fior di latte, basil.", price: 14, veg: true, img: IMG("1574071318508-1cdbab80d002") },
     { name: "Truffle Mushroom", desc: "Wild mushrooms, mozzarella and black truffle oil.", price: 19, veg: true, img: IMG("1574071318508-1cdbab80d002") },
     { name: "Diavola", desc: "Spicy salami, chilli oil and smoked mozzarella.", price: 17, veg: false, img: IMG("1628840042765-356cda07504e") },
     { name: "Quattro Formaggi", desc: "Mozzarella, gorgonzola, taleggio and parmigiano.", price: 18, veg: true, img: IMG("1593560708943-e12d7c570b4f") },
