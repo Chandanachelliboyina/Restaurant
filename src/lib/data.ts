@@ -1,7 +1,6 @@
 import crispycornImage from "@/assets/premium_photo-1680118540055-aa9f6ce1d93d.avif";
 
-const harabharakebabImage = "/istockphoto-1024552618-612x612.jpg";
-
+const harabharakebabImage = "/assets/istockphoto-1024552618-612x612.jpg";
 export type Category =
   | "Starters"
   | "Soups"
