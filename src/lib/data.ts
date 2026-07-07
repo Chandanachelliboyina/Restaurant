@@ -11,6 +11,7 @@ import spicyChickenBurgerImage from "@/assets/premium_photo-1675252369719-dd52bc
 import paneerTikkaBurgerImage from "@/assets/istockphoto-1401041513-612x612.webp";
 import tandooriBroccoliImage from "@/assets/istockphoto-1469649306-612x612.webp";
 import manchurianBallsImage from "@/assets/premium_photo-1713083113912-177fb1dd0a97.avif";
+import amburStarImage from "@/assets/premium_photo-1694141252026-3df1de888a21.avif";
 export type Category =
   | "Starters"
   | "Soups"
@@ -138,7 +139,7 @@ const SEEDS: Record<Category, Seed[]> = {
     { name: "Kolkata Biryani", desc: "Delicate Bengali-style biryani with potato and egg.", price: 15, veg: false, img: IMG("1696950169706-d4533c32f81a") },
     { name: "Malabar Chicken Biryani", desc: "Kaima rice, coconut and Kerala spices.", price: 16, veg: false, img: IMG("1563379091339-03b21ab4a4f8") },
     { name: "Mushroom Biryani", desc: "Button mushrooms slow-cooked in dum masala.", price: 12, veg: true, img: IMG("1669261882028-c418e8865b2e") },
-    { name: "Ambur Star Biryani", desc: "Short-grain seeraga samba with mutton.", price: 18, veg: false, img: IMG("1694141252026-3df1de888a21") },
+    { name: "Ambur Star Biryani", desc: "Short-grain seeraga samba with mutton.", price: 18, veg: false, img: amburStarImage },
   ],
   Chinese: [
     { name: "Chilli Chicken Dry", desc: "Wok-tossed chicken in soy-chilli glaze.", price: 13, veg: false, img: IMG("1675864532625-60efd11cde54") },
