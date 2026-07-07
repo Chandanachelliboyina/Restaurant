@@ -2,6 +2,7 @@ import crispycornImage from "@/assets/premium_photo-1680118540055-aa9f6ce1d93d.a
 import harabharakebabImage from "@/assets/istockphoto-1024552618-612x612.jpg";
 import fishamritsariImage from "@/assets/photo-1626253836448-e2376678c191.avif";
 import mushroomgaloutiImage from "@/assets/images.avif";
+import truffleMushroomImage from "@/assets/premium_photo-1663858366999-aa1ce123a972.avif";
 import wontonSoupImage from "@/assets/premium_photo-1664391950572-bc4b1bdd1268.avif";
 import creamOfMushroomImage from "@/assets/premium_photo-1669631647057-3403888e87da.avif";
 export type Category =
@@ -100,7 +101,7 @@ const SEEDS: Record<Category, Seed[]> = {
   ],
   Pizza: [
     { name: "Margherita Classica", desc: "San Marzano tomato, fior di latte, basil.", price: 14, veg: true, img: IMG("1574071318508-1cdbab80d002") },
-    { name: "Truffle Mushroom", desc: "Wild mushrooms, mozzarella and black truffle oil.", price: 19, veg: true, img: IMG("1663858366999-aa1ce123a972") },
+    { name: "Truffle Mushroom", desc: "Wild mushrooms, mozzarella and black truffle oil.", price: 19, veg: true, img: truffleMushroomImage },
     { name: "Diavola", desc: "Spicy salami, chilli oil and smoked mozzarella.", price: 17, veg: false, img: IMG("1722686519091-886edbd87f7e") },
     { name: "Quattro Formaggi", desc: "Mozzarella, gorgonzola, taleggio and parmigiano.", price: 18, veg: true, img: IMG("1751200884901-c1c6f43ae1d6") },
     { name: "BBQ Chicken", desc: "Slow-cooked chicken, red onion, cheddar and BBQ sauce.", price: 17, veg: false, img: IMG("1655471264223-b07ce84d521c") },
@@ -113,7 +114,7 @@ const SEEDS: Record<Category, Seed[]> = {
   Burgers: [
     { name: "Classic Cheeseburger", desc: "Aged beef patty, cheddar, lettuce, house sauce.", price: 13, veg: false, img: IMG("1568901346375-23c9450c58cd") },
     { name: "Double Smash", desc: "Twin smashed patties, American cheese, pickles.", price: 15, veg: false, img: IMG("1571091718767-18b5b1457add") },
-    { name: "BBQ Bacon Burger", desc: "Beef, smoked bacon, cheddar, crispy onions.", price: 16, veg: false, img: IMG("1568901346375-23c9450c58cd") },
+    { name: "BBQ Bacon Burger", desc: "Beef, smoked bacon, cheddar, crispy onions.", price: 16, veg: false, img: IMG("1610440042657-612c34d95e9f") },
     { name: "Spicy Chicken Burger", desc: "Buttermilk fried chicken with chipotle mayo.", price: 13, veg: false, img: IMG("1625813506002-e5da51ee0b71") },
     { name: "Mushroom Swiss", desc: "Beef, sautéed mushrooms and molten swiss.", price: 15, veg: false, img: IMG("1568901346375-23c9450c58cd") },
     { name: "Paneer Tikka Burger", desc: "Grilled paneer patty with mint mayo.", price: 12, veg: true, img: IMG("1568901346375-23c9450c58cd") },
