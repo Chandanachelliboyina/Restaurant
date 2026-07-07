@@ -2,8 +2,8 @@ import crispycornImage from "@/assets/premium_photo-1680118540055-aa9f6ce1d93d.a
 import harabharakebabImage from "@/assets/istockphoto-1024552618-612x612.jpg";
 import fishamritsariImage from "@/assets/photo-1626253836448-e2376678c191.avif";
 import mushroomgaloutiImage from "@/assets/images.avif";
-import wontonSoupImage from "@/assets/photo-1664391950572-bc4b1bdd1268.avif";
-import creamOfMushroomImage from "@/assets/photo-1669631647057-3403888e87da.avif";
+import wontonSoupImage from "@/assets/premium_photo-1664391950572-bc4b1bdd1268.avif";
+import creamOfMushroomImage from "@/assets/premium_photo-1669631647057-3403888e87da.avif";
 export type Category =
   | "Starters"
   | "Soups"
