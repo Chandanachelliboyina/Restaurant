@@ -4,6 +4,7 @@ import fishamritsariImage from "@/assets/photo-1626253836448-e2376678c191.avif";
 import mushroomgaloutiImage from "@/assets/images.avif";
 import truffleMushroomImage from "@/assets/premium_photo-1663858366999-aa1ce123a972.avif";
 import diavolaImage from "@/assets/photo-1571336350540-8b189c0779f4.avif";
+import premiumDiavolaImage from "@/assets/premium_photo-1722686519091-886edbd87f7e.avif";
 import wontonSoupImage from "@/assets/premium_photo-1664391950572-bc4b1bdd1268.avif";
 import creamOfMushroomImage from "@/assets/premium_photo-1669631647057-3403888e87da.avif";
 export type Category =
@@ -103,7 +104,7 @@ const SEEDS: Record<Category, Seed[]> = {
   Pizza: [
     { name: "Margherita Classica", desc: "San Marzano tomato, fior di latte, basil.", price: 14, veg: true, img: IMG("1574071318508-1cdbab80d002") },
     { name: "Truffle Mushroom", desc: "Wild mushrooms, mozzarella and black truffle oil.", price: 19, veg: true, img: truffleMushroomImage },
-    { name: "Diavola", desc: "Spicy salami, chilli oil and smoked mozzarella.", price: 17, veg: false, img: diavolaImage },
+    { name: "Diavola", desc: "Spicy salami, chilli oil and smoked mozzarella.", price: 17, veg: false, img: premiumDiavolaImage },
     { name: "Quattro Formaggi", desc: "Mozzarella, gorgonzola, taleggio and parmigiano.", price: 18, veg: true, img: IMG("1751200884901-c1c6f43ae1d6") },
     { name: "BBQ Chicken", desc: "Slow-cooked chicken, red onion, cheddar and BBQ sauce.", price: 17, veg: false, img: IMG("1655471264223-b07ce84d521c") },
     { name: "Pepperoni Reserve", desc: "Cup-and-char pepperoni over cookies and mozzarella.", price: 18, veg: false, img: IMG("1628840042765-356cda07504e") },
