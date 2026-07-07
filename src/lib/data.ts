@@ -9,6 +9,7 @@ import wontonSoupImage from "@/assets/premium_photo-1664391950572-bc4b1bdd1268.a
 import creamOfMushroomImage from "@/assets/premium_photo-1669631647057-3403888e87da.avif";
 import spicyChickenBurgerImage from "@/assets/premium_photo-1675252369719-dd52bc69c3df.avif";
 import paneerTikkaBurgerImage from "@/assets/istockphoto-1401041513-612x612.webp";
+import tandooriBroccoliImage from "@/assets/tandoori-broccoli.jpg";
 export type Category =
   | "Starters"
   | "Soups"
@@ -89,7 +90,7 @@ const SEEDS: Record<Category, Seed[]> = {
     { name: "Chilli Paneer Dry", desc: "Indo-Chinese paneer with bell peppers in soy glaze.", price: 12, veg: true, img: IMG("1551881192-002e02ad3d87") },
     { name: "Chicken 65", desc: "Fiery Chettinad-spiced fried chicken with curry leaves.", price: 14, veg: false, img: IMG("1588923930957-81c81fd6262b") },
     { name: "Aloo Tikki Chaat", desc: "Potato patties layered with chutneys and yogurt.", price: 8, veg: true, img: IMG("1736239092894-c73a7b8b9a39") },
-    { name: "Tandoori Broccoli", desc: "Charred broccoli in a hung-curd marinade.", price: 11, veg: true, img: IMG("1624462966581-bc6d768cbce5") },
+    { name: "Tandoori Broccoli", desc: "Charred broccoli in a hung-curd marinade.", price: 11, veg: true, img: tandooriBroccoliImage },
   ],
   Soups: [
     { name: "Sweet Corn Veg Soup", desc: "Silky corn broth with garden vegetables.", price: 7, veg: true, img: IMG("1665594051407-7385d281ad76") },
@@ -128,27 +129,27 @@ const SEEDS: Record<Category, Seed[]> = {
   ],
   Biryani: [
     { name: "Hyderabadi Chicken Biryani", desc: "Dum-cooked basmati layered with saffron chicken.", price: 16, veg: false, img: IMG("1589302168068-964664d93dc0") },
-    { name: "Lucknowi Mutton Biryani", desc: "Awadhi mutton in fragrant long-grain rice.", price: 19, veg: false, img: IMG("1563379091339-03b21ab4a4f8") },
+    { name: "Lucknowi Mutton Biryani", desc: "Awadhi mutton in fragrant long-grain rice.", price: 19, veg: false, img: IMG("1752673508949-f4aeeaef75f0") },
     { name: "Veg Dum Biryani", desc: "Seasonal vegetables layered with saffron rice.", price: 12, veg: true, img: IMG("1697155406055-2db32d47ca07") },
     { name: "Prawn Biryani", desc: "Delicate prawns dum-cooked with green masala.", price: 20, veg: false, img: IMG("1757445059337-23e485483425") },
     { name: "Paneer Biryani", desc: "Marinated paneer cubes in saffron basmati.", price: 13, veg: true, img: IMG("1633945274005-3e28c7eb463c") },
     { name: "Egg Biryani", desc: "Whole eggs and fried onions on dum rice.", price: 11, veg: false, img: IMG("1644677859249-e0c8f5b4a74b") },
-    { name: "Kolkata Biryani", desc: "Delicate Bengali-style biryani with potato and egg.", price: 15, veg: false, img: IMG("1633945274005-3e28c7eb463c") },
+    { name: "Kolkata Biryani", desc: "Delicate Bengali-style biryani with potato and egg.", price: 15, veg: false, img: IMG("1696950169706-d4533c32f81a") },
     { name: "Malabar Chicken Biryani", desc: "Kaima rice, coconut and Kerala spices.", price: 16, veg: false, img: IMG("1563379091339-03b21ab4a4f8") },
-    { name: "Mushroom Biryani", desc: "Button mushrooms slow-cooked in dum masala.", price: 12, veg: true, img: IMG("1633945274005-3e28c7eb463c") },
-    { name: "Ambur Star Biryani", desc: "Short-grain seeraga samba with mutton.", price: 18, veg: false, img: IMG("1563379091339-03b21ab4a4f8") },
+    { name: "Mushroom Biryani", desc: "Button mushrooms slow-cooked in dum masala.", price: 12, veg: true, img: IMG("1669261882028-c418e8865b2e") },
+    { name: "Ambur Star Biryani", desc: "Short-grain seeraga samba with mutton.", price: 18, veg: false, img: IMG("1694141252026-3df1de888a21") },
   ],
   Chinese: [
-    { name: "Chilli Chicken Dry", desc: "Wok-tossed chicken in soy-chilli glaze.", price: 13, veg: false, img: IMG("1512058564366-18510a8d4347") },
+    { name: "Chilli Chicken Dry", desc: "Wok-tossed chicken in soy-chilli glaze.", price: 13, veg: false, img: IMG("1675864532625-60efd11cde54") },
     { name: "Veg Hakka Noodles", desc: "Egg-less noodles with julienned vegetables.", price: 10, veg: true, img: IMG("1585032226651-759b368d7246") },
     { name: "Kung Pao Chicken", desc: "Sichuan chicken with peanuts and dry chillies.", price: 14, veg: false, img: IMG("1512058564366-18510a8d4347") },
     { name: "Schezwan Fried Rice", desc: "Wok rice with red schezwan chilli paste.", price: 10, veg: true, img: IMG("1618449806651-7f4cf91d1e48") },
-    { name: "Manchurian Balls", desc: "Crispy veg dumplings in tangy brown sauce.", price: 11, veg: true, img: IMG("1512058564366-18510a8d4347") },
-    { name: "Sweet & Sour Fish", desc: "Battered fish with pineapple and peppers.", price: 16, veg: false, img: IMG("1512058564366-18510a8d4347") },
-    { name: "Chow Mein Chicken", desc: "Slippery noodles wok-fried with shredded chicken.", price: 12, veg: false, img: IMG("1585032226651-759b368d7246") },
-    { name: "Tofu Black Bean", desc: "Silken tofu in fermented black bean sauce.", price: 12, veg: true, img: IMG("1546069901-ba9599a7e63c") },
-    { name: "Prawn Chilli Basil", desc: "Thai-style prawns with holy basil.", price: 18, veg: false, img: IMG("1565557623262-b51c2513a641") },
-    { name: "Veg Dim Sum", desc: "Steamed translucent dumplings, chilli-garlic dip.", price: 11, veg: true, img: IMG("1563245372-c215247fda41") },
+    { name: "Manchurian Balls", desc: "Crispy veg dumplings in tangy brown sauce.", price: 11, veg: true, img: IMG("1713083113912-177fb1dd0a97") },
+    { name: "Sweet & Sour Fish", desc: "Battered fish with pineapple and peppers.", price: 16, veg: false, img: IMG("1623689046286-01d812cc8bad") },
+    { name: "Chow Mein Chicken", desc: "Slippery noodles wok-fried with shredded chicken.", price: 12, veg: false, img: IMG("1769690507359-98ad7820b1bb") },
+    { name: "Tofu Black Bean", desc: "Silken tofu in fermented black bean sauce.", price: 12, veg: true, img: IMG("1694860349260-a2e6d9cdc6d8") },
+    { name: "Prawn Chilli Basil", desc: "Thai-style prawns with holy basil.", price: 18, veg: false, img: IMG("1661607229579-dd06d36302fc.") },
+    { name: "Veg Dim Sum", desc: "Steamed translucent dumplings, chilli-garlic dip.", price: 11, veg: true, img: IMG("1756821753259-eb8abcdda9a3") },
   ],
   "South Indian": [
     { name: "Masala Dosa", desc: "Crispy rice crepe with spiced potato filling.", price: 8, veg: true, img: IMG("1668236543090-82eba5ee5976") },
