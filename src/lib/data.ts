@@ -50,8 +50,8 @@ const IMG = (id: string) =>
 // Public-hosted asset paths (ensure files exist under `public/assets` before deploy)
 const IMAGES = {
   paneertikka: IMG("1666001120694-3ebe8fd207be"),
-  crispycorn: IMG("1680118540055-aa9f6ce1d93d"),
-  harabharakebab: IMG("1024552618-612x612")
+  crispycorn: crispycornImage,
+  harabharakebab: harabharakebabImage,
 };
 
 type Seed = {
@@ -68,7 +68,7 @@ const SEEDS: Record<Category, Seed[]> = {
     { name: "Paneer Tikka", desc: "Charred paneer marinated in yogurt, ginger and warm spices.", price: 12, veg: true, img: IMG("1666001120694-3ebe8fd207be") },
     { name: "Crispy Corn Kernels", desc: "Golden fried corn tossed with bell peppers and chilli.", price: 9, veg: true, img: crispycornImage },
     { name: "Chicken Tikka", desc: "Tandoori boneless chicken chunks with smoked cumin butter.", price: 14, veg: false, img: IMG("1599487488170-d11ec9c172f0") },
-    { name: "Hara Bhara Kebab", desc: "Spinach, peas & potato patties dusted with rock salt.", price: 10, veg: true, img: harabharakebabImage},
+    { name: "Hara Bhara Kebab", desc: "Spinach, peas & potato patties dusted with rock salt.", price: 10, veg: true, img: IMAGES.harabharakebab},
     { name: "Fish Amritsari", desc: "Ajwain-battered basa fillets fried till crisp.", price: 15, veg: false, img: IMG("1599487488170-d11ec9c172f0")  },
     { name: "Mushroom Galouti", desc: "Melt-in-mouth spiced mushroom patties on mini rumali.", price: 13, veg: true, img: IMG("1599487488170-d11ec9c172f0")  },
     { name: "Prawn Koliwada", desc: "Battered prawns with curry-leaf mayo.", price: 17, veg: false, img: IMG("1565557623262-b51c2513a641") },
