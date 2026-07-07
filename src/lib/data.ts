@@ -46,7 +46,7 @@ const IMG = (id: string) =>
 
 // Public-hosted asset paths (ensure files exist under `public/assets` before deploy)
 const IMAGES = {
-  crispyCorn: IMG("photo-1666001120694-3ebe8fd207be")
+  crispyCorn: IMG("1666001120694-3ebe8fd207be")
 };
 
 type Seed = {
