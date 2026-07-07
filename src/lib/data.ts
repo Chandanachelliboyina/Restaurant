@@ -10,8 +10,8 @@ import creamOfMushroomImage from "@/assets/premium_photo-1669631647057-3403888e8
 import spicyChickenBurgerImage from "@/assets/premium_photo-1675252369719-dd52bc69c3df.avif";
 import paneerTikkaBurgerImage from "@/assets/istockphoto-1401041513-612x612.webp";
 import tandooriBroccoliImage from "@/assets/istockphoto-1469649306-612x612.webp";
-import manchurianBallsImage from "@/assets/premium_photo-1713083113912-177fb1dd0a97.avif";
-import amburStarImage from "@/assets/premium_photo-1694141252026-3df1de888a21.avif";
+import manchurianBallsImage from "@/assets/manchurian-balls.jpg";
+import amburStarImage from "@/assets/ambur-star-biryani.jpg";
 export type Category =
   | "Starters"
   | "Soups"
