@@ -46,12 +46,12 @@ export function DishCard({ dish, index = 0 }: { dish: Dish; index?: number }) {
           <span
             className={cn(
               "grid h-5 w-5 place-items-center rounded-sm border-2 bg-background/80 backdrop-blur",
-              dish.veg ? "border-green-600" : "border-red-600",
+              dish.veg ? "border-green-600" : "border-gray-600",
             )}
             aria-label={dish.veg ? "Vegetarian" : "Non-vegetarian"}
             title={dish.veg ? "Vegetarian" : "Non-vegetarian"}
           >
-            <span className={cn("h-2 w-2 rounded-full", dish.veg ? "bg-green-600" : "bg-red-600")} />
+            <span className={cn("h-2 w-2 rounded-full", dish.veg ? "bg-green-600" : "bg-gray-600")} />
           </span>
           <span className="flex items-center gap-1 rounded-full bg-background/70 px-3 py-1 text-xs font-medium backdrop-blur-md">
             <Star className="h-3.5 w-3.5 fill-primary text-primary" />
