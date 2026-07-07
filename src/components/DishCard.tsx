@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Heart, Star, Flame, Clock, Plus, Minus, ShoppingBag } from "lucide-react";
+import fallbackImg from "@/assets/hero-restaurant.jpg";
 import { useState } from "react";
 import type { Dish } from "@/lib/data";
 import { toast } from "sonner";
@@ -26,6 +27,11 @@ export function DishCard({ dish, index = 0 }: { dish: Dish; index?: number }) {
           alt={dish.name}
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-110"
+          onError={(e) => {
+            // If the dish image fails to load (deploy/dev mismatch), use a local fallback
+            const target = e.currentTarget as HTMLImageElement;
+            if (target.src !== fallbackImg) target.src = fallbackImg;
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent opacity-90" />
         <button
