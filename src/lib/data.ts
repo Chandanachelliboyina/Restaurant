@@ -1,3 +1,5 @@
+import crispycornImage from "@/assets/premium_photo-1680118540055-aa9f6ce1d93d.avif";
+
 export type Category =
   | "Starters"
   | "Soups"
@@ -62,7 +64,7 @@ type Seed = {
 const SEEDS: Record<Category, Seed[]> = {
   Starters: [
     { name: "Paneer Tikka", desc: "Charred paneer marinated in yogurt, ginger and warm spices.", price: 12, veg: true, img: IMG("1666001120694-3ebe8fd207be") },
-    { name: "Crispy Corn Kernels", desc: "Golden fried corn tossed with bell peppers and chilli.", price: 9, veg: true, img: IMG("1680118540055-aa9f6ce1d93d") },
+    { name: "Crispy Corn Kernels", desc: "Golden fried corn tossed with bell peppers and chilli.", price: 9, veg: true, img: crispycornImage },
     { name: "Chicken Tikka", desc: "Tandoori boneless chicken chunks with smoked cumin butter.", price: 14, veg: false, img: IMG("1599487488170-d11ec9c172f0") },
     { name: "Hara Bhara Kebab", desc: "Spinach, peas & potato patties dusted with rock salt.", price: 10, veg: true, img: IMG("1599487488170-d11ec9c172f0")},
     { name: "Fish Amritsari", desc: "Ajwain-battered basa fillets fried till crisp.", price: 15, veg: false, img: IMG("1599487488170-d11ec9c172f0")  },
