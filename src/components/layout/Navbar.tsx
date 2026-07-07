@@ -6,6 +6,7 @@ import { useAuth } from "@/lib/auth";
 import { useCart } from "@/lib/cart";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import menuIcon from "@/assets/images.avif";
 
 
 const NAV = [
@@ -63,6 +64,8 @@ export function Navbar() {
               </span>
             </span>
           </Link>
+
+          <img src={menuIcon} alt="Menu" className="hidden h-10 w-10 rounded-full border border-border object-cover lg:block" />
 
           <nav className="hidden items-center gap-1 lg:flex">
             {NAV.map((n) => {
