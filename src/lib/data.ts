@@ -46,7 +46,8 @@ const IMG = (id: string) =>
 
 // Public-hosted asset paths (ensure files exist under `public/assets` before deploy)
 const IMAGES = {
-  crispyCorn: IMG("1666001120694-3ebe8fd207be")
+  paneertikka: IMG("1666001120694-3ebe8fd207be"),
+  crispycorn: IMG("1680118540055-aa9f6ce1d93d")
 };
 
 type Seed = {
@@ -61,7 +62,7 @@ type Seed = {
 const SEEDS: Record<Category, Seed[]> = {
   Starters: [
     { name: "Paneer Tikka", desc: "Charred paneer marinated in yogurt, ginger and warm spices.", price: 12, veg: true, img: IMG("1666001120694-3ebe8fd207be") },
-    { name: "Crispy Corn Kernels", desc: "Golden fried corn tossed with bell peppers and chilli.", price: 9, veg: true, img: IMG("1546069901-ba9599a7e63c") },
+    { name: "Crispy Corn Kernels", desc: "Golden fried corn tossed with bell peppers and chilli.", price: 9, veg: true, img: IMG("1680118540055-aa9f6ce1d93d") },
     { name: "Chicken Tikka", desc: "Tandoori boneless chicken chunks with smoked cumin butter.", price: 14, veg: false, img: IMG("1599487488170-d11ec9c172f0") },
     { name: "Hara Bhara Kebab", desc: "Spinach, peas & potato patties dusted with rock salt.", price: 10, veg: true, img: IMG("1599487488170-d11ec9c172f0")},
     { name: "Fish Amritsari", desc: "Ajwain-battered basa fillets fried till crisp.", price: 15, veg: false, img: IMG("1599487488170-d11ec9c172f0")  },
