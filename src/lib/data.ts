@@ -76,10 +76,10 @@ const SEEDS: Record<Category, Seed[]> = {
     { name: "Fish Amritsari", desc: "Ajwain-battered basa fillets fried till crisp.", price: 15, veg: false, img: fishamritsariImage },
     { name: "Mushroom Galouti", desc: "Melt-in-mouth spiced mushroom patties on mini rumali.", price: 13, veg: true, img: IMG("1599487488170-d11ec9c172f0")  },
     { name: "Prawn Koliwada", desc: "Battered prawns with curry-leaf mayo.", price: 17, veg: false, img: IMG("1565557623262-b51c2513a641") },
-    { name: "Veg Spring Rolls", desc: "Crisp rolls of cabbage, carrot and glass noodles.", price: 9, veg: true, img: IMG("1599487488170-d11ec9c172f0")},
-    { name: "Chilli Paneer Dry", desc: "Indo-Chinese paneer with bell peppers in soy glaze.", price: 12, veg: true, img: IMG("1601050690597-df056fb49785") },
+    { name: "Veg Spring Rolls", desc: "Crisp rolls of cabbage, carrot and glass noodles.", price: 9, veg: true, img: IMG("1695712641569-05eee7b37b6d") },
+    { name: "Chilli Paneer Dry", desc: "Indo-Chinese paneer with bell peppers in soy glaze.", price: 12, veg: true, img: IMG("1551881192-002e02ad3d87") },
     { name: "Chicken 65", desc: "Fiery Chettinad-spiced fried chicken with curry leaves.", price: 14, veg: false, img: IMG("1626132647523-66f5bf380027") },
-    { name: "Aloo Tikki Chaat", desc: "Potato patties layered with chutneys and yogurt.", price: 8, veg: true, img: IMG("1589301760014-d929f3979dbc") },
+    { name: "Aloo Tikki Chaat", desc: "Potato patties layered with chutneys and yogurt.", price: 8, veg: true, img: IMG("1736239092894-c73a7b8b9a39") },
     { name: "Tandoori Broccoli", desc: "Charred broccoli in a hung-curd marinade.", price: 11, veg: true, img: IMG("1624462966581-bc6d768cbce5") },
   ],
   Soups: [
