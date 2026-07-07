@@ -57,6 +57,8 @@ const IMAGES = {
   harabharakebab: harabharakebabImage,
   fishamritsari: fishamritsariImage,
   mushroomgalouti: mushroomgaloutiImage,
+  wontonSoup: wontonSoupImage,
+  creamOfMushroom: creamOfMushroomImage,
 
 };
 
