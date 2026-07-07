@@ -8,7 +8,7 @@ import premiumDiavolaImage from "@/assets/premium_photo-1722686519091-886edbd87f
 import wontonSoupImage from "@/assets/premium_photo-1664391950572-bc4b1bdd1268.avif";
 import creamOfMushroomImage from "@/assets/premium_photo-1669631647057-3403888e87da.avif";
 import spicyChickenBurgerImage from "@/assets/premium_photo-1675252369719-dd52bc69c3df.avif";
-import paneerTikkaBurgerImage from "@/assets/photo-1697155406055-2db32d47ca07.avif";
+import paneerTikkaBurgerImage from "@/assets/istockphoto-1401041513-612x612.webp";
 export type Category =
   | "Starters"
   | "Soups"
