@@ -52,7 +52,7 @@ const IMG = (id: string) =>
 const IMAGES = {
   paneertikka: IMG("1666001120694-3ebe8fd207be"),
   crispycorn: crispycornImage,
-  harabharakebab: harabharakebabImage,
+  harabharakebab: harabharakebabImage
 };
 
 type Seed = {
