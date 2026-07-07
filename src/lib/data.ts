@@ -1,6 +1,7 @@
 import crispycornImage from "@/assets/premium_photo-1680118540055-aa9f6ce1d93d.avif";
 import harabharakebabImage from "@/assets/istockphoto-1024552618-612x612.jpg";
 import fishamritsariImage from "@/assets/photo-1626253836448-e2376678c191.avif";
+import mushroomgaloutiImage from "@/assets/images.avif";
 export type Category =
   | "Starters"
   | "Soups"
@@ -53,6 +54,8 @@ const IMAGES = {
   crispycorn: crispycornImage,
   harabharakebab: harabharakebabImage,
   fishamritsari: fishamritsariImage,
+  mushroomgalouti: mushroomgaloutiImage,
+
 };
 
 type Seed = {
@@ -71,7 +74,7 @@ const SEEDS: Record<Category, Seed[]> = {
     { name: "Chicken Tikka", desc: "Tandoori boneless chicken chunks with smoked cumin butter.", price: 14, veg: false, img: IMG("1599487488170-d11ec9c172f0") },
     { name: "Hara Bhara Kebab", desc: "Spinach, peas & potato patties dusted with rock salt.", price: 10, veg: true, img: IMG("1674622720208-2a67da6ff4e8") },
     { name: "Fish Amritsari", desc: "Ajwain-battered basa fillets fried till crisp.", price: 15, veg: false, img: fishamritsariImage },
-    { name: "Mushroom Galouti", desc: "Melt-in-mouth spiced mushroom patties on mini rumali.", price: 13, veg: true, img: IMG("1599487488170-d11ec9c172f0")  },
+    { name: "Mushroom Galouti", desc: "Melt-in-mouth spiced mushroom patties on mini rumali.", price: 13, veg: true, img: mushroomgaloutiImage  },
     { name: "Prawn Koliwada", desc: "Battered prawns with curry-leaf mayo.", price: 17, veg: false, img: IMG("1565557623262-b51c2513a641") },
     { name: "Veg Spring Rolls", desc: "Crisp rolls of cabbage, carrot and glass noodles.", price: 9, veg: true, img: IMG("1599487488170-d11ec9c172f0")},
     { name: "Chilli Paneer Dry", desc: "Indo-Chinese paneer with bell peppers in soy glaze.", price: 12, veg: true, img: IMG("1601050690597-df056fb49785") },
