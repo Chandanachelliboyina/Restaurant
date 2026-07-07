@@ -7,6 +7,7 @@ import diavolaImage from "@/assets/photo-1571336350540-8b189c0779f4.avif";
 import premiumDiavolaImage from "@/assets/premium_photo-1722686519091-886edbd87f7e.avif";
 import wontonSoupImage from "@/assets/premium_photo-1664391950572-bc4b1bdd1268.avif";
 import creamOfMushroomImage from "@/assets/premium_photo-1669631647057-3403888e87da.avif";
+import spicyChickenBurgerImage from "@/assets/premium_photo-1675252369719-dd52bc69c3df.avif";
 export type Category =
   | "Starters"
   | "Soups"
@@ -117,7 +118,7 @@ const SEEDS: Record<Category, Seed[]> = {
     { name: "Classic Cheeseburger", desc: "Aged beef patty, cheddar, lettuce, house sauce.", price: 13, veg: false, img: IMG("1568901346375-23c9450c58cd") },
     { name: "Double Smash", desc: "Twin smashed patties, American cheese, pickles.", price: 15, veg: false, img: IMG("1571091718767-18b5b1457add") },
     { name: "BBQ Bacon Burger", desc: "Beef, smoked bacon, cheddar, crispy onions.", price: 16, veg: false, img: IMG("1610440042657-612c34d95e9f") },
-    { name: "Spicy Chicken Burger", desc: "Buttermilk fried chicken with chipotle mayo.", price: 13, veg: false, img: IMG("1695758787947-0aff87c1f93a") },
+    { name: "Spicy Chicken Burger", desc: "Buttermilk fried chicken with chipotle mayo.", price: 13, veg: false, img: spicyChickenBurgerImage },
     { name: "Mushroom Swiss", desc: "Beef, sautéed mushrooms and molten swiss.", price: 15, veg: false, img: IMG("1605345981660-ab44e036a21d") },
     { name: "Paneer Tikka Burger", desc: "Grilled paneer patty with mint mayo.", price: 12, veg: true, img: IMG("1568901346375-23c9450c58cd") },
     { name: "Veggie Beetroot", desc: "Beetroot-quinoa patty with hummus and greens.", price: 12, veg: true, img: IMG("1571336350540-8b189c0779f4") },
