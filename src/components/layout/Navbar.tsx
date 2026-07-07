@@ -6,7 +6,6 @@ import { useAuth } from "@/lib/auth";
 import { useCart } from "@/lib/cart";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import diavolaMenuIcon from "@/assets/photo-1571336350540-8b189c0779f4.avif";
 
 
 const NAV = [
@@ -65,7 +64,7 @@ export function Navbar() {
             </span>
           </Link>
 
-          <img src={diavolaMenuIcon} alt="Menu" className="hidden h-10 w-10 rounded-full border border-border object-cover lg:block" />
+          <img src="/assets/photo-1571336350540-8b189c0779f4.avif" alt="Menu" className="hidden h-10 w-10 rounded-full border border-border object-cover lg:block" />
 
           <nav className="hidden items-center gap-1 lg:flex">
             {NAV.map((n) => {
