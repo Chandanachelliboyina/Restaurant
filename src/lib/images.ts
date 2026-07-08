@@ -93,6 +93,7 @@ import photo_1668236543090 from "@/assets/photo-1668236543090-82eba5ee5976.avif"
 import istockphoto_1208083790 from "@/assets/istockphoto-1208083790-612x612.webp";
 import premium_photo_1661418257755 from "@/assets/premium_photo-1661418257755-a108f0225621.avif";
 import photo_1631452180519 from "@/assets/photo-1631452180519-c014fe946bc7.avif";
+import photo_1742599361539 from "@/assets/photo-1742599361539-f096753d1100.avif";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -193,7 +194,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Appam & Stew": istockphoto_1365183162,
   "Andhra Mutton Curry": istockphoto_1322959597,
   "Filter Coffee": premium_photo_1661418257755,
-  "Butter Chicken": photo_1589302168068,
+  "Butter Chicken": photo_1742599361539,
   "Dal Makhani": istockphoto_1170374719,
   "Paneer Butter Masala": photo_1631452180519,
   "Rogan Josh": istockphoto_1286704566,
@@ -201,7 +202,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Tandoori Roti Basket": photo_1633030318854,
   "Palak Paneer": photo_1589647363585,
   "Lamb Vindaloo": photo_1545247181,
-  "Malai Kofta": istockphoto_1397648059,
+  "Malai Kofta": photo_1589302168068,
   "Amritsari Chicken Curry": photo_1603496987351,
   "Gulab Jamun": photo_1595608010652,
   "Rasmalai": photo_1589302168068,
