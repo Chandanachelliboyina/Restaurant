@@ -20,6 +20,7 @@ import manchurianBallsImage from "@/assets/manchurian-balls.jpg";
 import amburStarImage from "@/assets/ambur-star-biryani.jpg";
 import crispyCornKernelsImage from "@/assets/crispy-corn.jpg";
 import photo_1599487488170 from "@/assets/photo-1599487488170-d11ec9c172f0.avif";
+import photo_1590534247854 from "@/assets/photo-1590534247854-e97d5e3feef6.avif";
 
 // Additional images by photo ID (only images that exist in assets)
 import photo_1666001120694 from "@/assets/photo-1666001120694-3ebe8fd207be.avif";
@@ -135,7 +136,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Thukpa Noodle Soup": photo_1589302168068,
   "Tom Yum Soup": photo_1628430043175,
   "Vegetable Clear Soup": photo_1643786661490,
-  "Margherita Classica": photo_1589302168068,
+  "Margherita Classica": photo_1590534247854,
   "Truffle Mushroom": truffleMushroomImage,
   "Diavola": premiumDiavolaImage,
   "Quattro Formaggi": photo_1751200884901,
