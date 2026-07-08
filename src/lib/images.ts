@@ -176,7 +176,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Masala Dosa": photo_1589302168068,
   "Idli Sambar": photo_1632104667384,
   "Medu Vada": photo_1730191843435,
-  "Rava Uttapam": photo_1589302168068,
+  "Rava Uttapam": istockphoto_1256957996,
   "Pongal": istockphoto_482366402,
   "Chettinad Chicken": photo_1545247181,
   "Kerala Fish Curry": photo_1620894580123,
