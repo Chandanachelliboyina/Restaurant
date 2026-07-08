@@ -1,1 +1,1 @@
-*.jpg filter=lfs diff=lfs merge=lfs -text
+# No LFS - all files stored normally in git
