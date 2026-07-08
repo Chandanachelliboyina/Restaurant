@@ -188,7 +188,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Medu Vada": photo_1730191843435,
   "Rava Uttapam": istockphoto_1256957996,
   "Pongal": istockphoto_482366402,
-  "Chettinad Chicken": photo_1545247181,
+  "Chettinad Chicken": istockphoto_1258129729,
   "Kerala Fish Curry": photo_1620894580123,
   "Appam & Stew": istockphoto_1365183162,
   "Andhra Mutton Curry": istockphoto_1322959597,
