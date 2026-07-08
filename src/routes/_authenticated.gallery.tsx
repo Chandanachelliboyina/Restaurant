@@ -17,65 +17,35 @@ export const Route = createFileRoute("/_authenticated/gallery")({
 
 type Cat = "All" | "Restaurant" | "Food" | "Chef" | "Events" | "Kitchen";
 
-const U = (id: string) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1200&q=80`;
+const LOCAL_ASSETS = import.meta.glob('@/assets/*.{jpg,png,jpeg,avif,webp}', { eager: true, import: 'default' }) as Record<string, string>;
+const allKeys = Object.keys(LOCAL_ASSETS);
 
 const ITEMS: { src: string; cat: Exclude<Cat, "All"> }[] = [
-  // Restaurant
-  { src: U("1517248135467-4c7edcad34c4"), cat: "Restaurant" },
-  { src: U("1552566626-52f8b828add9"), cat: "Restaurant" },
-  { src: U("1414235077428-338989a2e8c0"), cat: "Restaurant" },
-  { src: U("1466978913421-dad2ebd01d17"), cat: "Restaurant" },
-  { src: U("1590846406792-0adc7f938f1d"), cat: "Restaurant" },
-  { src: U("1544148103-0773bf10d330"), cat: "Restaurant" },
-  { src: U("1600891964599-f61ba0e24092"), cat: "Restaurant" },
-  { src: U("1424847651672-bf20a4b0982b"), cat: "Restaurant" },
-  { src: U("1555396273-367ea4eb4db5"), cat: "Restaurant" },
-  { src: U("1559339352-11d035aa65de"), cat: "Restaurant" },
-  // Food
-  { src: U("1565958011703-44f9829ba187"), cat: "Food" },
-  { src: U("1414235077428-338989a2e8c0"), cat: "Food" },
-  { src: U("1546069901-ba9599a7e63c"), cat: "Food" },
-  { src: U("1567620905732-2d1ec7ab7445"), cat: "Food" },
-  { src: U("1504674900247-0877df9cc836"), cat: "Food" },
-  { src: U("1540189549336-e6e99c3679fe"), cat: "Food" },
-  { src: U("1476224203421-9ac39bcb3327"), cat: "Food" },
-  { src: U("1565299624946-b28f40a0ae38"), cat: "Food" },
-  { src: U("1551782450-a2132b4ba21d"), cat: "Food" },
-  { src: U("1484723091739-30a097e8f929"), cat: "Food" },
-  // Chef
-  { src: U("1577219491135-ce391730fb2c"), cat: "Chef" },
-  { src: U("1583394293214-28ded15ee548"), cat: "Chef" },
-  { src: U("1622021142947-da7dedc7c39a"), cat: "Chef" },
-  { src: U("1607631568010-a87245c0daf8"), cat: "Chef" },
-  { src: U("1600565193348-f74bd3c7ccdf"), cat: "Chef" },
-  { src: U("1414235077428-338989a2e8c0"), cat: "Chef" },
-  { src: U("1466637574441-749b8f19452f"), cat: "Chef" },
-  { src: U("1587574293340-e0011c4e8ecf"), cat: "Chef" },
-  { src: U("1600891964092-4316c288032e"), cat: "Chef" },
-  { src: U("1631898039108-eab5a19b9c5c"), cat: "Chef" },
-  // Events
-  { src: U("1519671482749-fd09be7ccebf"), cat: "Events" },
-  { src: U("1530023367847-a683933f4172"), cat: "Events" },
-  { src: U("1464366400600-7168b8af9bc3"), cat: "Events" },
-  { src: U("1478147427282-58a87a120781"), cat: "Events" },
-  { src: U("1519671845924-1fd18db430b8"), cat: "Events" },
-  { src: U("1511795409834-ef04bbd61622"), cat: "Events" },
-  { src: U("1470336346630-8fe32c1e0eae"), cat: "Events" },
-  { src: U("1414235077428-338989a2e8c0"), cat: "Events" },
-  { src: U("1533174072545-7a4b6ad7a6c3"), cat: "Events" },
-  { src: U("1523580494863-6f3031224c94"), cat: "Events" },
-  // Kitchen
-  { src: U("1466637574441-749b8f19452f"), cat: "Kitchen" },
-  { src: U("1631898039108-eab5a19b9c5c"), cat: "Kitchen" },
-  { src: U("1556909114-f6e7ad7d3136"), cat: "Kitchen" },
-  { src: U("1590846406792-0adc7f938f1d"), cat: "Kitchen" },
-  { src: U("1556910633-5099dc3971e2"), cat: "Kitchen" },
-  { src: U("1600891964092-4316c288032e"), cat: "Kitchen" },
-  { src: U("1592180095948-38ff2b18e04d"), cat: "Kitchen" },
-  { src: U("1607083206869-4c7672e72a8a"), cat: "Kitchen" },
-  { src: U("1519708227418-c8fd9a32b7a2"), cat: "Kitchen" },
-  { src: U("1596040033229-a9821ebd058d"), cat: "Kitchen" },
+  { src: LOCAL_ASSETS['/src/assets/interior.jpg'] || LOCAL_ASSETS[allKeys[0]], cat: 'Restaurant' },
+  { src: LOCAL_ASSETS['/src/assets/hero-restaurant.jpg'] || LOCAL_ASSETS[allKeys[1]], cat: 'Restaurant' },
+  { src: LOCAL_ASSETS['/src/assets/bg-reservations.jpg'] || LOCAL_ASSETS[allKeys[2]], cat: 'Restaurant' },
+  
+  { src: LOCAL_ASSETS['/src/assets/gallery-1.jpg'] || LOCAL_ASSETS[allKeys[3]], cat: 'Food' },
+  { src: LOCAL_ASSETS['/src/assets/gallery-2.jpg'] || LOCAL_ASSETS[allKeys[4]], cat: 'Food' },
+  { src: LOCAL_ASSETS['/src/assets/gallery-3.jpg'] || LOCAL_ASSETS[allKeys[5]], cat: 'Food' },
+  { src: LOCAL_ASSETS['/src/assets/dish-1.jpg'] || LOCAL_ASSETS[allKeys[6]], cat: 'Food' },
+  { src: LOCAL_ASSETS['/src/assets/dish-2.jpg'] || LOCAL_ASSETS[allKeys[7]], cat: 'Food' },
+  { src: LOCAL_ASSETS['/src/assets/dish-3.jpg'] || LOCAL_ASSETS[allKeys[8]], cat: 'Food' },
+  
+  { src: LOCAL_ASSETS['/src/assets/chef.jpg'] || LOCAL_ASSETS[allKeys[9]], cat: 'Chef' },
+  
+  { src: LOCAL_ASSETS['/src/assets/bg-contact.jpg'] || LOCAL_ASSETS[allKeys[10]], cat: 'Events' },
+  
+  { src: LOCAL_ASSETS['/src/assets/bg-about.jpg'] || LOCAL_ASSETS[allKeys[11]], cat: 'Kitchen' },
 ];
+
+const extraPhotos = allKeys.filter(k => k.includes('/photo-') || k.includes('/istockphoto-'));
+let idx = 0;
+while (ITEMS.length < 30 && idx < extraPhotos.length) {
+  const cats: Exclude<Cat, "All">[] = ["Food", "Restaurant", "Events", "Kitchen", "Chef"];
+  ITEMS.push({ src: LOCAL_ASSETS[extraPhotos[idx]], cat: cats[idx % 5] });
+  idx++;
+}
 
 function GalleryPage() {
   const [cat, setCat] = useState<Cat>("All");
