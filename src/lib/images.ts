@@ -26,6 +26,7 @@ import istockphoto_1431115204 from "@/assets/istockphoto-1431115204-612x612.webp
 import photo_1585032226651 from "@/assets/photo-1585032226651-759b368d7246.avif";
 import photo_1568901346375 from "@/assets/photo-1568901346375-23c9450c58cd.avif";
 import photo_1555126634 from "@/assets/photo-1555126634-323283e090fa.avif";
+import premium_photo_1683619761492 from "@/assets/premium_photo-1683619761492-639240d29bb5.avif";
 import photo_1666001120694 from "@/assets/photo-1666001120694-3ebe8fd207be.avif";
 import photo_1674622720208 from "@/assets/photo-1674622720208-2a67da6ff4e8.avif";
 import photo_1695712641569 from "@/assets/photo-1695712641569-05eee7b37b6d.avif";
@@ -150,7 +151,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Meat Feast": photo_1628672092908,
   "Garden Fiesta": photo_1617470703128,
   "Classic Cheeseburger": photo_1568901346375,
-  "Double Smash": photo_1589302168068,
+  "Double Smash": premium_photo_1683619761492,
   "BBQ Bacon Burger": photo_1610440042657,
   "Spicy Chicken Burger": spicyChickenBurgerImage,
   "Mushroom Swiss": photo_1605345981660,
