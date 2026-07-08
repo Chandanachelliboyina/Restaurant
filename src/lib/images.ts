@@ -23,7 +23,8 @@ import photo_1599487488170 from "@/assets/photo-1599487488170-d11ec9c172f0.avif"
 import photo_1590534247854 from "@/assets/photo-1590534247854-e97d5e3feef6.avif";
 import istockphoto_1292615374 from "@/assets/istockphoto-1292615374-612x612.webp";
 import istockphoto_1431115204 from "@/assets/istockphoto-1431115204-612x612.webp";
-import photo_1585032226651 from "@/assets/photo-1585032226651-759b368d7246.avif";// Additional images by photo ID (only images that exist in assets)
+import photo_1585032226651 from "@/assets/photo-1585032226651-759b368d7246.avif";
+import photo_1568901346375 from "@/assets/photo-1568901346375-23c9450c58cd.avif";
 import photo_1666001120694 from "@/assets/photo-1666001120694-3ebe8fd207be.avif";
 import photo_1674622720208 from "@/assets/photo-1674622720208-2a67da6ff4e8.avif";
 import photo_1695712641569 from "@/assets/photo-1695712641569-05eee7b37b6d.avif";
@@ -147,7 +148,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Pesto Verde": photo_1534308983496,
   "Meat Feast": photo_1628672092908,
   "Garden Fiesta": photo_1617470703128,
-  "Classic Cheeseburger": photo_1589302168068,
+  "Classic Cheeseburger": photo_1568901346375,
   "Double Smash": photo_1589302168068,
   "BBQ Bacon Burger": photo_1610440042657,
   "Spicy Chicken Burger": spicyChickenBurgerImage,
