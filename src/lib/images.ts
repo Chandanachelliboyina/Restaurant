@@ -21,6 +21,7 @@ import amburStarImage from "@/assets/ambur-star-biryani.jpg";
 import crispyCornKernelsImage from "@/assets/crispy-corn.jpg";
 import photo_1599487488170 from "@/assets/photo-1599487488170-d11ec9c172f0.avif";
 import photo_1590534247854 from "@/assets/photo-1590534247854-e97d5e3feef6.avif";
+import istockphoto_1292615374 from "@/assets/istockphoto-1292615374-612x612.webp";
 
 // Additional images by photo ID (only images that exist in assets)
 import photo_1666001120694 from "@/assets/photo-1666001120694-3ebe8fd207be.avif";
@@ -120,7 +121,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Hara Bhara Kebab": photo_1674622720208,
   "Fish Amritsari": fishamritsariImage,
   "Mushroom Galouti": mushroomgaloutiImage,
-  "Prawn Koliwada": photo_1589302168068,
+  "Prawn Koliwada": istockphoto_1292615374,
   "Veg Spring Rolls": photo_1695712641569,
   "Chilli Paneer Dry": photo_1551881192,
   "Chicken 65": photo_1588923930957,
