@@ -89,6 +89,7 @@ import istockphoto_1365183162 from "@/assets/istockphoto-1365183162-612x612.webp
 import istockphoto_1397648059 from "@/assets/istockphoto-1397648059-612x612.webp";
 import istockphoto_1690939355 from "@/assets/istockphoto-1690939355-612x612.webp";
 import istockphoto_482366402 from "@/assets/istockphoto-482366402-612x612.webp";
+import photo_1668236543090 from "@/assets/photo-1668236543090-82eba5ee5976.avif";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -179,7 +180,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Tofu Black Bean": premium_photo_1694860349260,
   "Prawn Chilli Basil": premium_photo_1661607229579,
   "Veg Dim Sum": photo_1756821753259,
-  "Masala Dosa": photo_1589302168068,
+  "Masala Dosa": photo_1668236543090,
   "Idli Sambar": photo_1632104667384,
   "Medu Vada": photo_1730191843435,
   "Rava Uttapam": istockphoto_1256957996,
