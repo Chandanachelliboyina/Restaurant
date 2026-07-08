@@ -23,7 +23,7 @@ import photo_1599487488170 from "@/assets/photo-1599487488170-d11ec9c172f0.avif"
 import photo_1590534247854 from "@/assets/photo-1590534247854-e97d5e3feef6.avif";
 import istockphoto_1292615374 from "@/assets/istockphoto-1292615374-612x612.webp";
 import istockphoto_1431115204 from "@/assets/istockphoto-1431115204-612x612.webp";
-// Additional images by photo ID (only images that exist in assets)
+import photo_1585032226651 from "@/assets/photo-1585032226651-759b368d7246.avif";// Additional images by photo ID (only images that exist in assets)
 import photo_1666001120694 from "@/assets/photo-1666001120694-3ebe8fd207be.avif";
 import photo_1674622720208 from "@/assets/photo-1674622720208-2a67da6ff4e8.avif";
 import photo_1695712641569 from "@/assets/photo-1695712641569-05eee7b37b6d.avif";
@@ -134,7 +134,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Wonton Soup": wontonSoupImage,
   "Mulligatawny": photo_1613844237701,
   "Cream of Mushroom": creamOfMushroomImage,
-  "Thukpa Noodle Soup": photo_1589302168068,
+  "Thukpa Noodle Soup": photo_1585032226651,
   "Tom Yum Soup": photo_1628430043175,
   "Vegetable Clear Soup": photo_1643786661490,
   "Margherita Classica": istockphoto_1431115204,
