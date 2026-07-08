@@ -193,7 +193,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Andhra Mutton Curry": istockphoto_1322959597,
   "Filter Coffee": premium_photo_1661418257755,
   "Butter Chicken": photo_1589302168068,
-  "Dal Makhani": photo_1589302168068,
+  "Dal Makhani": istockphoto_1170374719,
   "Paneer Butter Masala": photo_1589302168068,
   "Rogan Josh": photo_1589302168068,
   "Chole Bhature": photo_1589302168068,
