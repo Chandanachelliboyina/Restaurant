@@ -90,6 +90,7 @@ import istockphoto_1397648059 from "@/assets/istockphoto-1397648059-612x612.webp
 import istockphoto_1690939355 from "@/assets/istockphoto-1690939355-612x612.webp";
 import istockphoto_482366402 from "@/assets/istockphoto-482366402-612x612.webp";
 import photo_1668236543090 from "@/assets/photo-1668236543090-82eba5ee5976.avif";
+import istockphoto_1208083790 from "@/assets/istockphoto-1208083790-612x612.webp";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -173,7 +174,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Chilli Chicken Dry": premium_photo_1675864532625,
   "Veg Hakka Noodles": photo_1585032226651,
   "Kung Pao Chicken": photo_1776729851079,
-  "Schezwan Fried Rice": photo_1589302168068,
+  "Schezwan Fried Rice": istockphoto_1208083790,
   "Manchurian Balls": manchurianBallsImage,
   "Sweet & Sour Fish": photo_1623689046286,
   "Chow Mein Chicken": photo_1769690507359,
