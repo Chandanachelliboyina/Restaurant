@@ -189,7 +189,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Chettinad Chicken": photo_1545247181,
   "Kerala Fish Curry": photo_1620894580123,
   "Appam & Stew": istockphoto_1365183162,
-  "Andhra Mutton Curry": photo_1589302168068,
+  "Andhra Mutton Curry": istockphoto_1322959597,
   "Filter Coffee": photo_1589302168068,
   "Butter Chicken": photo_1589302168068,
   "Dal Makhani": photo_1589302168068,
