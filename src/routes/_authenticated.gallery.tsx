@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { BackButton } from "@/components/BackButton";
-import galleryBg from "@/assets/bg-gallery.jpg";
+import { BG_IMAGES, GALLERY_IMAGES } from "@/lib/images";
 
 export const Route = createFileRoute("/_authenticated/gallery")({
   head: () => ({
@@ -17,35 +17,18 @@ export const Route = createFileRoute("/_authenticated/gallery")({
 
 type Cat = "All" | "Restaurant" | "Food" | "Chef" | "Events" | "Kitchen";
 
-const LOCAL_ASSETS = import.meta.glob('@/assets/*.{jpg,png,jpeg,avif,webp}', { eager: true, import: 'default' }) as Record<string, string>;
-const allKeys = Object.keys(LOCAL_ASSETS);
-
 const ITEMS: { src: string; cat: Exclude<Cat, "All"> }[] = [
-  { src: LOCAL_ASSETS['/src/assets/interior.jpg'] || LOCAL_ASSETS[allKeys[0]], cat: 'Restaurant' },
-  { src: LOCAL_ASSETS['/src/assets/hero-restaurant.jpg'] || LOCAL_ASSETS[allKeys[1]], cat: 'Restaurant' },
-  { src: LOCAL_ASSETS['/src/assets/bg-reservations.jpg'] || LOCAL_ASSETS[allKeys[2]], cat: 'Restaurant' },
-  
-  { src: LOCAL_ASSETS['/src/assets/gallery-1.jpg'] || LOCAL_ASSETS[allKeys[3]], cat: 'Food' },
-  { src: LOCAL_ASSETS['/src/assets/gallery-2.jpg'] || LOCAL_ASSETS[allKeys[4]], cat: 'Food' },
-  { src: LOCAL_ASSETS['/src/assets/gallery-3.jpg'] || LOCAL_ASSETS[allKeys[5]], cat: 'Food' },
-  { src: LOCAL_ASSETS['/src/assets/dish-1.jpg'] || LOCAL_ASSETS[allKeys[6]], cat: 'Food' },
-  { src: LOCAL_ASSETS['/src/assets/dish-2.jpg'] || LOCAL_ASSETS[allKeys[7]], cat: 'Food' },
-  { src: LOCAL_ASSETS['/src/assets/dish-3.jpg'] || LOCAL_ASSETS[allKeys[8]], cat: 'Food' },
-  
-  { src: LOCAL_ASSETS['/src/assets/chef.jpg'] || LOCAL_ASSETS[allKeys[9]], cat: 'Chef' },
-  
-  { src: LOCAL_ASSETS['/src/assets/bg-contact.jpg'] || LOCAL_ASSETS[allKeys[10]], cat: 'Events' },
-  
-  { src: LOCAL_ASSETS['/src/assets/bg-about.jpg'] || LOCAL_ASSETS[allKeys[11]], cat: 'Kitchen' },
+  // Restaurant
+  ...GALLERY_IMAGES.restaurant.map(img => ({ src: img.src, cat: "Restaurant" as const })),
+  // Food
+  ...GALLERY_IMAGES.food.map(img => ({ src: img.src, cat: "Food" as const })),
+  // Chef
+  ...GALLERY_IMAGES.chef.map(img => ({ src: img.src, cat: "Chef" as const })),
+  // Events
+  ...GALLERY_IMAGES.events.map(img => ({ src: img.src, cat: "Events" as const })),
+  // Kitchen
+  ...GALLERY_IMAGES.kitchen.map(img => ({ src: img.src, cat: "Kitchen" as const })),
 ];
-
-const extraPhotos = allKeys.filter(k => k.includes('/photo-') || k.includes('/istockphoto-'));
-let idx = 0;
-while (ITEMS.length < 30 && idx < extraPhotos.length) {
-  const cats: Exclude<Cat, "All">[] = ["Food", "Restaurant", "Events", "Kitchen", "Chef"];
-  ITEMS.push({ src: LOCAL_ASSETS[extraPhotos[idx]], cat: cats[idx % 5] });
-  idx++;
-}
 
 function GalleryPage() {
   const [cat, setCat] = useState<Cat>("All");
@@ -73,7 +56,7 @@ function GalleryPage() {
     <>
       <section className="relative overflow-hidden py-24 text-center md:py-32">
         <div className="absolute inset-0 -z-10">
-          <img src={galleryBg} alt="" className="h-full w-full object-cover" loading="lazy" />
+          <img src={BG_IMAGES.gallery} alt="" className="h-full w-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-black/70" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background" />
         </div>

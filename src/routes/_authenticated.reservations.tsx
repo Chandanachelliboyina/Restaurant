@@ -7,7 +7,7 @@ import { BackButton } from "@/components/BackButton";
 import { useAuth } from "@/lib/auth";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import reservationsBg from "@/assets/bg-reservations.jpg";
+import { BG_IMAGES } from "@/lib/images";
 
 
 export const Route = createFileRoute("/_authenticated/reservations")({
@@ -100,7 +100,7 @@ function ReservationsPage() {
     <>
       <section className="relative overflow-hidden py-24 text-center md:py-32">
         <div className="absolute inset-0 -z-10">
-          <img src={reservationsBg} alt="" className="h-full w-full object-cover" loading="lazy" />
+          <img src={BG_IMAGES.reservations} alt="" className="h-full w-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-black/70" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background" />
         </div>

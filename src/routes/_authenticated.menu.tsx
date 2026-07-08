@@ -5,7 +5,7 @@ import { Search, X } from "lucide-react";
 import { CATEGORIES, DISHES, type Category } from "@/lib/data";
 import { DishCard } from "@/components/DishCard";
 import { BackButton } from "@/components/BackButton";
-import menuBg from "@/assets/bg-menu.jpg";
+import { BG_IMAGES } from "@/lib/images";
 
 
 export const Route = createFileRoute("/_authenticated/menu")({
@@ -40,7 +40,7 @@ function MenuPage() {
     <>
       <section className="relative overflow-hidden py-24 text-center md:py-32">
         <div className="absolute inset-0 -z-10">
-          <img src={menuBg} alt="" className="h-full w-full object-cover" loading="lazy" />
+          <img src={BG_IMAGES.menu} alt="" className="h-full w-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-black/70" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background" />
         </div>

@@ -1,17 +1,4 @@
-import crispycornImage from "@/assets/premium_photo-1680118540055-aa9f6ce1d93d.avif";
-import harabharakebabImage from "@/assets/istockphoto-1024552618-612x612.jpg";
-import fishamritsariImage from "@/assets/photo-1626253836448-e2376678c191.avif";
-import mushroomgaloutiImage from "@/assets/images.avif";
-import truffleMushroomImage from "@/assets/premium_photo-1663858366999-aa1ce123a972.avif";
-import diavolaImage from "@/assets/photo-1571336350540-8b189c0779f4.avif";
-import premiumDiavolaImage from "@/assets/premium_photo-1722686519091-886edbd87f7e.avif";
-import wontonSoupImage from "@/assets/premium_photo-1664391950572-bc4b1bdd1268.avif";
-import creamOfMushroomImage from "@/assets/premium_photo-1669631647057-3403888e87da.avif";
-import spicyChickenBurgerImage from "@/assets/premium_photo-1675252369719-dd52bc69c3df.avif";
-import paneerTikkaBurgerImage from "@/assets/istockphoto-1401041513-612x612.webp";
-import tandooriBroccoliImage from "@/assets/istockphoto-1469649306-612x612.webp";
-import manchurianBallsImage from "@/assets/manchurian-balls.jpg";
-import amburStarImage from "@/assets/ambur-star-biryani.jpg";
+import { getDishImage } from "@/lib/images";
 export type Category =
   | "Starters"
   | "Soups"
@@ -57,32 +44,8 @@ export interface Dish {
 const LOCAL_ASSETS = import.meta.glob('@/assets/*.{jpg,png,jpeg,avif,webp}', { eager: true, import: 'default' }) as Record<string, string>;
 
 function getLocalImage(id: string, dishName: string): string {
-  const assets = Object.keys(LOCAL_ASSETS);
-  
-  if (id && id !== 'undefined' && id !== 'null' && !id.includes('Image')) {
-    let match = assets.find(a => a.includes(id));
-    if (match) return LOCAL_ASSETS[match];
-  }
-
-  if (dishName) {
-    const expected = dishName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-    let match = assets.find(a => a.toLowerCase().includes(expected + '.'));
-    if (match) return LOCAL_ASSETS[match];
-    
-    match = assets.find(a => {
-      const file = a.split('/').pop()?.toLowerCase();
-      return file && (file.includes(expected) || file.includes(dishName.toLowerCase().replace(/\s+/g, '')));
-    });
-    if (match) return LOCAL_ASSETS[match];
-
-    const hash = dishName.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
-    const fallback = `dish-${(hash % 6) + 1}.jpg`;
-    match = assets.find(a => a.includes(fallback));
-    if (match) return LOCAL_ASSETS[match];
-  }
-
-  const firstMatch = assets.find(a => a.includes('dish-1'));
-  return firstMatch ? LOCAL_ASSETS[firstMatch] : '';
+  // Direct lookup by dish name
+  return getDishImage(dishName);
 }
 
 type Seed = {
@@ -170,7 +133,7 @@ const SEEDS: Record<Category, Seed[]> = {
   ],
   "South Indian": [
     { name: "Masala Dosa", desc: "Crispy rice crepe with spiced potato filling.", price: 8, veg: true, img: getLocalImage("1668236543090-82eba5ee5976", "Masala Dosa") },
-    { name: "Idli Sambar", desc: "Steamed rice cakes with lentil stew and chutneys.", price: 6, veg: true, img: idlisambarImage },
+    { name: "Idli Sambar", desc: "Steamed rice cakes with lentil stew and chutneys.", price: 6, veg: true, img: getLocalImage("1668236543090-82eba5ee5976", "Idli Sambar") },
     { name: "Medu Vada", desc: "Fluffy urad-dal doughnuts with coconut chutney.", price: 6, veg: true, img: getLocalImage("1730191843435-073792ba22bc", "Medu Vada") },
     { name: "Rava Uttapam", desc: "Semolina pancake with onions, tomatoes and chilli.", price: 7, veg: true, img: getLocalImage("1668236543090-82eba5ee5976", "Rava Uttapam") },
     { name: "Pongal", desc: "Creamy rice-lentil porridge with cracked pepper.", price: 7, veg: true, img: getLocalImage("1668236543090-82eba5ee5976", "Pongal") },

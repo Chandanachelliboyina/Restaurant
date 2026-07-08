@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { Target, Eye, Sparkles, Award, Users, Building2, ChefHat, ArrowRight } from "lucide-react";
 import chef from "@/assets/chef.jpg";
 import interior from "@/assets/interior.jpg";
-import aboutBg from "@/assets/bg-about.jpg";
+import { BG_IMAGES } from "@/lib/images";
 import { BackButton } from "@/components/BackButton";
 import { TIMELINE } from "@/lib/data";
 
@@ -26,7 +26,7 @@ function AboutPage() {
     <>
       <section className="relative overflow-hidden py-24 md:py-32">
         <div className="absolute inset-0">
-          <img src={aboutBg} alt="" className="h-full w-full object-cover" />
+          <img src={BG_IMAGES.about} alt="" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-black/65" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background" />
         </div>

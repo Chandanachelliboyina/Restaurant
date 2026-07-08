@@ -4,7 +4,7 @@ import { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter, MessageCircleMore, Send, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 import { BackButton } from "@/components/BackButton";
-import contactBg from "@/assets/bg-contact.jpg";
+import { BG_IMAGES } from "@/lib/images";
 
 
 export const Route = createFileRoute("/_authenticated/contact")({
@@ -43,7 +43,7 @@ function ContactPage() {
       <section className="relative overflow-hidden py-24 text-center md:py-32">
         <div className="absolute inset-0 -z-10">
           <img
-            src={contactBg}
+            src={BG_IMAGES.contact}
             alt=""
             className="h-full w-full object-cover object-bottom"
             loading="lazy"
