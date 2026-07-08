@@ -73,7 +73,6 @@ import photo_1645024679624 from "@/assets/photo-1645024679624-e8351ac98f01.avif"
 import photo_1691171047312 from "@/assets/photo-1691171047312-d809eccef46d.avif";
 import photo_1707592357743 from "@/assets/photo-1707592357743-5e25b277ca36.avif";
 import photo_1769690507359 from "@/assets/photo-1769690507359-98ad7820b1bb.avif";
-import photo_1776729851079 from "@/assets/photo-1776729851079-686daa8ff9aa.avif";
 import premium_photo_1661607229579 from "@/assets/premium_photo-1661607229579-dd06d36302fc.avif";
 import premium_photo_1675864532625 from "@/assets/premium_photo-1675864532625-60efd11cde54.avif";
 import premium_photo_1680118540055 from "@/assets/premium_photo-1680118540055-aa9f6ce1d93d.avif";
