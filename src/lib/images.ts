@@ -160,7 +160,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Paneer Biryani": photo_1691171047462,
   "Egg Biryani": photo_1644677859249,
   "Kolkata Biryani": photo_1696950169706,
-  "Malabar Chicken Biryani": photo_1589302168068,
+  "Malabar Chicken Biryani": istockphoto_1333127664,
   "Mushroom Biryani": premium_photo_1669261882028,
   "Ambur Star Biryani": amburStarImage,
   "Chilli Chicken Dry": premium_photo_1675864532625,
