@@ -200,7 +200,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Chole Bhature": istockphoto_1328524499,
   "Tandoori Roti Basket": photo_1633030318854,
   "Palak Paneer": photo_1589647363585,
-  "Lamb Vindaloo": photo_1589302168068,
+  "Lamb Vindaloo": photo_1545247181,
   "Malai Kofta": photo_1589302168068,
   "Amritsari Chicken Curry": photo_1603496987351,
   "Gulab Jamun": photo_1595608010652,
