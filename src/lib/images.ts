@@ -197,7 +197,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Dal Makhani": istockphoto_1170374719,
   "Paneer Butter Masala": photo_1631452180519,
   "Rogan Josh": istockphoto_1286704566,
-  "Chole Bhature": photo_1589302168068,
+  "Chole Bhature": istockphoto_1328524499,
   "Tandoori Roti Basket": photo_1589302168068,
   "Palak Paneer": photo_1589647363585,
   "Lamb Vindaloo": photo_1589302168068,
