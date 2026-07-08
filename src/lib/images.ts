@@ -94,6 +94,7 @@ import istockphoto_1208083790 from "@/assets/istockphoto-1208083790-612x612.webp
 import premium_photo_1661418257755 from "@/assets/premium_photo-1661418257755-a108f0225621.avif";
 import photo_1631452180519 from "@/assets/photo-1631452180519-c014fe946bc7.avif";
 import photo_1742599361539 from "@/assets/photo-1742599361539-f096753d1100.avif";
+import photo_1636743715220 from "@/assets/photo-1636743715220-d8f8dd900b87.avif";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -213,7 +214,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Crème Brûlée": photo_1589302168068,
   "Gajar Halwa": photo_1589302168068,
   "Baklava": photo_1589302168068,
-  "Chocolate Brownie": photo_1589302168068,
+  "Chocolate Brownie": photo_1636743715220,
   "Mango Lassi": photo_1589302168068,
   "Masala Chai": photo_1589302168068,
   "Cold Coffee": photo_1589302168068,
