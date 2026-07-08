@@ -18,7 +18,7 @@ import paneerTikkaBurgerImage from "@/assets/istockphoto-1401041513-612x612.webp
 import tandooriBroccoliImage from "@/assets/istockphoto-1469649306-612x612.webp";
 import manchurianBallsImage from "@/assets/manchurian-balls.jpg";
 import amburStarImage from "@/assets/ambur-star-biryani.jpg";
-import crispyCornKernelsImage from "@/assets/Crispy-corn-kernals-1.jpg";
+import crispyCornKernelsImage from "@/assets/crispy-corn.jpg";
 
 // Additional images by photo ID (only images that exist in assets)
 import photo_1666001120694 from "@/assets/photo-1666001120694-3ebe8fd207be.avif";
