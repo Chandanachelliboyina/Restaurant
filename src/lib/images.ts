@@ -22,7 +22,7 @@ import crispyCornKernelsImage from "@/assets/crispy-corn.jpg";
 import photo_1599487488170 from "@/assets/photo-1599487488170-d11ec9c172f0.avif";
 import photo_1590534247854 from "@/assets/photo-1590534247854-e97d5e3feef6.avif";
 import istockphoto_1292615374 from "@/assets/istockphoto-1292615374-612x612.webp";
-
+import istockphoto_1431115204 from "@/assets/istockphoto-1431115204-612x612.webp";
 // Additional images by photo ID (only images that exist in assets)
 import photo_1666001120694 from "@/assets/photo-1666001120694-3ebe8fd207be.avif";
 import photo_1674622720208 from "@/assets/photo-1674622720208-2a67da6ff4e8.avif";
@@ -137,7 +137,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Thukpa Noodle Soup": photo_1589302168068,
   "Tom Yum Soup": photo_1628430043175,
   "Vegetable Clear Soup": photo_1643786661490,
-  "Margherita Classica": photo_1590534247854,
+  "Margherita Classica": istockphoto_1431115204,
   "Truffle Mushroom": truffleMushroomImage,
   "Diavola": premiumDiavolaImage,
   "Quattro Formaggi": photo_1751200884901,
