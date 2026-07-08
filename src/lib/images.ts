@@ -142,7 +142,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Diavola": premiumDiavolaImage,
   "Quattro Formaggi": photo_1751200884901,
   "BBQ Chicken": photo_1655471264223,
-  "Pepperoni Reserve": photo_1589302168068,
+  "Pepperoni Reserve": photo_1590534247854,
   "Paneer Makhani Pizza": photo_1573821663912,
   "Pesto Verde": photo_1534308983496,
   "Meat Feast": photo_1628672092908,
