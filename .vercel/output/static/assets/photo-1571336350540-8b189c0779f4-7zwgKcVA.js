@@ -1,1 +1,0 @@
-var e=`/assets/photo-1571336350540-8b189c0779f4-CHi0WhvX.avif`;export{e as t};
