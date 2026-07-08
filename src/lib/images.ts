@@ -19,6 +19,7 @@ import tandooriBroccoliImage from "@/assets/istockphoto-1469649306-612x612.webp"
 import manchurianBallsImage from "@/assets/manchurian-balls.jpg";
 import amburStarImage from "@/assets/ambur-star-biryani.jpg";
 import crispyCornKernelsImage from "@/assets/crispy-corn.jpg";
+import photo_1599487488170 from "@/assets/photo-1599487488170-d11ec9c172f0.avif";
 
 // Additional images by photo ID (only images that exist in assets)
 import photo_1666001120694 from "@/assets/photo-1666001120694-3ebe8fd207be.avif";
@@ -114,7 +115,7 @@ import gallery3Image from "@/assets/gallery-3.jpg";
 export const DISH_IMAGES: Record<string, string> = {
   "Paneer Tikka": photo_1666001120694,
   "Crispy Corn Kernels": crispyCornKernelsImage,
-  "Chicken Tikka": photo_1589302168068,
+  "Chicken Tikka": photo_1599487488170,
   "Hara Bhara Kebab": photo_1674622720208,
   "Fish Amritsari": fishamritsariImage,
   "Mushroom Galouti": mushroomgaloutiImage,
