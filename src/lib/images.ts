@@ -117,6 +117,7 @@ import istockphoto_657076530 from "@/assets/istockphoto-657076530-612x612.webp";
 import photo_1669200236241 from "@/assets/photo-1669200236241-7c365035612a.avif";
 import coconut_sorbet_img from "@/assets/istockphoto-2197716123-612x612 (1).webp";
 import pistachio_gelato_img from "@/assets/photo-1630859885680-8f780e2e65a9.avif";
+import strawberry_sorbet_img from "@/assets/photo-1724805053611-54c999f9c70c.avif";
 import mango_sorbet_img from "@/assets/photo-1663904458920-f153c162fa79.avif";
 
 // Gallery/background images
@@ -250,7 +251,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Kulfi Malai": istockphoto_657076530,
   "Belgian Chocolate": istockphoto_1148258027,
   "Vanilla Bean": photo_1568903880699,
-  "Strawberry Sorbet": photo_1589302168068,
+  "Strawberry Sorbet": strawberry_sorbet_img,
   "Pistachio Gelato": pistachio_gelato_img,
   "Mango Sorbet": mango_sorbet_img,
   "Cookies & Cream": photo_1589302168068,
