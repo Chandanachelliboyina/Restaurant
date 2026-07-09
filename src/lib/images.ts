@@ -113,6 +113,7 @@ import istockphoto_1148258027 from "@/assets/istockphoto-1148258027-612x612.webp
 import photo_1705663106388 from "@/assets/photo-1705663106388-6c1c51ff5a8d.avif";
 import photo_1676300184943 from "@/assets/photo-1676300184943-09b2a08319a3.avif";
 import istockphoto_657076530 from "@/assets/istockphoto-657076530-612x612.webp";
+import photo_1669200236241 from "@/assets/photo-1669200236241-7c365035612a.avif";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -228,7 +229,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Molten Chocolate Cake": photo_1617305855058,
   "Tiramisu Classico": photo_1704742205361,
   "Cheesecake New York": premium_photo_1723651343962,
-  "Kulfi Falooda": photo_1589302168068,
+  "Kulfi Falooda": photo_1669200236241,
   "Crème Brûlée": photo_1676300184943,
   "Gajar Halwa": istockphoto_1277967163,
   "Baklava": photo_1705663106388,
