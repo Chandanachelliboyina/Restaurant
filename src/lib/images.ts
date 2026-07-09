@@ -106,6 +106,7 @@ import photo_1634141572430 from "@/assets/photo-1634141572430-cc6c46de1cf6.avif"
 import photo_1634496064950 from "@/assets/photo-1634496064950-02f043806b09.avif";
 import istockphoto_2181659111 from "@/assets/istockphoto-2181659111-612x612.webp";
 import istockphoto_1160275420 from "@/assets/istockphoto-1160275420-612x612.webp";
+import premium_photo_1675667390417 from "@/assets/premium_photo-1675667390417-d9d23160f4a6.avif";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -234,7 +235,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Virgin Mojito": photo_1634496064950,
   "Rose Milk": istockphoto_2181659111,
   "Iced Tea Peach": istockphoto_1160275420,
-  "Fresh Orange Juice": photo_1589302168068,
+  "Fresh Orange Juice": premium_photo_1675667390417,
   "Kulfi Malai": photo_1589302168068,
   "Belgian Chocolate": photo_1589302168068,
   "Vanilla Bean": photo_1589302168068,
