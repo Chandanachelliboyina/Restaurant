@@ -95,6 +95,7 @@ import premium_photo_1661418257755 from "@/assets/premium_photo-1661418257755-a1
 import photo_1631452180519 from "@/assets/photo-1631452180519-c014fe946bc7.avif";
 import photo_1742599361539 from "@/assets/photo-1742599361539-f096753d1100.avif";
 import photo_1636743715220 from "@/assets/photo-1636743715220-d8f8dd900b87.avif";
+import istockphoto_1312156074 from "@/assets/istockphoto-1312156074-612x612.webp";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -206,7 +207,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Malai Kofta": istockphoto_1397648059,
   "Amritsari Chicken Curry": photo_1603496987351,
   "Gulab Jamun": photo_1595608010652,
-  "Rasmalai": photo_1589302168068,
+  "Rasmalai": istockphoto_1312156074,
   "Molten Chocolate Cake": photo_1589302168068,
   "Tiramisu Classico": photo_1589302168068,
   "Cheesecake New York": photo_1589302168068,
