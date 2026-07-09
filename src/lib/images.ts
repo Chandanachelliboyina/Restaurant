@@ -4,8 +4,7 @@
  */
 
 // Menu dish images - imported explicitly
-import crispycornImage from "@/assets/premium_photo-1680118540055-aa9f6ce1d93d.avif";
-import harabharakebabImage from "@/assets/istockphoto-1024552618-612x612.jpg";
+
 import fishamritsariImage from "@/assets/photo-1626253836448-e2376678c191.avif";
 import mushroomgaloutiImage from "@/assets/images.avif";
 import truffleMushroomImage from "@/assets/premium_photo-1663858366999-aa1ce123a972.avif";
@@ -66,18 +65,17 @@ import photo_1623689046286 from "@/assets/photo-1623689046286-01d812cc8bad.avif"
 import photo_1756821753259 from "@/assets/photo-1756821753259-eb8abcdda9a3.avif";
 import photo_1730191843435 from "@/assets/photo-1730191843435-073792ba22bc.avif";
 import photo_1603496987351 from "@/assets/photo-1603496987351-f84a3ba5ec85.avif";
-import photo_1572815438941 from "@/assets/photo-1572815438941-36e4b94f4dda.avif";
+
 import photo_1632104667384 from "@/assets/photo-1632104667384-06f58cb7ad44.avif";
 import photo_1633030318854 from "@/assets/photo-1633030318854-b076ff72770f.avif";
 import photo_1645024679624 from "@/assets/photo-1645024679624-e8351ac98f01.avif";
-import photo_1691171047312 from "@/assets/photo-1691171047312-d809eccef46d.avif";
-import photo_1707592357743 from "@/assets/photo-1707592357743-5e25b277ca36.avif";
+
 import photo_1769690507359 from "@/assets/photo-1769690507359-98ad7820b1bb.avif";
 import premium_photo_1661607229579 from "@/assets/premium_photo-1661607229579-dd06d36302fc.avif";
 import premium_photo_1675864532625 from "@/assets/premium_photo-1675864532625-60efd11cde54.avif";
-import premium_photo_1680118540055 from "@/assets/premium_photo-1680118540055-aa9f6ce1d93d.avif";
+
 import premium_photo_1694860349260 from "@/assets/premium_photo-1694860349260-a2e6d9cdc6d8.avif";
-import premium_photo_1695758787947 from "@/assets/premium_photo-1695758787947-0aff87c1f93a.avif";
+
 import istockphoto_1170374719 from "@/assets/istockphoto-1170374719-612x612.webp";
 import istockphoto_1256957996 from "@/assets/istockphoto-1256957996-612x612.webp";
 import istockphoto_1258129729 from "@/assets/istockphoto-1258129729-612x612.webp";
@@ -87,7 +85,7 @@ import istockphoto_1328524499 from "@/assets/istockphoto-1328524499-612x612.webp
 import istockphoto_1333127664 from "@/assets/istockphoto-1333127664-612x612.webp";
 import istockphoto_1365183162 from "@/assets/istockphoto-1365183162-612x612.webp";
 import istockphoto_1397648059 from "@/assets/istockphoto-1397648059-612x612.webp";
-import istockphoto_1690939355 from "@/assets/istockphoto-1690939355-612x612.webp";
+
 import istockphoto_482366402 from "@/assets/istockphoto-482366402-612x612.webp";
 import photo_1668236543090 from "@/assets/photo-1668236543090-82eba5ee5976.avif";
 import istockphoto_1208083790 from "@/assets/istockphoto-1208083790-612x612.webp";
