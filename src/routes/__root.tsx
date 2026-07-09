@@ -86,14 +86,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Spice Garden" },
       { name: "theme-color", content: "#0F0F0F" },
       { property: "og:title", content: "Spice Garden — Luxury Fine Dining" },
-      { property: "og:description", content: "A premium restaurant website offering an immersive digital fine dining experience with interactive elements." },
+      {
+        property: "og:description",
+        content:
+          "A premium restaurant website offering an immersive digital fine dining experience with interactive elements.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Spice Garden — Luxury Fine Dining" },
-      { name: "description", content: "A premium restaurant website offering an immersive digital fine dining experience with interactive elements." },
-      { name: "twitter:description", content: "A premium restaurant website offering an immersive digital fine dining experience with interactive elements." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ab78ffb8-2b42-416c-87fe-ae55a6d2da3c/id-preview-e143db40--de1d7a42-c157-45c5-8afe-a4fcce37c5e3.lovable.app-1782974120670.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ab78ffb8-2b42-416c-87fe-ae55a6d2da3c/id-preview-e143db40--de1d7a42-c157-45c5-8afe-a4fcce37c5e3.lovable.app-1782974120670.png" },
+      {
+        name: "description",
+        content:
+          "A premium restaurant website offering an immersive digital fine dining experience with interactive elements.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "A premium restaurant website offering an immersive digital fine dining experience with interactive elements.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ab78ffb8-2b42-416c-87fe-ae55a6d2da3c/id-preview-e143db40--de1d7a42-c157-45c5-8afe-a4fcce37c5e3.lovable.app-1782974120670.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ab78ffb8-2b42-416c-87fe-ae55a6d2da3c/id-preview-e143db40--de1d7a42-c157-45c5-8afe-a4fcce37c5e3.lovable.app-1782974120670.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

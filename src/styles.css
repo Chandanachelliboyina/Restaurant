@@ -91,19 +91,19 @@
 
 :root.light {
   /* Luxury light palette — warm ivory, espresso & antique gold */
-  --background: oklch(0.975 0.008 80);   /* #FAF7F2 warm ivory */
-  --foreground: oklch(0.25 0.005 60);    /* #1F1F1F espresso */
-  --surface: oklch(0.955 0.012 82);      /* #F5EFE7 section bg */
-  --card: oklch(1 0 0);                  /* #FFFFFF crisp card */
+  --background: oklch(0.975 0.008 80); /* #FAF7F2 warm ivory */
+  --foreground: oklch(0.25 0.005 60); /* #1F1F1F espresso */
+  --surface: oklch(0.955 0.012 82); /* #F5EFE7 section bg */
+  --card: oklch(1 0 0); /* #FFFFFF crisp card */
   --card-foreground: oklch(0.25 0.005 60);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.25 0.005 60);
 
-  --primary: oklch(0.72 0.13 82);        /* #C9A33A antique gold (deeper for AA) */
+  --primary: oklch(0.72 0.13 82); /* #C9A33A antique gold (deeper for AA) */
   --primary-foreground: oklch(0.99 0.005 85);
-  --primary-glow: oklch(0.82 0.14 88);   /* warm champagne highlight */
+  --primary-glow: oklch(0.82 0.14 88); /* warm champagne highlight */
 
-  --secondary: oklch(0.46 0.06 60);      /* #7A5C3E warm brown */
+  --secondary: oklch(0.46 0.06 60); /* #7A5C3E warm brown */
   --secondary-foreground: oklch(0.99 0.005 85);
 
   --muted: oklch(0.94 0.012 80);
@@ -119,14 +119,13 @@
 
   --success: oklch(0.58 0.16 145);
 
-  --border: oklch(0.78 0.015 70 / 0.6);  /* #E9E2D8 warm border */
+  --border: oklch(0.78 0.015 70 / 0.6); /* #E9E2D8 warm border */
   --input: oklch(0.78 0.015 70 / 0.7);
   --ring: oklch(0.72 0.13 82 / 0.45);
 
   /* Soft, layered premium shadows — no harsh drop shadows */
   --shadow-luxe:
-    0 1px 2px oklch(0.3 0.02 60 / 0.04),
-    0 8px 24px -8px oklch(0.3 0.02 60 / 0.08),
+    0 1px 2px oklch(0.3 0.02 60 / 0.04), 0 8px 24px -8px oklch(0.3 0.02 60 / 0.08),
     0 24px 48px -24px oklch(0.5 0.08 70 / 0.18);
   --shadow-glow: 0 12px 40px -12px color-mix(in oklab, var(--primary) 38%, transparent);
 }
@@ -134,8 +133,16 @@
 /* ----- Light-mode component refinements ----- */
 :root.light body {
   background:
-    radial-gradient(ellipse 1200px 600px at 50% -10%, color-mix(in oklab, var(--primary) 8%, transparent), transparent 60%),
-    radial-gradient(ellipse 900px 500px at 90% 90%, color-mix(in oklab, var(--secondary) 6%, transparent), transparent 60%),
+    radial-gradient(
+      ellipse 1200px 600px at 50% -10%,
+      color-mix(in oklab, var(--primary) 8%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 900px 500px at 90% 90%,
+      color-mix(in oklab, var(--secondary) 6%, transparent),
+      transparent 60%
+    ),
     var(--background);
   background-attachment: fixed;
 }
@@ -169,13 +176,26 @@
   color: transparent;
 }
 
-:root.light ::-webkit-scrollbar-track { background: var(--surface); }
+:root.light ::-webkit-scrollbar-track {
+  background: var(--surface);
+}
 
 /* Smooth theme transition on core surfaces */
-html, body,
-header, footer, section, main, article, aside, nav,
-.glass, .glass-strong,
-[class*="bg-"], [class*="border"], [class*="text-"], [class*="shadow"] {
+html,
+body,
+header,
+footer,
+section,
+main,
+article,
+aside,
+nav,
+.glass,
+.glass-strong,
+[class*="bg-"],
+[class*="border"],
+[class*="text-"],
+[class*="shadow"] {
   transition:
     background-color 380ms ease,
     border-color 380ms ease,
@@ -183,19 +203,32 @@ header, footer, section, main, article, aside, nav,
     box-shadow 380ms ease;
 }
 /* Don't transition interactive hover/active for snappy feel */
-button, a { transition: background-color 220ms ease, color 200ms ease, box-shadow 260ms ease, transform 260ms ease, border-color 220ms ease; }
+button,
+a {
+  transition:
+    background-color 220ms ease,
+    color 200ms ease,
+    box-shadow 260ms ease,
+    transform 260ms ease,
+    border-color 220ms ease;
+}
 
 @layer base {
   * {
     border-color: var(--color-border);
   }
-  html, body {
+  html,
+  body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     font-family: var(--font-display);
     letter-spacing: -0.01em;
   }
@@ -204,8 +237,13 @@ button, a { transition: background-color 220ms ease, color 200ms ease, box-shado
     color: var(--cream);
   }
   /* Custom scrollbar */
-  ::-webkit-scrollbar { width: 10px; height: 10px; }
-  ::-webkit-scrollbar-track { background: var(--surface); }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--surface);
+  }
   ::-webkit-scrollbar-thumb {
     background: color-mix(in oklab, var(--primary) 40%, var(--surface));
     border-radius: 999px;
@@ -246,12 +284,18 @@ button, a { transition: background-color 220ms ease, color 200ms ease, box-shado
 
 @utility radial-spot {
   background:
-    radial-gradient(ellipse at top, color-mix(in oklab, var(--primary) 14%, transparent), transparent 60%),
+    radial-gradient(
+      ellipse at top,
+      color-mix(in oklab, var(--primary) 14%, transparent),
+      transparent 60%
+    ),
     var(--background);
 }
 
 @utility hover-lift {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s ease;
 }
 
 @utility section-pad {

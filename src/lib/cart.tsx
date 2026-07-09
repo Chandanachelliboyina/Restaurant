@@ -73,12 +73,21 @@ export function CartProvider({ children }: { children: ReactNode }) {
           }
           return [
             ...prev,
-            { id: dish.id, name: dish.name, image: dish.image, price: dish.price, veg: dish.veg, quantity: qty },
+            {
+              id: dish.id,
+              name: dish.name,
+              image: dish.image,
+              price: dish.price,
+              veg: dish.veg,
+              quantity: qty,
+            },
           ];
         }),
       setQuantity: (id, qty) =>
         setItems((prev) =>
-          qty <= 0 ? prev.filter((p) => p.id !== id) : prev.map((p) => (p.id === id ? { ...p, quantity: qty } : p)),
+          qty <= 0
+            ? prev.filter((p) => p.id !== id)
+            : prev.map((p) => (p.id === id ? { ...p, quantity: qty } : p)),
         ),
       remove: (id) => setItems((prev) => prev.filter((p) => p.id !== id)),
       clear: () => setItems([]),

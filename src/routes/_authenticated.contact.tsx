@@ -1,11 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter, MessageCircleMore, Send, Sparkles } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Instagram,
+  Facebook,
+  Twitter,
+  MessageCircleMore,
+  Send,
+  Sparkles,
+} from "lucide-react";
 import { toast } from "sonner";
 import { BackButton } from "@/components/BackButton";
 import { BG_IMAGES } from "@/lib/images";
-
 
 export const Route = createFileRoute("/_authenticated/contact")({
   head: () => ({
@@ -21,10 +31,13 @@ function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [chatOpen, setChatOpen] = useState(false);
   const [chatInput, setChatInput] = useState("");
-  const [chatMessages, setChatMessages] = useState<{ role: "assistant" | "user"; content: string }[]>([
+  const [chatMessages, setChatMessages] = useState<
+    { role: "assistant" | "user"; content: string }[]
+  >([
     {
       role: "assistant" as const,
-      content: "Hi! I can help with reservations, menu questions, payments, and service issues. What do you need today?",
+      content:
+        "Hi! I can help with reservations, menu questions, payments, and service issues. What do you need today?",
     },
   ]);
 
@@ -34,7 +47,11 @@ function ContactPage() {
     if (!userMessage) return;
 
     const reply = getChatReply(userMessage);
-    setChatMessages((prev) => [...prev, { role: "user", content: userMessage }, { role: "assistant", content: reply }]);
+    setChatMessages((prev) => [
+      ...prev,
+      { role: "user", content: userMessage },
+      { role: "assistant", content: reply },
+    ]);
     setChatInput("");
   };
 
@@ -62,7 +79,6 @@ function ContactPage() {
         </div>
       </section>
 
-
       <section className="section-pad pt-0">
         <div className="container-luxe grid gap-8 lg:grid-cols-[1.1fr_1fr]">
           <motion.form
@@ -78,9 +94,22 @@ function ContactPage() {
           >
             <h2 className="font-display text-3xl">Send us a note</h2>
             <div className="mt-6 grid gap-4">
-              <Input label="Name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} />
-              <Input label="Email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} />
-              <Input label="Subject" value={form.subject} onChange={(v) => setForm({ ...form, subject: v })} />
+              <Input
+                label="Name"
+                value={form.name}
+                onChange={(v) => setForm({ ...form, name: v })}
+              />
+              <Input
+                label="Email"
+                type="email"
+                value={form.email}
+                onChange={(v) => setForm({ ...form, email: v })}
+              />
+              <Input
+                label="Subject"
+                value={form.subject}
+                onChange={(v) => setForm({ ...form, subject: v })}
+              />
               <label className="block">
                 <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
                   Message
@@ -111,7 +140,8 @@ function ContactPage() {
             <div className="rounded-3xl border border-primary/25 bg-card p-6">
               <p className="divider-gold">Helpline & AI Chat</p>
               <p className="mt-3 text-sm text-muted-foreground">
-                Need help with reservations, menu ideas, or any concern? Our support assistant is ready to guide you instantly.
+                Need help with reservations, menu ideas, or any concern? Our support assistant is
+                ready to guide you instantly.
               </p>
               <button
                 type="button"
@@ -129,7 +159,10 @@ function ContactPage() {
                   </div>
                   <div className="mt-3 max-h-56 space-y-2 overflow-auto">
                     {chatMessages.map((msg, index) => (
-                      <div key={`${msg.role}-${index}`} className={`max-w-[90%] rounded-2xl px-3 py-2 text-sm ${msg.role === "assistant" ? "bg-primary/10 text-foreground" : "ml-auto bg-primary text-primary-foreground"}`}>
+                      <div
+                        key={`${msg.role}-${index}`}
+                        className={`max-w-[90%] rounded-2xl px-3 py-2 text-sm ${msg.role === "assistant" ? "bg-primary/10 text-foreground" : "ml-auto bg-primary text-primary-foreground"}`}
+                      >
                         {msg.content}
                       </div>
                     ))}
@@ -141,7 +174,11 @@ function ContactPage() {
                       placeholder="Ask about a reservation or issue"
                       className="flex-1 rounded-full border border-border bg-background/80 px-3 py-2 text-sm outline-none focus:border-primary/60"
                     />
-                    <button type="submit" className="grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground" aria-label="Send message">
+                    <button
+                      type="submit"
+                      className="grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground"
+                      aria-label="Send message"
+                    >
                       <Send className="h-4 w-4" />
                     </button>
                   </form>
@@ -199,11 +236,19 @@ function getChatReply(message: string) {
   }
 
   if (/(reservation|table|book|booking|reserve|seat|seats)/.test(lower)) {
-    intentMatches.push("We can help you reserve a table. Please share your preferred date, time, and guest count.");
+    intentMatches.push(
+      "We can help you reserve a table. Please share your preferred date, time, and guest count.",
+    );
   }
 
-  if (/(menu|dish|soup|food|allergy|vegetarian|vegan|recommend|special|taste|what do you serve)/.test(lower)) {
-    intentMatches.push("We offer a wide range of dishes, including soups, vegetarian favorites, and signature mains.");
+  if (
+    /(menu|dish|soup|food|allergy|vegetarian|vegan|recommend|special|taste|what do you serve)/.test(
+      lower,
+    )
+  ) {
+    intentMatches.push(
+      "We offer a wide range of dishes, including soups, vegetarian favorites, and signature mains.",
+    );
   }
 
   if (/(timing|time|open|close|hours|morning|night|sun|mon|today)/.test(lower)) {
@@ -211,15 +256,21 @@ function getChatReply(message: string) {
   }
 
   if (/(location|address|where|hitec|hyderabad|map|nearby)/.test(lower)) {
-    intentMatches.push("We’re located in HITEC City, Hyderabad, and the map on this page shows the area.");
+    intentMatches.push(
+      "We’re located in HITEC City, Hyderabad, and the map on this page shows the area.",
+    );
   }
 
   if (/(payment|bill|refund|charge|card|cash|price|cost)/.test(lower)) {
-    intentMatches.push("We can assist with billing or payment concerns. Share the concern and amount so we can help.");
+    intentMatches.push(
+      "We can assist with billing or payment concerns. Share the concern and amount so we can help.",
+    );
   }
 
   if (/(delay|late|order|delivery|wait|service|problem|issue|bad|angry|complaint)/.test(lower)) {
-    intentMatches.push("Sorry for the inconvenience. Tell us what happened so we can help resolve it.");
+    intentMatches.push(
+      "Sorry for the inconvenience. Tell us what happened so we can help resolve it.",
+    );
   }
 
   if (/(phone|email|contact|number|reach)/.test(lower)) {
@@ -234,8 +285,16 @@ function getChatReply(message: string) {
 }
 
 function Input({
-  label, value, onChange, type = "text",
-}: { label: string; value: string; onChange: (v: string) => void; type?: string }) {
+  label,
+  value,
+  onChange,
+  type = "text",
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  type?: string;
+}) {
   return (
     <label className="block">
       <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">

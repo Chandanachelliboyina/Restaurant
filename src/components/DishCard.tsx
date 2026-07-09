@@ -43,7 +43,9 @@ export function DishCard({ dish, index = 0 }: { dish: Dish; index?: number }) {
           aria-label="Add to favourites"
           className={cn(
             "absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full backdrop-blur-md transition",
-            fav ? "bg-primary text-primary-foreground" : "bg-background/60 text-foreground hover:bg-primary/30"
+            fav
+              ? "bg-primary text-primary-foreground"
+              : "bg-background/60 text-foreground hover:bg-primary/30",
           )}
         >
           <Heart className={cn("h-4 w-4", fav && "fill-current")} />
@@ -57,7 +59,9 @@ export function DishCard({ dish, index = 0 }: { dish: Dish; index?: number }) {
             aria-label={dish.veg ? "Vegetarian" : "Non-vegetarian"}
             title={dish.veg ? "Vegetarian" : "Non-vegetarian"}
           >
-            <span className={cn("h-2 w-2 rounded-full", dish.veg ? "bg-green-600" : "bg-gray-600")} />
+            <span
+              className={cn("h-2 w-2 rounded-full", dish.veg ? "bg-green-600" : "bg-gray-600")}
+            />
           </span>
           <span className="flex items-center gap-1 rounded-full bg-background/70 px-3 py-1 text-xs font-medium backdrop-blur-md">
             <Star className="h-3.5 w-3.5 fill-primary text-primary" />
@@ -75,8 +79,14 @@ export function DishCard({ dish, index = 0 }: { dish: Dish; index?: number }) {
           {dish.description}
         </p>
         <div className="mt-1 flex items-center gap-4 text-xs text-muted-foreground">
-          <span className="flex items-center gap-1.5"><Flame className="h-3.5 w-3.5 text-primary/80" />{dish.calories} kcal</span>
-          <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5 text-primary/80" />{dish.cookTime} min</span>
+          <span className="flex items-center gap-1.5">
+            <Flame className="h-3.5 w-3.5 text-primary/80" />
+            {dish.calories} kcal
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Clock className="h-3.5 w-3.5 text-primary/80" />
+            {dish.cookTime} min
+          </span>
         </div>
         <div className="mt-4 flex items-center gap-2">
           <div className="flex items-center gap-1 rounded-full border border-border bg-background/40 px-1">

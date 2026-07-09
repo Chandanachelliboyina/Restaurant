@@ -7,7 +7,6 @@ import { DishCard } from "@/components/DishCard";
 import { BackButton } from "@/components/BackButton";
 import { BG_IMAGES } from "@/lib/images";
 
-
 export const Route = createFileRoute("/_authenticated/menu")({
   head: () => ({
     meta: [
@@ -59,7 +58,6 @@ function MenuPage() {
         </div>
       </section>
 
-
       <section className="container-luxe">
         <div className="glass-strong sticky top-24 z-30 flex flex-col gap-4 rounded-3xl p-4 md:flex-row md:items-center">
           <div className="flex items-center gap-2 rounded-2xl border border-border bg-background/40 px-4 py-2.5 md:w-72">
@@ -86,9 +84,7 @@ function MenuPage() {
                 key={c}
                 onClick={() => setActive(c)}
                 className={`relative shrink-0 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition ${
-                  active === c
-                    ? "text-primary-foreground"
-                    : "text-foreground/70 hover:text-primary"
+                  active === c ? "text-primary-foreground" : "text-foreground/70 hover:text-primary"
                 }`}
               >
                 {active === c && (

@@ -29,7 +29,10 @@ export const Route = createFileRoute("/_authenticated/")({
           "A Michelin-inspired fine dining sanctuary. Reserve your table at Spice Garden today.",
       },
       { property: "og:title", content: "Spice Garden — Good Food, Good Mood" },
-      { property: "og:description", content: "Cinematic fine dining crafted by world-class chefs." },
+      {
+        property: "og:description",
+        content: "Cinematic fine dining crafted by world-class chefs.",
+      },
       { property: "og:image", content: hero },
     ],
   }),
@@ -61,10 +64,7 @@ function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section
-      ref={ref}
-      className="relative -mt-24 flex min-h-[100svh] items-center overflow-hidden"
-    >
+    <section ref={ref} className="relative -mt-24 flex min-h-[100svh] items-center overflow-hidden">
       <motion.div style={{ scale }} className="absolute inset-0">
         <img src={hero} alt="" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background" />
@@ -210,7 +210,13 @@ function WhyChooseUs() {
 }
 
 function PopularDishes() {
-  const featuredDishes = DISHES.filter((d) => d.popular || d.category === "Biryani" || d.category === "North Indian" || d.category === "Desserts").slice(0, 8);
+  const featuredDishes = DISHES.filter(
+    (d) =>
+      d.popular ||
+      d.category === "Biryani" ||
+      d.category === "North Indian" ||
+      d.category === "Desserts",
+  ).slice(0, 8);
 
   return (
     <section className="section-pad bg-surface">
@@ -289,9 +295,9 @@ function ChefSection() {
             Chef Marco Aurelio
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            With over 20 years of experience across Paris, Tokyo and Delhi, Chef Marco creates
-            menus that balance elegance, comfort and bold spice. Every dish is shaped by technique,
-            warmth and a deep respect for tradition.
+            With over 20 years of experience across Paris, Tokyo and Delhi, Chef Marco creates menus
+            that balance elegance, comfort and bold spice. Every dish is shaped by technique, warmth
+            and a deep respect for tradition.
           </p>
           <p className="mt-4 font-display text-2xl italic gold-text">"Cook less. Cook better."</p>
           <div className="mt-8 grid grid-cols-3 gap-4">
@@ -300,14 +306,9 @@ function ChefSection() {
               ["15", "Awards"],
               ["All", "Menu Dishes"],
             ].map(([n, l]) => (
-              <div
-                key={l}
-                className="rounded-2xl border border-border bg-card p-5 text-center"
-              >
+              <div key={l} className="rounded-2xl border border-border bg-card p-5 text-center">
                 <p className="font-display text-3xl gold-text">{n}</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                  {l}
-                </p>
+                <p className="mt-1 text-xs uppercase tracking-[0.3em] text-muted-foreground">{l}</p>
               </div>
             ))}
           </div>
@@ -381,8 +382,12 @@ function TodaysSpecial() {
               <h2 className="mt-4 font-display text-4xl md:text-5xl">{dish.name}</h2>
               <p className="mt-4 max-w-md text-muted-foreground">{dish.description}</p>
               <div className="mt-6 flex flex-wrap items-center gap-6 text-sm">
-                <span className="flex items-center gap-2"><Star className="h-4 w-4 fill-primary text-primary" /> {dish.rating}</span>
-                <span className="font-display text-3xl gold-text">{formatCurrency(dish.price)}</span>
+                <span className="flex items-center gap-2">
+                  <Star className="h-4 w-4 fill-primary text-primary" /> {dish.rating}
+                </span>
+                <span className="font-display text-3xl gold-text">
+                  {formatCurrency(dish.price)}
+                </span>
               </div>
               <Link
                 to="/reservations"
@@ -396,7 +401,12 @@ function TodaysSpecial() {
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full border border-primary/40 shadow-luxe"
             >
-              <img src={dish.image} alt={dish.name} loading="lazy" className="h-full w-full object-cover" />
+              <img
+                src={dish.image}
+                alt={dish.name}
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
             </motion.div>
           </div>
         </motion.div>
@@ -421,9 +431,7 @@ function Categories() {
               transition={{ delay: i * 0.06 }}
               className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 transition hover:border-primary/40 hover:shadow-luxe"
             >
-              <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
-                0{i + 1}
-              </p>
+              <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">0{i + 1}</p>
               <h3 className="mt-3 font-display text-3xl transition group-hover:gold-text">{c}</h3>
               <Link
                 to="/menu"
@@ -461,9 +469,7 @@ function Testimonials() {
               </blockquote>
               <figcaption className="mt-6">
                 <p className="font-display text-lg">{t.name}</p>
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                  {t.role}
-                </p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{t.role}</p>
               </figcaption>
             </motion.figure>
           ))}
@@ -566,9 +572,7 @@ function SectionHeader({
         transition={{ duration: 0.7 }}
       >
         <p className="divider-gold">{eyebrow}</p>
-        <h2 className="mt-3 max-w-2xl font-display text-4xl leading-tight md:text-5xl">
-          {title}
-        </h2>
+        <h2 className="mt-3 max-w-2xl font-display text-4xl leading-tight md:text-5xl">{title}</h2>
       </motion.div>
       {action}
     </div>

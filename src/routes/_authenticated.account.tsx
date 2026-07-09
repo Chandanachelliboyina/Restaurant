@@ -36,7 +36,13 @@ function AccountPage() {
     e.preventDefault();
     setSaving(true);
     const { error } = await supabase.auth.updateUser({
-      data: { first_name: firstName, last_name: lastName, phone, delivery_address: deliveryAddress, avatar_url: avatarUrl },
+      data: {
+        first_name: firstName,
+        last_name: lastName,
+        phone,
+        delivery_address: deliveryAddress,
+        avatar_url: avatarUrl,
+      },
     });
     setSaving(false);
     if (error) return toast.error(error.message);
@@ -50,7 +56,9 @@ function AccountPage() {
     setUploading(true);
     try {
       const path = `avatars/${user.id}/avatar-${Date.now()}`;
-      const { error: upErr } = await supabase.storage.from("avatars").upload(path, file, { upsert: true });
+      const { error: upErr } = await supabase.storage
+        .from("avatars")
+        .upload(path, file, { upsert: true });
       if (upErr) throw upErr;
       const { data } = supabase.storage.from("avatars").getPublicUrl(path);
       const publicUrl = data.publicUrl;
@@ -80,7 +88,11 @@ function AccountPage() {
     <section className="section-pad">
       <div className="container-luxe max-w-3xl">
         <BackButton />
-        <motion.h1 initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="font-display text-4xl md:text-5xl">
+        <motion.h1
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="font-display text-4xl md:text-5xl"
+        >
           Account
         </motion.h1>
 
@@ -90,10 +102,18 @@ function AccountPage() {
               {initials}
             </div>
             <div className="flex-1">
-              <p className="font-display text-2xl">{firstName || "Guest"} {lastName}</p>
+              <p className="font-display text-2xl">
+                {firstName || "Guest"} {lastName}
+              </p>
               <p className="text-sm text-muted-foreground">{user.email}</p>
-              <span className={`mt-2 inline-flex items-center gap-1 rounded-full px-3 py-1 text-[0.65rem] uppercase tracking-[0.25em] ${verified ? "bg-success/15 text-success" : "bg-destructive/15 text-destructive"}`}>
-                {verified ? <ShieldCheck className="h-3 w-3" /> : <ShieldAlert className="h-3 w-3" />}
+              <span
+                className={`mt-2 inline-flex items-center gap-1 rounded-full px-3 py-1 text-[0.65rem] uppercase tracking-[0.25em] ${verified ? "bg-success/15 text-success" : "bg-destructive/15 text-destructive"}`}
+              >
+                {verified ? (
+                  <ShieldCheck className="h-3 w-3" />
+                ) : (
+                  <ShieldAlert className="h-3 w-3" />
+                )}
                 {verified ? "Verified" : "Unverified"}
               </span>
             </div>
@@ -108,14 +128,23 @@ function AccountPage() {
           </dl>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <button onClick={() => setEditing((v) => !v)} className="rounded-full border border-primary/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] hover:bg-primary/10">
+            <button
+              onClick={() => setEditing((v) => !v)}
+              className="rounded-full border border-primary/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] hover:bg-primary/10"
+            >
               {editing ? "Cancel" : "Edit Profile"}
             </button>
-            <button onClick={() => setChangingPw((v) => !v)} className="rounded-full border border-primary/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] hover:bg-primary/10">
+            <button
+              onClick={() => setChangingPw((v) => !v)}
+              className="rounded-full border border-primary/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] hover:bg-primary/10"
+            >
               {changingPw ? "Cancel" : "Change Password"}
             </button>
             <button
-              onClick={async () => { await logout(); navigate({ to: "/login" }); }}
+              onClick={async () => {
+                await logout();
+                navigate({ to: "/login" });
+              }}
               className="inline-flex items-center gap-2 rounded-full bg-destructive/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-destructive hover:bg-destructive/20"
             >
               <LogOut className="h-3 w-3" /> Logout
@@ -123,19 +152,41 @@ function AccountPage() {
           </div>
 
           {editing && (
-            <form onSubmit={saveProfile} className="mt-6 grid gap-4 border-t border-border pt-6 sm:grid-cols-2">
+            <form
+              onSubmit={saveProfile}
+              className="mt-6 grid gap-4 border-t border-border pt-6 sm:grid-cols-2"
+            >
               <Field label="First name" value={firstName} onChange={setFirstName} />
               <Field label="Last name" value={lastName} onChange={setLastName} />
               <Field label="Phone" value={phone} onChange={setPhone} />
-              <Field label="Delivery address" value={deliveryAddress} onChange={setDeliveryAddress} className="sm:col-span-2" />
+              <Field
+                label="Delivery address"
+                value={deliveryAddress}
+                onChange={setDeliveryAddress}
+                className="sm:col-span-2"
+              />
               <label className="sm:col-span-2">
-                <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Profile photo</span>
+                <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                  Profile photo
+                </span>
                 <div className="flex items-center gap-3">
-                  <img src={avatarUrl || undefined} alt="avatar" className="h-12 w-12 rounded-full object-cover" />
-                  <input type="file" accept="image/*" onChange={(e) => uploadAvatar(e.target.files?.[0] ?? null)} disabled={uploading} />
+                  <img
+                    src={avatarUrl || undefined}
+                    alt="avatar"
+                    className="h-12 w-12 rounded-full object-cover"
+                  />
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => uploadAvatar(e.target.files?.[0] ?? null)}
+                    disabled={uploading}
+                  />
                 </div>
               </label>
-              <button disabled={saving} className="sm:col-span-2 rounded-full bg-primary px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground disabled:opacity-60">
+              <button
+                disabled={saving}
+                className="sm:col-span-2 rounded-full bg-primary px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground disabled:opacity-60"
+              >
                 {saving ? "Saving…" : "Save Changes"}
               </button>
             </form>
@@ -167,10 +218,24 @@ function Info({ icon: Icon, l, v }: { icon: any; l: string; v: string }) {
   );
 }
 
-function Field({ label, value, onChange, type = "text", className = "" }: { label: string; value: string; onChange: (v: string) => void; type?: string; className?: string }) {
+function Field({
+  label,
+  value,
+  onChange,
+  type = "text",
+  className = "",
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  type?: string;
+  className?: string;
+}) {
   return (
     <label className={`block ${className}`}>
-      <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">{label}</span>
+      <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+        {label}
+      </span>
       <input
         type={type}
         value={value}

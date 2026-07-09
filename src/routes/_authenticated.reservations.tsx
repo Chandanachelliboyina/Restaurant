@@ -9,7 +9,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { BG_IMAGES } from "@/lib/images";
 
-
 export const Route = createFileRoute("/_authenticated/reservations")({
   head: () => ({
     meta: [
@@ -100,7 +99,12 @@ function ReservationsPage() {
     <>
       <section className="relative overflow-hidden py-24 text-center md:py-32">
         <div className="absolute inset-0 -z-10">
-          <img src={BG_IMAGES.reservations} alt="" className="h-full w-full object-cover" loading="lazy" />
+          <img
+            src={BG_IMAGES.reservations}
+            alt=""
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
           <div className="absolute inset-0 bg-black/70" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background" />
         </div>
@@ -118,7 +122,6 @@ function ReservationsPage() {
         </div>
       </section>
 
-
       <section className="section-pad pt-0">
         <div className="container-luxe grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <motion.form
@@ -130,9 +133,26 @@ function ReservationsPage() {
           >
             <h2 className="font-display text-3xl">Your details</h2>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <Field label="Full name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} required />
-              <Field label="Email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} required />
-              <Field label="Phone" type="tel" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} required />
+              <Field
+                label="Full name"
+                value={form.name}
+                onChange={(v) => setForm({ ...form, name: v })}
+                required
+              />
+              <Field
+                label="Email"
+                type="email"
+                value={form.email}
+                onChange={(v) => setForm({ ...form, email: v })}
+                required
+              />
+              <Field
+                label="Phone"
+                type="tel"
+                value={form.phone}
+                onChange={(v) => setForm({ ...form, phone: v })}
+                required
+              />
               <Field
                 label="Guests"
                 type="number"
@@ -202,17 +222,29 @@ function ReservationsPage() {
             <div className="rounded-3xl border border-border bg-card p-7">
               <p className="divider-gold">Service hours</p>
               <ul className="mt-4 space-y-2 text-sm text-foreground/80">
-                <li className="flex justify-between"><span>Tuesday — Thursday</span><span className="text-muted-foreground">18:00 – 22:30</span></li>
-                <li className="flex justify-between"><span>Friday — Saturday</span><span className="text-muted-foreground">17:30 – 23:00</span></li>
-                <li className="flex justify-between"><span>Sunday</span><span className="text-muted-foreground">12:00 – 21:00</span></li>
-                <li className="flex justify-between"><span>Monday</span><span className="text-muted-foreground">Closed</span></li>
+                <li className="flex justify-between">
+                  <span>Tuesday — Thursday</span>
+                  <span className="text-muted-foreground">18:00 – 22:30</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Friday — Saturday</span>
+                  <span className="text-muted-foreground">17:30 – 23:00</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Sunday</span>
+                  <span className="text-muted-foreground">12:00 – 21:00</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Monday</span>
+                  <span className="text-muted-foreground">Closed</span>
+                </li>
               </ul>
             </div>
             <div className="rounded-3xl border border-border bg-card p-7">
               <p className="divider-gold">Policy</p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                A card is required to confirm. Cancellations are complimentary up to 48 hours
-                before service. Tasting menus require pre-payment.
+                A card is required to confirm. Cancellations are complimentary up to 48 hours before
+                service. Tasting menus require pre-payment.
               </p>
             </div>
           </motion.aside>
@@ -288,10 +320,27 @@ function ReservationsPage() {
 }
 
 function Field({
-  label, value, onChange, type = "text", required, placeholder, icon, className = "", min, max,
+  label,
+  value,
+  onChange,
+  type = "text",
+  required,
+  placeholder,
+  icon,
+  className = "",
+  min,
+  max,
 }: {
-  label: string; value: string; onChange: (v: string) => void; type?: string; required?: boolean;
-  placeholder?: string; icon?: React.ReactNode; className?: string; min?: number | string; max?: number | string;
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  type?: string;
+  required?: boolean;
+  placeholder?: string;
+  icon?: React.ReactNode;
+  className?: string;
+  min?: number | string;
+  max?: number | string;
 }) {
   return (
     <label className={`block ${className}`}>
@@ -316,9 +365,17 @@ function Field({
 }
 
 function SelectField({
-  label, value, onChange, options, icon,
+  label,
+  value,
+  onChange,
+  options,
+  icon,
 }: {
-  label: string; value: string; onChange: (v: string) => void; options: string[]; icon?: React.ReactNode;
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  options: string[];
+  icon?: React.ReactNode;
 }) {
   return (
     <label className="block">

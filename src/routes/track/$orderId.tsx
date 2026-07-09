@@ -111,15 +111,24 @@ function TrackOrderPage() {
     <section className="section-pad">
       <div className="container-luxe max-w-5xl">
         <BackButton />
-        <motion.h1 initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="font-display text-4xl md:text-5xl">
+        <motion.h1
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="font-display text-4xl md:text-5xl"
+        >
           Track your order
         </motion.h1>
 
         {!user ? (
           <div className="mt-10 rounded-3xl border border-border bg-card p-12 text-center">
             <XCircle className="mx-auto h-12 w-12 text-destructive" />
-            <p className="mt-4 text-muted-foreground">You need to sign in to view order tracking.</p>
-            <Link to="/login" className="mt-6 inline-block rounded-full bg-primary px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground">
+            <p className="mt-4 text-muted-foreground">
+              You need to sign in to view order tracking.
+            </p>
+            <Link
+              to="/login"
+              className="mt-6 inline-block rounded-full bg-primary px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground"
+            >
               Sign In
             </Link>
           </div>
@@ -128,14 +137,22 @@ function TrackOrderPage() {
         ) : error ? (
           <div className="mt-10 rounded-3xl border border-border bg-card p-12 text-center">
             <p className="text-destructive">{error}</p>
-            <Link to="/orders" className="mt-6 inline-block rounded-full border border-border px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-foreground hover:border-primary hover:text-primary">
+            <Link
+              to="/orders"
+              className="mt-6 inline-block rounded-full border border-border px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-foreground hover:border-primary hover:text-primary"
+            >
               Back to orders
             </Link>
           </div>
         ) : !order ? (
           <div className="mt-10 rounded-3xl border border-border bg-card p-12 text-center">
-            <p className="text-muted-foreground">Order not found or you don't have access to this order.</p>
-            <Link to="/orders" className="mt-6 inline-block rounded-full border border-border px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-foreground hover:border-primary hover:text-primary">
+            <p className="text-muted-foreground">
+              Order not found or you don't have access to this order.
+            </p>
+            <Link
+              to="/orders"
+              className="mt-6 inline-block rounded-full border border-border px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-foreground hover:border-primary hover:text-primary"
+            >
               View orders
             </Link>
           </div>
@@ -144,14 +161,27 @@ function TrackOrderPage() {
             <div className="rounded-3xl border border-border bg-card p-6">
               <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Order #{order.order_number}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">Placed {new Date(order.created_at).toLocaleString()}</p>
-                  {order.address && <p className="mt-1 text-sm text-muted-foreground">Delivering to {order.address}</p>}
+                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    Order #{order.order_number}
+                  </p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    Placed {new Date(order.created_at).toLocaleString()}
+                  </p>
+                  {order.address && (
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Delivering to {order.address}
+                    </p>
+                  )}
                 </div>
                 <div className="grid gap-2 sm:grid-cols-2">
                   <div className="rounded-3xl border border-border bg-background p-4 text-sm">
                     <p className="text-muted-foreground">Payment</p>
-                    <p className="mt-2 font-semibold">{order.payment_method ?? (order.notes?.startsWith("Payment:") ? order.notes.replace(/^Payment:\s*/, "") : "Online Payment")}</p>
+                    <p className="mt-2 font-semibold">
+                      {order.payment_method ??
+                        (order.notes?.startsWith("Payment:")
+                          ? order.notes.replace(/^Payment:\s*/, "")
+                          : "Online Payment")}
+                    </p>
                     <p className="text-xs text-muted-foreground">{order.payment_status}</p>
                   </div>
                   <div className="rounded-3xl border border-border bg-background p-4 text-sm">
@@ -165,19 +195,30 @@ function TrackOrderPage() {
 
             <div className="rounded-3xl border border-border bg-card p-6">
               <h2 className="font-display text-2xl">Live order status</h2>
-              <p className="mt-2 text-sm text-muted-foreground">This timeline updates automatically when your order moves to the next stage.</p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                This timeline updates automatically when your order moves to the next stage.
+              </p>
               <div className="mt-6 space-y-4">
                 {STAGES.map((stage, index) => {
                   const completed = index < activeStage;
                   const active = index === activeStage;
                   const Icon = stage.icon;
                   return (
-                    <div key={stage.id} className="flex gap-4 rounded-3xl border border-border bg-background p-4">
-                      <div className={`grid h-12 w-12 place-items-center rounded-3xl ${completed ? "bg-success/15 text-success" : active ? "bg-primary/15 text-primary" : "bg-muted-foreground/10 text-muted-foreground"}`}>
+                    <div
+                      key={stage.id}
+                      className="flex gap-4 rounded-3xl border border-border bg-background p-4"
+                    >
+                      <div
+                        className={`grid h-12 w-12 place-items-center rounded-3xl ${completed ? "bg-success/15 text-success" : active ? "bg-primary/15 text-primary" : "bg-muted-foreground/10 text-muted-foreground"}`}
+                      >
                         <Icon className="h-5 w-5" />
                       </div>
                       <div className="flex-1">
-                        <p className={`font-medium ${active ? "text-foreground" : "text-muted-foreground"}`}>{stage.label}</p>
+                        <p
+                          className={`font-medium ${active ? "text-foreground" : "text-muted-foreground"}`}
+                        >
+                          {stage.label}
+                        </p>
                         <p className="text-xs text-muted-foreground">
                           {completed ? "Completed" : active ? "Current stage" : "Waiting"}
                         </p>
@@ -193,8 +234,15 @@ function TrackOrderPage() {
                 <p className="text-sm text-muted-foreground">Order items</p>
                 <ul className="mt-4 space-y-3">
                   {order.order_items.map((item) => (
-                    <li key={item.id} className="flex items-center gap-4 rounded-3xl border border-border p-3">
-                      <img src={item.image ?? "https://via.placeholder.com/80"} alt={item.name} className="h-16 w-16 rounded-2xl object-cover" />
+                    <li
+                      key={item.id}
+                      className="flex items-center gap-4 rounded-3xl border border-border p-3"
+                    >
+                      <img
+                        src={item.image ?? "https://via.placeholder.com/80"}
+                        alt={item.name}
+                        className="h-16 w-16 rounded-2xl object-cover"
+                      />
                       <div className="flex-1">
                         <p className="font-medium">{item.name}</p>
                         <p className="text-xs text-muted-foreground">Qty {item.quantity}</p>
@@ -208,11 +256,26 @@ function TrackOrderPage() {
               <div className="rounded-3xl border border-border bg-background p-5">
                 <p className="text-sm text-muted-foreground">Order summary</p>
                 <div className="mt-4 space-y-3 text-sm text-muted-foreground">
-                  <div className="flex justify-between"><span>Subtotal</span><span>{formatCurrency(order.subtotal)}</span></div>
-                  <div className="flex justify-between"><span>Tax</span><span>{formatCurrency(order.tax)}</span></div>
-                  <div className="flex justify-between"><span>Delivery fee</span><span>{formatCurrency(order.delivery_fee)}</span></div>
-                  <div className="flex justify-between"><span>Discount</span><span>-{formatCurrency(order.discount)}</span></div>
-                  <div className="border-t border-border pt-3 font-semibold flex justify-between"><span>Total</span><span>{formatCurrency(order.total)}</span></div>
+                  <div className="flex justify-between">
+                    <span>Subtotal</span>
+                    <span>{formatCurrency(order.subtotal)}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Tax</span>
+                    <span>{formatCurrency(order.tax)}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Delivery fee</span>
+                    <span>{formatCurrency(order.delivery_fee)}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Discount</span>
+                    <span>-{formatCurrency(order.discount)}</span>
+                  </div>
+                  <div className="border-t border-border pt-3 font-semibold flex justify-between">
+                    <span>Total</span>
+                    <span>{formatCurrency(order.total)}</span>
+                  </div>
                 </div>
               </div>
             </div>

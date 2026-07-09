@@ -44,7 +44,9 @@ function ProfilePage() {
             <div className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-primary/20 font-display text-2xl text-primary ring-1 ring-primary/40">
               {initials}
             </div>
-            <p className="mt-4 font-display text-xl">{firstName} {lastName}</p>
+            <p className="mt-4 font-display text-xl">
+              {firstName} {lastName}
+            </p>
             <p className="text-xs text-muted-foreground">{user.email}</p>
             <span className="mt-3 inline-block rounded-full bg-primary/15 px-3 py-1 text-[0.65rem] uppercase tracking-[0.3em] text-primary">
               Gold Member
@@ -115,7 +117,10 @@ function ProfilePage() {
                 { date: "Fri, 25 Oct · 20:00", guests: 4, status: "Pending" },
                 { date: "Sun, 03 Nov · 13:00", guests: 6, status: "Confirmed" },
               ].map((r) => (
-                <div key={r.date} className="flex flex-wrap items-center justify-between gap-3 rounded-3xl border border-border bg-card p-6">
+                <div
+                  key={r.date}
+                  className="flex flex-wrap items-center justify-between gap-3 rounded-3xl border border-border bg-card p-6"
+                >
                   <div>
                     <p className="font-display text-lg">{r.date}</p>
                     <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
@@ -144,7 +149,8 @@ function ProfilePage() {
                   <div className="min-w-0 flex-1">
                     <p className="font-display text-lg">{d.name}</p>
                     <p className="flex items-center gap-1 text-xs text-muted-foreground">
-                      <Star className="h-3 w-3 fill-primary text-primary" /> {d.rating} · {formatCurrency(d.price)}
+                      <Star className="h-3 w-3 fill-primary text-primary" /> {d.rating} ·{" "}
+                      {formatCurrency(d.price)}
                     </p>
                   </div>
                 </div>

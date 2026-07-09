@@ -40,7 +40,16 @@ function CartPage() {
   const [checkoutStep, setCheckoutStep] = useState<"cart" | "payment" | "gateway">("cart");
   const [paymentMethod, setPaymentMethod] = useState<"cod" | "online" | "">("");
   const [paymentError, setPaymentError] = useState<string | null>(null);
-  const [onlineOption, setOnlineOption] = useState<"PhonePe" | "Google Pay" | "Paytm" | "UPI ID" | "Credit Card" | "Debit Card" | "Net Banking" | "">("");
+  const [onlineOption, setOnlineOption] = useState<
+    | "PhonePe"
+    | "Google Pay"
+    | "Paytm"
+    | "UPI ID"
+    | "Credit Card"
+    | "Debit Card"
+    | "Net Banking"
+    | ""
+  >("");
   const [upiId, setUpiId] = useState("");
 
   const selectPaymentMethod = (method: "cod" | "online") => {
@@ -79,7 +88,8 @@ function CartPage() {
         throw new Error(userError.message || "Unable to verify your account.");
       }
       authUserId = userData?.user?.id ?? null;
-      deliveryAddress = (userData?.user?.user_metadata?.delivery_address as string | undefined) ?? deliveryAddress;
+      deliveryAddress =
+        (userData?.user?.user_metadata?.delivery_address as string | undefined) ?? deliveryAddress;
     }
 
     if (!authUserId) {
@@ -211,14 +221,21 @@ function CartPage() {
     <section className="section-pad">
       <div className="container-luxe max-w-5xl">
         <BackButton />
-        <motion.h1 initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="font-display text-4xl md:text-5xl">
+        <motion.h1
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="font-display text-4xl md:text-5xl"
+        >
           Your Cart
         </motion.h1>
         {items.length === 0 ? (
           <div className="mt-10 rounded-3xl border border-border bg-card p-12 text-center">
             <ShoppingBag className="mx-auto h-10 w-10 text-primary" />
             <p className="mt-4 text-muted-foreground">Your cart is empty.</p>
-            <Link to="/menu" className="mt-6 inline-block rounded-full bg-primary px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground">
+            <Link
+              to="/menu"
+              className="mt-6 inline-block rounded-full bg-primary px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground"
+            >
               Browse Menu
             </Link>
           </div>
@@ -232,19 +249,37 @@ function CartPage() {
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <p className="font-display text-lg">{i.name}</p>
-                        <p className="text-xs text-muted-foreground">{formatCurrency(i.price)} each</p>
+                        <p className="text-xs text-muted-foreground">
+                          {formatCurrency(i.price)} each
+                        </p>
                       </div>
-                      <button onClick={() => remove(i.id)} aria-label="Remove" className="text-muted-foreground hover:text-destructive">
+                      <button
+                        onClick={() => remove(i.id)}
+                        aria-label="Remove"
+                        className="text-muted-foreground hover:text-destructive"
+                      >
                         <Trash2 className="h-4 w-4" />
                       </button>
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="inline-flex items-center rounded-full border border-border">
-                        <button onClick={() => setQuantity(i.id, i.quantity - 1)} className="grid h-8 w-8 place-items-center"><Minus className="h-3 w-3" /></button>
+                        <button
+                          onClick={() => setQuantity(i.id, i.quantity - 1)}
+                          className="grid h-8 w-8 place-items-center"
+                        >
+                          <Minus className="h-3 w-3" />
+                        </button>
                         <span className="w-8 text-center text-sm">{i.quantity}</span>
-                        <button onClick={() => setQuantity(i.id, i.quantity + 1)} className="grid h-8 w-8 place-items-center"><Plus className="h-3 w-3" /></button>
+                        <button
+                          onClick={() => setQuantity(i.id, i.quantity + 1)}
+                          className="grid h-8 w-8 place-items-center"
+                        >
+                          <Plus className="h-3 w-3" />
+                        </button>
                       </div>
-                      <p className="font-medium text-primary">{formatCurrency(i.price * i.quantity)}</p>
+                      <p className="font-medium text-primary">
+                        {formatCurrency(i.price * i.quantity)}
+                      </p>
                     </div>
                   </div>
                 </li>
@@ -256,9 +291,12 @@ function CartPage() {
                 <Row l="Subtotal" v={totals.subtotal} />
                 <Row l="Tax (8%)" v={totals.tax} />
                 <Row l="Delivery" v={totals.delivery} />
-                {totals.discount > 0 && <Row l="Discount" v={-totals.discount} className="text-success" />}
+                {totals.discount > 0 && (
+                  <Row l="Discount" v={-totals.discount} className="text-success" />
+                )}
                 <div className="mt-2 border-t border-border pt-3 flex justify-between font-display text-lg">
-                  <span>Total</span><span className="text-primary">{formatCurrency(totals.total)}</span>
+                  <span>Total</span>
+                  <span className="text-primary">{formatCurrency(totals.total)}</span>
                 </div>
               </dl>
               <button
@@ -278,7 +316,9 @@ function CartPage() {
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="font-display text-xl">Select Payment Method</p>
-                    <p className="mt-2 text-sm text-muted-foreground">Choose your preferred method before confirming the order.</p>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Choose your preferred method before confirming the order.
+                    </p>
                   </div>
                   <button
                     type="button"
@@ -306,7 +346,9 @@ function CartPage() {
                   />
                 </div>
 
-                {paymentError ? <p className="mt-4 text-sm text-destructive">{paymentError}</p> : null}
+                {paymentError ? (
+                  <p className="mt-4 text-sm text-destructive">{paymentError}</p>
+                ) : null}
               </div>
               <div className="rounded-3xl border border-border bg-card p-6">
                 <h3 className="font-display text-xl">Order review</h3>
@@ -314,10 +356,22 @@ function CartPage() {
                   <Row l="Subtotal" v={totals.subtotal} />
                   <Row l="Tax (8%)" v={totals.tax} />
                   <Row l="Delivery" v={totals.delivery} />
-                  {totals.discount > 0 && <Row l="Discount" v={-totals.discount} className="text-success" />}
-                  <div className="flex justify-between"><span>Payment method</span><span className="font-medium">{paymentMethod === "cod" ? "Cash on Delivery" : paymentMethod === "online" ? "Online Payment" : "—"}</span></div>
+                  {totals.discount > 0 && (
+                    <Row l="Discount" v={-totals.discount} className="text-success" />
+                  )}
+                  <div className="flex justify-between">
+                    <span>Payment method</span>
+                    <span className="font-medium">
+                      {paymentMethod === "cod"
+                        ? "Cash on Delivery"
+                        : paymentMethod === "online"
+                          ? "Online Payment"
+                          : "—"}
+                    </span>
+                  </div>
                   <div className="mt-2 border-t border-border pt-3 flex justify-between font-display text-lg">
-                    <span>Total</span><span className="text-primary">{formatCurrency(totals.total)}</span>
+                    <span>Total</span>
+                    <span className="text-primary">{formatCurrency(totals.total)}</span>
                   </div>
                 </dl>
                 <button
@@ -336,9 +390,12 @@ function CartPage() {
                 <Row l="Subtotal" v={totals.subtotal} />
                 <Row l="Tax (8%)" v={totals.tax} />
                 <Row l="Delivery" v={totals.delivery} />
-                {totals.discount > 0 && <Row l="Discount" v={-totals.discount} className="text-success" />}
+                {totals.discount > 0 && (
+                  <Row l="Discount" v={-totals.discount} className="text-success" />
+                )}
                 <div className="mt-2 border-t border-border pt-3 flex justify-between font-display text-lg">
-                  <span>Total</span><span className="text-primary">{formatCurrency(totals.total)}</span>
+                  <span>Total</span>
+                  <span className="text-primary">{formatCurrency(totals.total)}</span>
                 </div>
               </dl>
             </aside>
@@ -350,7 +407,9 @@ function CartPage() {
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="font-display text-xl">Complete Online Payment</p>
-                    <p className="mt-2 text-sm text-muted-foreground">Pick a payment option and complete the transaction to place your order.</p>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Pick a payment option and complete the transaction to place your order.
+                    </p>
                   </div>
                   <button
                     type="button"
@@ -374,10 +433,10 @@ function CartPage() {
                         {option === "UPI ID"
                           ? "Pay with your UPI handle."
                           : option === "Credit Card" || option === "Debit Card"
-                          ? "Enter your card details at checkout."
-                          : option === "Net Banking"
-                          ? "Pay using your preferred bank."
-                          : `Pay with ${option}.`}
+                            ? "Enter your card details at checkout."
+                            : option === "Net Banking"
+                              ? "Pay using your preferred bank."
+                              : `Pay with ${option}.`}
                       </p>
                     </button>
                   ))}
@@ -401,10 +460,15 @@ function CartPage() {
 
               <div className="rounded-3xl border border-border bg-card p-6">
                 <h3 className="font-display text-xl">Payment summary</h3>
-                <p className="mt-3 text-sm text-muted-foreground">Once payment is successful, your order will be created and saved.</p>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  Once payment is successful, your order will be created and saved.
+                </p>
                 <dl className="mt-4 space-y-2 text-sm">
                   <Row l="Amount" v={totals.total} />
-                  <div className="flex justify-between"><span>Payment option</span><span className="font-medium">{onlineOption || "—"}</span></div>
+                  <div className="flex justify-between">
+                    <span>Payment option</span>
+                    <span className="font-medium">{onlineOption || "—"}</span>
+                  </div>
                 </dl>
                 <button
                   type="button"
@@ -422,9 +486,12 @@ function CartPage() {
                 <Row l="Subtotal" v={totals.subtotal} />
                 <Row l="Tax (8%)" v={totals.tax} />
                 <Row l="Delivery" v={totals.delivery} />
-                {totals.discount > 0 && <Row l="Discount" v={-totals.discount} className="text-success" />}
+                {totals.discount > 0 && (
+                  <Row l="Discount" v={-totals.discount} className="text-success" />
+                )}
                 <div className="mt-2 border-t border-border pt-3 flex justify-between font-display text-lg">
-                  <span>Total</span><span className="text-primary">{formatCurrency(totals.total)}</span>
+                  <span>Total</span>
+                  <span className="text-primary">{formatCurrency(totals.total)}</span>
                 </div>
               </dl>
             </aside>
@@ -463,7 +530,9 @@ function PaymentOption({
       onClick={onSelect}
       className={`group flex w-full items-start gap-4 rounded-3xl border p-5 text-left transition ${selected ? "border-primary bg-primary/10" : "border-border bg-background hover:border-primary/60"}`}
     >
-      <div className={`grid h-12 w-12 place-items-center rounded-3xl ${selected ? "bg-primary text-primary-foreground" : "bg-background text-muted-foreground"}`}>
+      <div
+        className={`grid h-12 w-12 place-items-center rounded-3xl ${selected ? "bg-primary text-primary-foreground" : "bg-background text-muted-foreground"}`}
+      >
         <Icon className="h-5 w-5" />
       </div>
       <div>

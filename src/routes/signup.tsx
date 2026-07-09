@@ -17,7 +17,10 @@ const schema = z
     confirm: z.string(),
     terms: z.literal(true, { message: "Accept the terms to continue" } as never),
   })
-  .refine((d) => d.password === d.confirm, { path: ["confirm"], message: "Passwords do not match" });
+  .refine((d) => d.password === d.confirm, {
+    path: ["confirm"],
+    message: "Passwords do not match",
+  });
 
 const signupSearchSchema = z.object({
   email: z.string().optional(),
@@ -31,7 +34,10 @@ export const Route = createFileRoute("/signup")({
   head: () => ({
     meta: [
       { title: "Create Account — Spice Garden" },
-      { name: "description", content: "Join Spice Garden — reservations, tasting notes and private events." },
+      {
+        name: "description",
+        content: "Join Spice Garden — reservations, tasting notes and private events.",
+      },
     ],
   }),
   component: SignupPage,
@@ -122,7 +128,9 @@ function SignupPage() {
     e.preventDefault();
     const parsed = schema.safeParse(form);
     if (!parsed.success) {
-      setErrors(Object.fromEntries(parsed.error.issues.map((i) => [i.path[0] as string, i.message])));
+      setErrors(
+        Object.fromEntries(parsed.error.issues.map((i) => [i.path[0] as string, i.message])),
+      );
       return;
     }
     setErrors({});
@@ -192,7 +200,9 @@ function SignupPage() {
     if (updateError) {
       setLoading(false);
       console.error("[signup] update user metadata/password failed:", updateError);
-      toast.error("Account verified, but failed to set password. Please use Forgot Password to set it.");
+      toast.error(
+        "Account verified, but failed to set password. Please use Forgot Password to set it.",
+      );
       return;
     }
 
@@ -207,7 +217,7 @@ function SignupPage() {
           phone: form.phone.trim(),
         })
         .eq("id", userId);
-      
+
       if (profileError) {
         console.error("[signup] update profile table failed:", profileError);
       }
@@ -227,7 +237,9 @@ function SignupPage() {
 
   return (
     <AuthShell
-      title={step === "done" ? "You're in" : step === "otp" ? "Verify your email" : "Create your account"}
+      title={
+        step === "done" ? "You're in" : step === "otp" ? "Verify your email" : "Create your account"
+      }
       subtitle={
         step === "done"
           ? "Welcome to the table."

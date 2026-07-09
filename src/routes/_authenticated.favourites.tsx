@@ -20,7 +20,7 @@ function FavouritesPage() {
 
   const favourites = useMemo(
     () => DISHES.filter((dish) => favoriteIds.includes(dish.id)),
-    [favoriteIds]
+    [favoriteIds],
   );
 
   return (

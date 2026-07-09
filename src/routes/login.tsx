@@ -85,14 +85,13 @@ function LoginPage() {
       title="WELCOME"
       emphasizeTitle
       footer={
-        <span className="text-muted-foreground">
-          Signed in already? Enjoy your reserved table.
-        </span>
+        <span className="text-muted-foreground">Signed in already? Enjoy your reserved table.</span>
       }
     >
       <div className="mb-6 rounded-2xl border border-primary/25 bg-primary/5 p-4 text-center">
         <p className="text-xs leading-relaxed text-foreground/80">
-          Please create an account before signing in. Only registered users can access the Sign In page.
+          Please create an account before signing in. Only registered users can access the Sign In
+          page.
         </p>
         <Link
           to="/signup"

@@ -1,10 +1,13 @@
-import fs from 'fs';
+import fs from "fs";
 
-let content = fs.readFileSync('src/lib/data.ts', 'utf8');
+let content = fs.readFileSync("src/lib/data.ts", "utf8");
 
 // 1. Remove the image imports at the top
-const importRegex = new RegExp('^import \\w+(?:Image)? from "@\\\\/assets\\\\/[^"]+";\\r?\\n', 'gm');
-content = content.replace(importRegex, '');
+const importRegex = new RegExp(
+  '^import \\w+(?:Image)? from "@\\\\/assets\\\\/[^"]+";\\r?\\n',
+  "gm",
+);
+content = content.replace(importRegex, "");
 
 // 2. Replace the IMG function and IMAGES object with getLocalImage
 const funcReplacement = `const LOCAL_ASSETS = import.meta.glob('@/assets/*.{jpg,png,jpeg,avif,webp}', { eager: true, import: 'default' }) as Record<string, string>;
@@ -38,7 +41,10 @@ function getLocalImage(id: string, dishName: string): string {
   return firstMatch ? LOCAL_ASSETS[firstMatch] : '';
 }`;
 
-content = content.replace(/\/\/ Curated stable Unsplash photo IDs by cuisine[\s\S]*?(?=type Seed = {)/, funcReplacement + '\n\n');
+content = content.replace(
+  /\/\/ Curated stable Unsplash photo IDs by cuisine[\s\S]*?(?=type Seed = {)/,
+  funcReplacement + "\n\n",
+);
 
 // 3. Replace all img: ... in SEEDS
 // We will match { name: "...", ... img: ... } and replace the img part.
@@ -58,5 +64,5 @@ content = content.replace(lineRegex, (match, name, middle) => {
   return `{ name: "${name}"${middle}img: getLocalImage("${id}", "${name}") }`;
 });
 
-fs.writeFileSync('src/lib/data.ts', content, 'utf8');
-console.log('Done modifying data.ts');
+fs.writeFileSync("src/lib/data.ts", content, "utf8");
+console.log("Done modifying data.ts");

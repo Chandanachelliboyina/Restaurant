@@ -1,6 +1,6 @@
-import fs from 'fs';
+import fs from "fs";
 
-let content = fs.readFileSync('src/routes/_authenticated.gallery.tsx', 'utf8');
+let content = fs.readFileSync("src/routes/_authenticated.gallery.tsx", "utf8");
 
 // Replace everything from const U = ... to the end of const ITEMS = [...];
 const itemsRegex = /const U = [\s\S]*?(?=function GalleryPage)/;
@@ -39,5 +39,5 @@ while (ITEMS.length < 30 && idx < extraPhotos.length) {
 
 content = content.replace(itemsRegex, replacement);
 
-fs.writeFileSync('src/routes/_authenticated.gallery.tsx', content, 'utf8');
-console.log('Done modifying _authenticated.gallery.tsx');
+fs.writeFileSync("src/routes/_authenticated.gallery.tsx", content, "utf8");
+console.log("Done modifying _authenticated.gallery.tsx");

@@ -7,7 +7,6 @@ import { BG_IMAGES } from "@/lib/images";
 import { BackButton } from "@/components/BackButton";
 import { TIMELINE } from "@/lib/data";
 
-
 export const Route = createFileRoute("/_authenticated/about")({
   head: () => ({
     meta: [
@@ -39,7 +38,6 @@ function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             className="divider-gold justify-center"
           >
-
             Our Story
           </motion.p>
           <motion.h1
@@ -57,9 +55,21 @@ function AboutPage() {
       <section className="section-pad">
         <div className="container-luxe grid gap-8 md:grid-cols-3">
           {[
-            { icon: Target, title: "Mission", text: "To make the most precise food in the world feel personal — never performative." },
-            { icon: Eye, title: "Vision", text: "An evening at Spice Garden should be remembered like a piece of music." },
-            { icon: Sparkles, title: "Philosophy", text: "Seasonality, restraint, generosity — in that order. Always in that order." },
+            {
+              icon: Target,
+              title: "Mission",
+              text: "To make the most precise food in the world feel personal — never performative.",
+            },
+            {
+              icon: Eye,
+              title: "Vision",
+              text: "An evening at Spice Garden should be remembered like a piece of music.",
+            },
+            {
+              icon: Sparkles,
+              title: "Philosophy",
+              text: "Seasonality, restraint, generosity — in that order. Always in that order.",
+            },
           ].map((m, i) => (
             <motion.div
               key={m.title}
@@ -135,9 +145,7 @@ function AboutPage() {
               decades distilling a single idea: the most luxurious thing on a plate is restraint.
               His signature lies not in what he adds, but in what he refuses to.
             </p>
-            <p className="mt-6 font-display text-3xl italic gold-text">
-              "Cook less. Cook better."
-            </p>
+            <p className="mt-6 font-display text-3xl italic gold-text">"Cook less. Cook better."</p>
             <p className="mt-4 text-xs uppercase tracking-[0.4em] text-muted-foreground">
               — Chef Marco Aurelio
             </p>
@@ -163,9 +171,7 @@ function AboutPage() {
             >
               <s.icon className="mx-auto h-7 w-7 text-primary" />
               <p className="mt-4 font-display text-4xl gold-text">{s.n}</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                {s.l}
-              </p>
+              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">{s.l}</p>
             </motion.div>
           ))}
         </div>

@@ -17,17 +17,11 @@ export function AuthShell({
   children: ReactNode;
   footer?: ReactNode;
 }) {
-
   return (
     <main className="relative min-h-dvh overflow-hidden bg-background">
       {/* Animated background */}
       <div className="absolute inset-0">
-        <img
-          src={hero}
-          alt=""
-          className="h-full w-full object-cover opacity-40"
-          aria-hidden
-        />
+        <img src={hero} alt="" className="h-full w-full object-cover opacity-40" aria-hidden />
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background/70 to-background" />
         <motion.div
           aria-hidden
@@ -76,7 +70,6 @@ export function AuthShell({
           )}
           <div className="mt-7">{children}</div>
         </motion.div>
-
 
         {footer && <div className="mt-6 text-center text-sm text-muted-foreground">{footer}</div>}
       </div>
@@ -134,7 +127,10 @@ export function OAuthRow({ onProvider }: { onProvider: (p: "google" | "apple") =
         className="flex items-center justify-center gap-2 rounded-2xl border border-border bg-background/40 px-4 py-3 text-sm font-medium transition hover:border-primary/40 hover:bg-primary/5"
       >
         <svg viewBox="0 0 24 24" className="h-4 w-4">
-          <path fill="#EA4335" d="M12 11v3.2h5.3c-.2 1.3-1.7 3.9-5.3 3.9-3.2 0-5.8-2.7-5.8-6s2.6-6 5.8-6c1.8 0 3 .8 3.7 1.5l2.5-2.4C16.5 3.6 14.5 2.7 12 2.7 6.9 2.7 2.8 6.8 2.8 12s4.1 9.3 9.2 9.3c5.3 0 8.8-3.7 8.8-9 0-.6-.1-1-.1-1.5H12z"/>
+          <path
+            fill="#EA4335"
+            d="M12 11v3.2h5.3c-.2 1.3-1.7 3.9-5.3 3.9-3.2 0-5.8-2.7-5.8-6s2.6-6 5.8-6c1.8 0 3 .8 3.7 1.5l2.5-2.4C16.5 3.6 14.5 2.7 12 2.7 6.9 2.7 2.8 6.8 2.8 12s4.1 9.3 9.2 9.3c5.3 0 8.8-3.7 8.8-9 0-.6-.1-1-.1-1.5H12z"
+          />
         </svg>
         Google
       </button>
@@ -144,7 +140,7 @@ export function OAuthRow({ onProvider }: { onProvider: (p: "google" | "apple") =
         className="flex items-center justify-center gap-2 rounded-2xl border border-border bg-background/40 px-4 py-3 text-sm font-medium transition hover:border-primary/40 hover:bg-primary/5"
       >
         <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
-          <path d="M16.5 12.3c0-2.3 1.9-3.4 2-3.4-1.1-1.6-2.8-1.8-3.4-1.9-1.5-.1-2.8.8-3.6.8-.7 0-1.9-.8-3.1-.8C7 7 5.3 8 4.4 9.6c-1.8 3.2-.5 7.9 1.3 10.5.9 1.3 2 2.8 3.4 2.7 1.3-.1 1.9-.9 3.6-.9 1.7 0 2.2.9 3.6.8 1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.4-3 1.5-3.1-.1-.1-2.7-1-2.6-3.7zM14.3 4.8C15 4 15.5 2.9 15.3 1.8c-1 0-2.2.7-2.9 1.5-.7.7-1.2 1.9-1 2.9 1.1.1 2.2-.6 2.9-1.4z"/>
+          <path d="M16.5 12.3c0-2.3 1.9-3.4 2-3.4-1.1-1.6-2.8-1.8-3.4-1.9-1.5-.1-2.8.8-3.6.8-.7 0-1.9-.8-3.1-.8C7 7 5.3 8 4.4 9.6c-1.8 3.2-.5 7.9 1.3 10.5.9 1.3 2 2.8 3.4 2.7 1.3-.1 1.9-.9 3.6-.9 1.7 0 2.2.9 3.6.8 1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.4-3 1.5-3.1-.1-.1-2.7-1-2.6-3.7zM14.3 4.8C15 4 15.5 2.9 15.3 1.8c-1 0-2.2.7-2.9 1.5-.7.7-1.2 1.9-1 2.9 1.1.1 2.2-.6 2.9-1.4z" />
         </svg>
         Apple
       </button>

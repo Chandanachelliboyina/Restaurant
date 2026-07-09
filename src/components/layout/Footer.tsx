@@ -22,8 +22,8 @@ export function Footer() {
         </Link>
 
         <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
-          A Michelin-inspired sanctuary where seasonal ingredients are coaxed into quiet
-          theatre by hands that have spent a lifetime perfecting the craft.
+          A Michelin-inspired sanctuary where seasonal ingredients are coaxed into quiet theatre by
+          hands that have spent a lifetime perfecting the craft.
         </p>
 
         <div className="flex gap-3">

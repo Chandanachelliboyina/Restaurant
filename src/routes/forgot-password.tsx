@@ -86,7 +86,8 @@ function ForgotPage() {
               <CheckCircle2 className="h-10 w-10" />
             </div>
             <p className="text-xs text-muted-foreground">
-              <Mail className="inline h-3.5 w-3.5" /> Click the link in the email to set a new password.
+              <Mail className="inline h-3.5 w-3.5" /> Click the link in the email to set a new
+              password.
             </p>
           </motion.div>
         )}

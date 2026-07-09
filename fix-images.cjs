@@ -1,7 +1,7 @@
-const fs = require('fs');
+const fs = require("fs");
 
-const dataContent = fs.readFileSync('src/lib/data.ts', 'utf8');
-const imagesContent = fs.readFileSync('src/lib/images.ts', 'utf8');
+const dataContent = fs.readFileSync("src/lib/data.ts", "utf8");
+const imagesContent = fs.readFileSync("src/lib/images.ts", "utf8");
 
 // 1. Extract mapping from data.ts: "Dish Name" -> "123456-abc"
 const dishToId = {};
@@ -33,28 +33,28 @@ const dishNames = Object.keys(dishToId);
 for (const dish of dishNames) {
   const id = dishToId[dish];
   let varName = "photo_1589302168068"; // default fallback
-  
+
   if (id === "idlisambarImage") {
-     // I already replaced this in data.ts maybe? Oh wait, it is "1632104667384-06f58cb7ad44" for Idli Sambar or we just use photo_1632104667384
-     varName = "photo_1632104667384";
+    // I already replaced this in data.ts maybe? Oh wait, it is "1632104667384-06f58cb7ad44" for Idli Sambar or we just use photo_1632104667384
+    varName = "photo_1632104667384";
   } else if (idToVar[id]) {
     varName = idToVar[id];
   } else {
     // try to find by variable name if the id is actually a variable name like 'crispycornImage'
-    const foundVar = Object.keys(filenameToVar).find(v => filenameToVar[v] === id);
+    const foundVar = Object.keys(filenameToVar).find((v) => filenameToVar[v] === id);
     if (foundVar) {
-       varName = id;
+      varName = id;
     } else if (filenameToVar[id]) {
-       varName = filenameToVar[id];
+      varName = filenameToVar[id];
     } else {
-       // Search if any filename includes the ID
-       const partialMatch = Object.keys(filenameToVar).find(f => f.includes(id));
-       if (partialMatch) {
-         varName = filenameToVar[partialMatch];
-       }
+      // Search if any filename includes the ID
+      const partialMatch = Object.keys(filenameToVar).find((f) => f.includes(id));
+      if (partialMatch) {
+        varName = filenameToVar[partialMatch];
+      }
     }
   }
-  
+
   // Specific overrides because user messed up the ID in data.ts for Idli Sambar
   if (dish === "Idli Sambar") {
     varName = "photo_1632104667384";
@@ -67,8 +67,8 @@ newMapLines.push("};");
 // 4. Replace DISH_IMAGES in images.ts
 const newImagesContent = imagesContent.replace(
   /export const DISH_IMAGES: Record<string, string> = \{[\s\S]*?^};/m,
-  newMapLines.join('\n')
+  newMapLines.join("\n"),
 );
 
-fs.writeFileSync('src/lib/images.ts', newImagesContent);
+fs.writeFileSync("src/lib/images.ts", newImagesContent);
 console.log("Rewrote images.ts DISH_IMAGES mapping.");

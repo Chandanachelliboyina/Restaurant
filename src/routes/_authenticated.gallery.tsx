@@ -9,7 +9,10 @@ export const Route = createFileRoute("/_authenticated/gallery")({
   head: () => ({
     meta: [
       { title: "Gallery — Spice Garden" },
-      { name: "description", content: "A visual journey through the kitchen, the room and the plates." },
+      {
+        name: "description",
+        content: "A visual journey through the kitchen, the room and the plates.",
+      },
     ],
   }),
   component: GalleryPage,
@@ -19,15 +22,15 @@ type Cat = "All" | "Restaurant" | "Food" | "Chef" | "Events" | "Kitchen";
 
 const ITEMS: { src: string; cat: Exclude<Cat, "All"> }[] = [
   // Restaurant
-  ...GALLERY_IMAGES.restaurant.map(img => ({ src: img.src, cat: "Restaurant" as const })),
+  ...GALLERY_IMAGES.restaurant.map((img) => ({ src: img.src, cat: "Restaurant" as const })),
   // Food
-  ...GALLERY_IMAGES.food.map(img => ({ src: img.src, cat: "Food" as const })),
+  ...GALLERY_IMAGES.food.map((img) => ({ src: img.src, cat: "Food" as const })),
   // Chef
-  ...GALLERY_IMAGES.chef.map(img => ({ src: img.src, cat: "Chef" as const })),
+  ...GALLERY_IMAGES.chef.map((img) => ({ src: img.src, cat: "Chef" as const })),
   // Events
-  ...GALLERY_IMAGES.events.map(img => ({ src: img.src, cat: "Events" as const })),
+  ...GALLERY_IMAGES.events.map((img) => ({ src: img.src, cat: "Events" as const })),
   // Kitchen
-  ...GALLERY_IMAGES.kitchen.map(img => ({ src: img.src, cat: "Kitchen" as const })),
+  ...GALLERY_IMAGES.kitchen.map((img) => ({ src: img.src, cat: "Kitchen" as const })),
 ];
 
 function GalleryPage() {
@@ -35,7 +38,10 @@ function GalleryPage() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   const items = useMemo(() => (cat === "All" ? ITEMS : ITEMS.filter((i) => i.cat === cat)), [cat]);
 
-  const next = useCallback(() => setOpenIdx((i) => (i === null ? null : (i + 1) % items.length)), [items.length]);
+  const next = useCallback(
+    () => setOpenIdx((i) => (i === null ? null : (i + 1) % items.length)),
+    [items.length],
+  );
   const prev = useCallback(
     () => setOpenIdx((i) => (i === null ? null : (i - 1 + items.length) % items.length)),
     [items.length],
@@ -56,7 +62,12 @@ function GalleryPage() {
     <>
       <section className="relative overflow-hidden py-24 text-center md:py-32">
         <div className="absolute inset-0 -z-10">
-          <img src={BG_IMAGES.gallery} alt="" className="h-full w-full object-cover" loading="lazy" />
+          <img
+            src={BG_IMAGES.gallery}
+            alt=""
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
           <div className="absolute inset-0 bg-black/70" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background" />
         </div>
@@ -70,7 +81,6 @@ function GalleryPage() {
           </h1>
         </div>
       </section>
-
 
       <section className="container-luxe">
         <div className="flex flex-wrap justify-center gap-2">
@@ -92,7 +102,10 @@ function GalleryPage() {
 
       <section className="section-pad">
         <div className="container-luxe">
-          <motion.div layout className="columns-1 gap-4 sm:columns-2 lg:columns-3 [column-fill:_balance]">
+          <motion.div
+            layout
+            className="columns-1 gap-4 sm:columns-2 lg:columns-3 [column-fill:_balance]"
+          >
             <AnimatePresence>
               {items.map((it, i) => (
                 <motion.button

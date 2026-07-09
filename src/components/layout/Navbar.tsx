@@ -7,7 +7,6 @@ import { useCart } from "@/lib/cart";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-
 import navImage from "@/assets/photo-1571336350540-8b189c0779f4.avif";
 
 const NAV = [
@@ -42,7 +41,7 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled ? "py-2" : "py-4"
+        scrolled ? "py-2" : "py-4",
       )}
     >
       <div className="container-luxe">
@@ -51,7 +50,7 @@ export function Navbar() {
             "flex items-center justify-between rounded-full px-5 py-3 transition-all duration-500 md:px-7",
             scrolled
               ? "glass-strong shadow-luxe"
-              : "border border-transparent bg-background/10 backdrop-blur-sm"
+              : "border border-transparent bg-background/10 backdrop-blur-sm",
           )}
         >
           <Link to="/" className="flex items-center gap-2 group">
@@ -66,7 +65,11 @@ export function Navbar() {
             </span>
           </Link>
 
-          <img src={navImage} alt="Menu" className="hidden h-10 w-10 rounded-full border border-border object-cover lg:block" />
+          <img
+            src={navImage}
+            alt="Menu"
+            className="hidden h-10 w-10 rounded-full border border-border object-cover lg:block"
+          />
 
           <nav className="hidden items-center gap-1 lg:flex">
             {NAV.map((n) => {
@@ -77,7 +80,7 @@ export function Navbar() {
                   to={n.to}
                   className={cn(
                     "relative rounded-full px-4 py-2 text-sm font-medium transition",
-                    active ? "text-primary" : "text-foreground/80 hover:text-primary"
+                    active ? "text-primary" : "text-foreground/80 hover:text-primary",
                   )}
                 >
                   {n.label}
@@ -129,7 +132,6 @@ export function Navbar() {
             )}
           </div>
 
-
           <div className="flex items-center gap-2 lg:hidden">
             <ThemeToggle />
             <Link
@@ -145,26 +147,35 @@ export function Navbar() {
               )}
             </Link>
             <button
-            onClick={() => setOpen((v) => !v)}
-            className="grid h-11 w-11 place-items-center rounded-full border border-primary/30 text-primary"
-            aria-label="Toggle menu"
-          >
-            <AnimatePresence mode="wait">
-              {open ? (
-                <motion.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }}>
-                  <X className="h-5 w-5" />
-                </motion.span>
-              ) : (
-                <motion.span key="m" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }}>
-                  <Menu className="h-5 w-5" />
-                </motion.span>
-              )}
-            </AnimatePresence>
-          </button>
+              onClick={() => setOpen((v) => !v)}
+              className="grid h-11 w-11 place-items-center rounded-full border border-primary/30 text-primary"
+              aria-label="Toggle menu"
+            >
+              <AnimatePresence mode="wait">
+                {open ? (
+                  <motion.span
+                    key="x"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                  >
+                    <X className="h-5 w-5" />
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="m"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                  >
+                    <Menu className="h-5 w-5" />
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </button>
           </div>
         </div>
       </div>
-
 
       {/* Mobile drawer */}
       <AnimatePresence>
@@ -186,7 +197,9 @@ export function Navbar() {
                       to={n.to}
                       className={cn(
                         "rounded-2xl px-4 py-3 text-base font-medium transition",
-                        active ? "bg-primary/10 text-primary" : "text-foreground/85 hover:bg-white/5"
+                        active
+                          ? "bg-primary/10 text-primary"
+                          : "text-foreground/85 hover:bg-white/5",
                       )}
                     >
                       {n.label}
@@ -214,7 +227,6 @@ export function Navbar() {
                   </Link>
                 )}
               </div>
-
             </div>
           </motion.div>
         )}
