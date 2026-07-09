@@ -119,6 +119,7 @@ import coconut_sorbet_img from "@/assets/istockphoto-2197716123-612x612 (1).webp
 import pistachio_gelato_img from "@/assets/photo-1630859885680-8f780e2e65a9.avif";
 import strawberry_sorbet_img from "@/assets/photo-1724805053611-54c999f9c70c.avif";
 import mango_sorbet_img from "@/assets/photo-1663904458920-f153c162fa79.avif";
+import cookies_cream_img from "@/assets/photo-1686948927872-af1042ff16dc.avif";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -254,7 +255,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Strawberry Sorbet": strawberry_sorbet_img,
   "Pistachio Gelato": pistachio_gelato_img,
   "Mango Sorbet": mango_sorbet_img,
-  "Cookies & Cream": photo_1589302168068,
+  "Cookies & Cream": cookies_cream_img,
   "Salted Caramel": photo_1589302168068,
   "Butterscotch Nut": photo_1589302168068,
   "Coconut Sorbet": coconut_sorbet_img,
