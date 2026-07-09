@@ -97,6 +97,7 @@ import photo_1742599361539 from "@/assets/photo-1742599361539-f096753d1100.avif"
 import photo_1636743715220 from "@/assets/photo-1636743715220-d8f8dd900b87.avif";
 import istockphoto_1312156074 from "@/assets/istockphoto-1312156074-612x612.webp";
 import istockphoto_1277967163 from "@/assets/istockphoto-1277967163-612x612.webp";
+import photo_1617305855058 from "@/assets/photo-1617305855058-336d24456869.avif";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -209,7 +210,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Amritsari Chicken Curry": photo_1603496987351,
   "Gulab Jamun": photo_1595608010652,
   "Rasmalai": istockphoto_1312156074,
-  "Molten Chocolate Cake": photo_1589302168068,
+  "Molten Chocolate Cake": photo_1617305855058,
   "Tiramisu Classico": photo_1589302168068,
   "Cheesecake New York": photo_1589302168068,
   "Kulfi Falooda": photo_1589302168068,
