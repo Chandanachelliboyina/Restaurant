@@ -96,6 +96,7 @@ import photo_1631452180519 from "@/assets/photo-1631452180519-c014fe946bc7.avif"
 import photo_1742599361539 from "@/assets/photo-1742599361539-f096753d1100.avif";
 import photo_1636743715220 from "@/assets/photo-1636743715220-d8f8dd900b87.avif";
 import istockphoto_1312156074 from "@/assets/istockphoto-1312156074-612x612.webp";
+import istockphoto_1277967163 from "@/assets/istockphoto-1277967163-612x612.webp";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -213,7 +214,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Cheesecake New York": photo_1589302168068,
   "Kulfi Falooda": photo_1589302168068,
   "Crème Brûlée": photo_1589302168068,
-  "Gajar Halwa": photo_1589302168068,
+  "Gajar Halwa": istockphoto_1277967163,
   "Baklava": photo_1589302168068,
   "Chocolate Brownie": photo_1636743715220,
   "Mango Lassi": photo_1589302168068,
