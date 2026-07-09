@@ -162,7 +162,8 @@ function OrdersPage() {
                           {expandedOrderId === o.id ? "Hide tracking" : "Track My Order"}
                         </button>
                         <Link
-                          to={`/track/${o.id}`}
+                          to="/track/$orderId"
+                          params={{ orderId: o.id }}
                           className="rounded-full border border-border bg-background/80 px-4 py-2 text-xs uppercase tracking-[0.2em] text-foreground transition hover:border-primary hover:text-primary"
                         >
                           Open tracking page

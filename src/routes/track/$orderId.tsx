@@ -49,7 +49,7 @@ const STAGES = [
 
 function TrackOrderPage() {
   const { user } = useAuth();
-  const params = useParams<{ orderId: string }>();
+  const params = Route.useParams();
   const orderId = params.orderId;
   const [order, setOrder] = useState<Order | null>(null);
   const [loading, setLoading] = useState(true);

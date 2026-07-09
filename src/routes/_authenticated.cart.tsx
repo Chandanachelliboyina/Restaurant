@@ -96,7 +96,7 @@ function CartPage() {
       discount: totals.discount,
       total: totals.total,
       address: deliveryAddress,
-      order_status: "confirmed",
+      order_status: "confirmed" as const,
       payment_status: paymentStatus,
       fulfillment: "delivery",
       notes: `Payment: ${paymentLabel}`,

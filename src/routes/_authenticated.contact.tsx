@@ -21,7 +21,7 @@ function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [chatOpen, setChatOpen] = useState(false);
   const [chatInput, setChatInput] = useState("");
-  const [chatMessages, setChatMessages] = useState([
+  const [chatMessages, setChatMessages] = useState<{ role: "assistant" | "user"; content: string }[]>([
     {
       role: "assistant" as const,
       content: "Hi! I can help with reservations, menu questions, payments, and service issues. What do you need today?",
