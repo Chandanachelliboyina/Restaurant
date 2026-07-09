@@ -66,7 +66,7 @@ function AccountPage() {
       if (upd) throw upd;
       setAvatarUrl(publicUrl);
       toast.success("Profile photo updated");
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("[account] avatar upload failed:", err);
       toast.error(err?.message || "Failed to upload avatar");
     } finally {
@@ -206,7 +206,7 @@ function AccountPage() {
   );
 }
 
-function Info({ icon: Icon, l, v }: { icon: any; l: string; v: string }) {
+function Info({ icon: Icon, l, v }: { icon: React.ElementType; l: string; v: string }) {
   return (
     <div className="flex items-start gap-3 rounded-2xl border border-border/60 bg-background/30 p-4">
       <Icon className="mt-0.5 h-4 w-4 text-primary" />

@@ -153,8 +153,10 @@ function CartPage() {
     setPlacing(true);
     try {
       await createOrder("Cash on Delivery", "pending");
-    } catch (error: any) {
-      toast.error(error?.message || "Couldn't confirm order. Please try again.");
+    } catch (error: unknown) {
+      toast.error(
+        error instanceof Error ? error.message : "Couldn't confirm order. Please try again.",
+      );
     } finally {
       setPlacing(false);
     }
@@ -200,8 +202,8 @@ function CartPage() {
       }
       const paymentLabel = onlineOption === "UPI ID" ? `UPI (${upiId})` : onlineOption;
       await createOrder(paymentLabel, "paid");
-    } catch (error: any) {
-      toast.error(error?.message || "Payment failed. Please try again.");
+    } catch (error: unknown) {
+      toast.error(error instanceof Error ? error.message : "Payment failed. Please try again.");
     } finally {
       setPlacing(false);
     }

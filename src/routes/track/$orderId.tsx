@@ -70,9 +70,9 @@ function TrackOrderPage() {
 
       if (error) throw error;
       setOrder(data as Order);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Failed to load order", err);
-      setError(err?.message ?? "Unable to load your order.");
+      setError(err instanceof Error ? err.message : "Unable to load your order.");
     } finally {
       setLoading(false);
     }
@@ -102,6 +102,7 @@ function TrackOrderPage() {
         channel.unsubscribe();
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [orderId, user]);
 
   const activeStage = order ? STAGES.findIndex((stage) => stage.id === order.order_status) : 0;

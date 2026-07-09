@@ -69,9 +69,9 @@ function OrdersPage() {
 
       if (error) throw error;
       setOrders((data ?? []) as Order[]);
-    } catch (error: any) {
-      console.error("Failed loading orders", error);
-      setErrorMessage(error?.message ?? "Failed to load your orders.");
+    } catch (err: unknown) {
+      console.error("Failed loading orders", err);
+      setErrorMessage(err instanceof Error ? err.message : "Failed to load your orders.");
     } finally {
       setLoading(false);
     }
@@ -102,6 +102,7 @@ function OrdersPage() {
         channel.unsubscribe();
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   return (

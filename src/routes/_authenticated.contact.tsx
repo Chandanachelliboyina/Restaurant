@@ -87,8 +87,12 @@ function ContactPage() {
             viewport={{ once: true }}
             onSubmit={(e) => {
               e.preventDefault();
-              toast.success("Message sent — we'll reply shortly");
-              setForm({ name: "", email: "", subject: "", message: "" });
+              try {
+                toast.success("Message sent — we'll reply shortly");
+                setForm({ name: "", email: "", subject: "", message: "" });
+              } catch (err: unknown) {
+                toast.error(err instanceof Error ? err.message : "Failed to send message");
+              }
             }}
             className="glass-strong rounded-3xl p-6 shadow-luxe md:p-10"
           >
@@ -310,7 +314,15 @@ function Input({
   );
 }
 
-function Info({ icon: Icon, title, text }: { icon: any; title: string; text: string }) {
+function Info({
+  icon: Icon,
+  title,
+  text,
+}: {
+  icon: React.ElementType;
+  title: string;
+  text: string;
+}) {
   return (
     <div className="flex items-start gap-4 rounded-3xl border border-border bg-card p-6">
       <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary/15 text-primary ring-1 ring-primary/30">
