@@ -108,6 +108,7 @@ import istockphoto_2181659111 from "@/assets/istockphoto-2181659111-612x612.webp
 import istockphoto_1160275420 from "@/assets/istockphoto-1160275420-612x612.webp";
 import premium_photo_1675667390417 from "@/assets/premium_photo-1675667390417-d9d23160f4a6.avif";
 import photo_1704742205361 from "@/assets/photo-1704742205361-8d532d9d7e2e.avif";
+import photo_1568903880699 from "@/assets/photo-1568903880699-b53f3e0c2b96.avif";
 import premium_photo_1723651343962 from "@/assets/premium_photo-1723651343962-75cd6cc5c308.avif";
 import istockphoto_1148258027 from "@/assets/istockphoto-1148258027-612x612.webp";
 import photo_1705663106388 from "@/assets/photo-1705663106388-6c1c51ff5a8d.avif";
@@ -115,6 +116,7 @@ import photo_1676300184943 from "@/assets/photo-1676300184943-09b2a08319a3.avif"
 import istockphoto_657076530 from "@/assets/istockphoto-657076530-612x612.webp";
 import photo_1669200236241 from "@/assets/photo-1669200236241-7c365035612a.avif";
 import coconut_sorbet_img from "@/assets/istockphoto-2197716123-612x612 (1).webp";
+import photo_1724805053611 from "@/assets/photo-1724805053611-54c999f9c70c.avif";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -247,7 +249,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Kulfi Malai": istockphoto_657076530,
   "Belgian Chocolate": istockphoto_1148258027,
   "Vanilla Bean": photo_1589302168068,
-  "Strawberry Sorbet": photo_1589302168068,
+  "Strawberry Sorbet": photo_1724805053611,
   "Pistachio Gelato": photo_1589302168068,
   "Mango Sorbet": photo_1589302168068,
   "Cookies & Cream": photo_1589302168068,
