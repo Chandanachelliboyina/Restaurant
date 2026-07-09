@@ -98,6 +98,7 @@ import photo_1636743715220 from "@/assets/photo-1636743715220-d8f8dd900b87.avif"
 import istockphoto_1312156074 from "@/assets/istockphoto-1312156074-612x612.webp";
 import istockphoto_1277967163 from "@/assets/istockphoto-1277967163-612x612.webp";
 import photo_1617305855058 from "@/assets/photo-1617305855058-336d24456869.avif";
+import photo_1719239948819 from "@/assets/photo-1719239948819-0afeced16184.avif";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -218,7 +219,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Gajar Halwa": istockphoto_1277967163,
   "Baklava": photo_1589302168068,
   "Chocolate Brownie": photo_1636743715220,
-  "Mango Lassi": photo_1589302168068,
+  "Mango Lassi": photo_1719239948819,
   "Masala Chai": photo_1589302168068,
   "Cold Coffee": photo_1589302168068,
   "Fresh Lime Soda": photo_1589302168068,
