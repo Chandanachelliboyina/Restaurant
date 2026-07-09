@@ -103,6 +103,7 @@ import istockphoto_1336601313 from "@/assets/istockphoto-1336601313-612x612.webp
 import photo_1461023058943 from "@/assets/photo-1461023058943-07fcbe16d735.avif";
 import premium_photo_1721780793069 from "@/assets/premium_photo-1721780793069-5576631f1b46.avif";
 import photo_1634141572430 from "@/assets/photo-1634141572430-cc6c46de1cf6.avif";
+import photo_1634496064950 from "@/assets/photo-1634496064950-02f043806b09.avif";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -228,7 +229,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Cold Coffee": photo_1461023058943,
   "Fresh Lime Soda": premium_photo_1721780793069,
   "Watermelon Cooler": photo_1634141572430,
-  "Virgin Mojito": photo_1589302168068,
+  "Virgin Mojito": photo_1634496064950,
   "Rose Milk": photo_1589302168068,
   "Iced Tea Peach": photo_1589302168068,
   "Fresh Orange Juice": photo_1589302168068,
