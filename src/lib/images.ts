@@ -114,6 +114,7 @@ import photo_1705663106388 from "@/assets/photo-1705663106388-6c1c51ff5a8d.avif"
 import photo_1676300184943 from "@/assets/photo-1676300184943-09b2a08319a3.avif";
 import istockphoto_657076530 from "@/assets/istockphoto-657076530-612x612.webp";
 import photo_1669200236241 from "@/assets/photo-1669200236241-7c365035612a.avif";
+import coconut_sorbet_img from "@/assets/istockphoto-2197716123-612x612 (1).webp";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -252,7 +253,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Cookies & Cream": photo_1589302168068,
   "Salted Caramel": photo_1589302168068,
   "Butterscotch Nut": photo_1589302168068,
-  "Coconut Sorbet": photo_1589302168068,
+  "Coconut Sorbet": coconut_sorbet_img,
 };
 
 /**
