@@ -99,6 +99,7 @@ import istockphoto_1312156074 from "@/assets/istockphoto-1312156074-612x612.webp
 import istockphoto_1277967163 from "@/assets/istockphoto-1277967163-612x612.webp";
 import photo_1617305855058 from "@/assets/photo-1617305855058-336d24456869.avif";
 import photo_1719239948819 from "@/assets/photo-1719239948819-0afeced16184.avif";
+import istockphoto_1336601313 from "@/assets/istockphoto-1336601313-612x612.webp";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -220,7 +221,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Baklava": photo_1589302168068,
   "Chocolate Brownie": photo_1636743715220,
   "Mango Lassi": photo_1719239948819,
-  "Masala Chai": photo_1589302168068,
+  "Masala Chai": istockphoto_1336601313,
   "Cold Coffee": photo_1589302168068,
   "Fresh Lime Soda": photo_1589302168068,
   "Watermelon Cooler": photo_1589302168068,
