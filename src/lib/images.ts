@@ -101,6 +101,7 @@ import photo_1617305855058 from "@/assets/photo-1617305855058-336d24456869.avif"
 import photo_1719239948819 from "@/assets/photo-1719239948819-0afeced16184.avif";
 import istockphoto_1336601313 from "@/assets/istockphoto-1336601313-612x612.webp";
 import photo_1461023058943 from "@/assets/photo-1461023058943-07fcbe16d735.avif";
+import premium_photo_1721780793069 from "@/assets/premium_photo-1721780793069-5576631f1b46.avif";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -224,7 +225,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Mango Lassi": photo_1719239948819,
   "Masala Chai": istockphoto_1336601313,
   "Cold Coffee": photo_1461023058943,
-  "Fresh Lime Soda": photo_1589302168068,
+  "Fresh Lime Soda": premium_photo_1721780793069,
   "Watermelon Cooler": photo_1589302168068,
   "Virgin Mojito": photo_1589302168068,
   "Rose Milk": photo_1589302168068,
