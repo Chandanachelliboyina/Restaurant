@@ -108,6 +108,8 @@ import istockphoto_2181659111 from "@/assets/istockphoto-2181659111-612x612.webp
 import istockphoto_1160275420 from "@/assets/istockphoto-1160275420-612x612.webp";
 import premium_photo_1675667390417 from "@/assets/premium_photo-1675667390417-d9d23160f4a6.avif";
 import photo_1704742205361 from "@/assets/photo-1704742205361-8d532d9d7e2e.avif";
+import premium_photo_1723651343962 from "@/assets/premium_photo-1723651343962-75cd6cc5c308.avif";
+import photo_1705663106388 from "@/assets/photo-1705663106388-6c1c51ff5a8d.avif";
 
 // Gallery/background images
 import bgGalleryImage from "@/assets/bg-gallery.jpg";
@@ -222,11 +224,11 @@ export const DISH_IMAGES: Record<string, string> = {
   "Rasmalai": istockphoto_1312156074,
   "Molten Chocolate Cake": photo_1617305855058,
   "Tiramisu Classico": photo_1704742205361,
-  "Cheesecake New York": photo_1589302168068,
+  "Cheesecake New York": premium_photo_1723651343962,
   "Kulfi Falooda": photo_1589302168068,
   "Crème Brûlée": photo_1589302168068,
   "Gajar Halwa": istockphoto_1277967163,
-  "Baklava": photo_1589302168068,
+  "Baklava": photo_1705663106388,
   "Chocolate Brownie": photo_1636743715220,
   "Mango Lassi": photo_1719239948819,
   "Masala Chai": istockphoto_1336601313,
