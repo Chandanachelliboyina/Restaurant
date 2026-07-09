@@ -248,7 +248,7 @@ export const DISH_IMAGES: Record<string, string> = {
   "Fresh Orange Juice": premium_photo_1675667390417,
   "Kulfi Malai": istockphoto_657076530,
   "Belgian Chocolate": istockphoto_1148258027,
-  "Vanilla Bean": photo_1589302168068,
+  "Vanilla Bean": photo_1568903880699,
   "Strawberry Sorbet": photo_1724805053611,
   "Pistachio Gelato": photo_1589302168068,
   "Mango Sorbet": photo_1589302168068,
